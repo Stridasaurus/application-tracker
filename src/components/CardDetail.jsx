@@ -65,6 +65,7 @@ export default function CardDetail({ appId, apps, store, onClose, now }) {
             onChange={update}
             allTags={store.tags}
             onCreateTag={store.actions.addTag}
+            hideStage
           />
 
           <div className="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 dark:border-slate-700">

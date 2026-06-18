@@ -5,7 +5,7 @@ import TagPicker from './TagPicker.jsx'
 
 // Controlled fields for an application. `draft` is the working object, `onChange`
 // receives a partial patch. Used by both quick-add and the detail editor.
-export default function ApplicationForm({ draft, onChange, allTags, onCreateTag, compact }) {
+export default function ApplicationForm({ draft, onChange, allTags, onCreateTag, compact, hideStage }) {
   const set = (patch) => onChange(patch)
   const stages = pipelineForTrack(draft.track)
 
@@ -51,13 +51,15 @@ export default function ApplicationForm({ draft, onChange, allTags, onCreateTag,
             ))}
           </select>
         </Field>
-        <Field label="Stage">
-          <select className={inputCls} value={draft.status} onChange={(e) => set({ status: e.target.value })}>
-            {stages.map((s) => (
-              <option key={s}>{s}</option>
-            ))}
-          </select>
-        </Field>
+        {!hideStage && (
+          <Field label="Stage">
+            <select className={inputCls} value={draft.status} onChange={(e) => set({ status: e.target.value })}>
+              {stages.map((s) => (
+                <option key={s}>{s}</option>
+              ))}
+            </select>
+          </Field>
+        )}
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
