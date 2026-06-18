@@ -7,6 +7,8 @@ import {
   dedupeListings,
   filterByKeywords,
   sortByPostedDesc,
+  capPerTrack,
+  processListings,
 } from './normalize.js'
 
 describe('hashId', () => {
@@ -85,5 +87,33 @@ describe('sortByPostedDesc', () => {
       makeListing({ title: 'c', url: 'c', postedAt: '2026-06-10' }),
     ]
     expect(sortByPostedDesc(ls).map((l) => l.title)).toEqual(['c', 'a', 'b'])
+  })
+})
+
+describe('capPerTrack', () => {
+  it('limits each track independently, preserving order', () => {
+    const ls = [
+      makeListing({ title: 'd1', url: 'd1', track: 'defense' }),
+      makeListing({ title: 'd2', url: 'd2', track: 'defense' }),
+      makeListing({ title: 'd3', url: 'd3', track: 'defense' }),
+      makeListing({ title: 'q1', url: 'q1', track: 'quant' }),
+    ]
+    const out = capPerTrack(ls, 2)
+    expect(out.map((l) => l.title)).toEqual(['d1', 'd2', 'q1'])
+  })
+})
+
+describe('processListings', () => {
+  it('dedupes, keyword-filters every source, sorts, and caps per track', () => {
+    const kw = { defense: ['radar'], quant: ['quant'] }
+    const ls = [
+      makeListing({ title: 'Radar Eng', track: 'defense', url: 'a', postedAt: '2026-06-01', source: 'greenhouse:x' }),
+      makeListing({ title: 'Radar Sci', track: 'defense', url: 'b', postedAt: '2026-06-05', source: 'greenhouse:x' }),
+      makeListing({ title: 'Recruiter', track: 'defense', url: 'c', source: 'greenhouse:x' }), // filtered out
+      makeListing({ title: 'Quant Researcher', track: 'quant', url: 'd', postedAt: '2026-06-02' }),
+    ]
+    const out = processListings(ls, kw, { maxPerTrack: 1 })
+    // company-board listings are now keyword-filtered (no bypass), newest first, 1 per track
+    expect(out.map((l) => l.title)).toEqual(['Radar Sci', 'Quant Researcher'])
   })
 })

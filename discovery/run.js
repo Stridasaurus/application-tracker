@@ -79,9 +79,9 @@ async function main() {
     console.log('Adzuna: skipped (no ADZUNA_APP_ID / ADZUNA_APP_KEY secret)')
   }
 
-  const listings = processListings(all, KEYWORDS_BY_TRACK, {
-    alwaysKeepSources: ['greenhouse:', 'lever:', 'ashby:'],
-  })
+  // Keyword-filter every source (even company boards) so large boards like big
+  // defense primes don't flood a track, and cap per track for a curated inbox.
+  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50 })
 
   const payload = {
     generatedAt: new Date().toISOString(),

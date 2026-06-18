@@ -83,7 +83,22 @@ export function sortByPostedDesc(listings) {
   })
 }
 
-// Full pipeline: dedupe -> keyword filter -> sort.
-export function processListings(listings, keywordsByTrack, opts) {
-  return sortByPostedDesc(filterByKeywords(dedupeListings(listings), keywordsByTrack, opts))
+// Keep at most `max` listings per track (assumes input already sorted by
+// preference). Prevents a single big company board from flooding a track.
+export function capPerTrack(listings, max) {
+  if (!max || max <= 0) return listings
+  const counts = {}
+  const out = []
+  for (const l of listings) {
+    counts[l.track] = (counts[l.track] ?? 0) + 1
+    if (counts[l.track] <= max) out.push(l)
+  }
+  return out
+}
+
+// Full pipeline: dedupe -> keyword filter (every source) -> sort newest-first
+// -> cap per track. `maxPerTrack` keeps the Discover inbox curated, not a flood.
+export function processListings(listings, keywordsByTrack, { maxPerTrack = 50 } = {}) {
+  const filtered = filterByKeywords(dedupeListings(listings), keywordsByTrack)
+  return capPerTrack(sortByPostedDesc(filtered), maxPerTrack)
 }
