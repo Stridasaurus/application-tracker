@@ -78,6 +78,22 @@ export default function App() {
     setMenuOpen(false)
   }
 
+  const clearData = () => {
+    setMenuOpen(false)
+    const count = store.apps.length
+    const sampleHint = store.apps.some((a) => a.notes?.includes('Discovered via'))
+      ? ''
+      : ' (including the sample applications)'
+    const ok = window.confirm(
+      `Delete all ${count} application${count === 1 ? '' : 's'}${sampleHint} and start fresh?\n\n` +
+        'This cannot be undone. Tip: use "Backup data (JSON)" first if you want a copy.',
+    )
+    if (ok) {
+      store.actions.clearAll()
+      setDetailId(null)
+    }
+  }
+
   const importJson = (e) => {
     const file = e.target.files?.[0]
     if (!file) return
@@ -133,6 +149,10 @@ export default function App() {
                     <MenuItem onClick={() => fileRef.current?.click()}>⬆ Import data (JSON)</MenuItem>
                     <MenuItem onClick={() => { toggle(); setMenuOpen(false) }}>
                       {theme === 'dark' ? '☀ Light theme' : '🌙 Dark theme'}
+                    </MenuItem>
+                    <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
+                    <MenuItem onClick={clearData} danger>
+                      🗑 Clear all data
                     </MenuItem>
                   </div>
                 )}
@@ -242,11 +262,14 @@ export default function App() {
   )
 }
 
-function MenuItem({ onClick, children }) {
+function MenuItem({ onClick, children, danger }) {
   return (
     <button
       onClick={onClick}
-      className="block w-full px-3 py-2 text-left hover:bg-slate-100 dark:hover:bg-slate-800"
+      className={
+        'block w-full px-3 py-2 text-left hover:bg-slate-100 dark:hover:bg-slate-800 ' +
+        (danger ? 'text-rose-600 dark:text-rose-400' : '')
+      }
     >
       {children}
     </button>
