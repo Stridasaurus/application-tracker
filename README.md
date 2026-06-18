@@ -27,8 +27,40 @@ Programs (and an Other catch-all).
   over time, response rate, average time-to-response, and a salary/stipend
   distribution that **excludes** entries with no comp (never zero-filled).
 - **One-click PDF** — active applications grouped by track with deadlines clear.
+- **Daily job discovery** — a scheduled GitHub Action sweeps job sources and
+  feeds a **Discover** inbox in the app (see below).
 - **Dark/light theme**, fully responsive, encouraging empty states.
 - **JSON backup/import** via the ⋯ menu (data otherwise lives only in your browser).
+
+## Daily job discovery
+
+`.github/workflows/discover.yml` runs once a day (and on demand). It executes
+`discovery/run.js`, which sweeps:
+
+- **Company job boards** — public Greenhouse / Lever / Ashby APIs for the
+  companies listed in `discovery/sources.js` (edit that file to add your own).
+- **USAJOBS** — the official US federal jobs API (great for the Defense track
+  and clearance-sponsored roles). Requires `USAJOBS_API_KEY` + `USAJOBS_EMAIL`.
+- **Adzuna** — broad keyword search across many boards. Requires
+  `ADZUNA_APP_ID` + `ADZUNA_APP_KEY`.
+
+Results are filtered by per-track keywords, de-duplicated, written to
+`public/discovered-jobs.json`, committed, and redeployed. The app's **Discover**
+tab shows new matches grouped by track with one-click **Add to board** / dismiss.
+Already-tracked and dismissed listings are filtered out. Missing API-key secrets
+simply skip those sources — company boards work with no keys at all.
+
+PhD programs aren't on job boards, so discovery intentionally skips that track.
+
+### Setting up the API keys (optional but recommended)
+
+1. **USAJOBS**: request a key at <https://developer.usajobs.gov/apirequest/> and
+   note the email you registered. Add repo secrets `USAJOBS_API_KEY` and
+   `USAJOBS_EMAIL`.
+2. **Adzuna**: register at <https://developer.adzuna.com/> for an `app_id` and
+   `app_key`. Add repo secrets `ADZUNA_APP_ID` and `ADZUNA_APP_KEY`.
+
+Add secrets under **Settings → Secrets and variables → Actions**.
 
 ## Develop
 

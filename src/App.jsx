@@ -1,6 +1,8 @@
 import { useMemo, useRef, useState } from 'react'
 import { useStore } from './store/useStore.js'
 import { useTheme } from './store/useTheme.js'
+import { useDiscovered } from './store/useDiscovered.js'
+import Discover from './components/Discover.jsx'
 import { filterApps } from './domain/filter.js'
 import { overdueCount, upcomingDeadlines } from './domain/metrics.js'
 import { Button } from './components/ui.jsx'
@@ -13,6 +15,7 @@ import DeadlinesView from './components/DeadlinesView.jsx'
 
 const TABS = [
   { id: 'board', label: 'Board' },
+  { id: 'discover', label: 'Discover' },
   { id: 'deadlines', label: 'Deadlines' },
   { id: 'analytics', label: 'Analytics' },
 ]
@@ -20,6 +23,7 @@ const TABS = [
 export default function App() {
   const store = useStore()
   const { theme, toggle } = useTheme()
+  const discovered = useDiscovered()
   const [tab, setTab] = useState('board')
   const [filters, setFilters] = useState({ query: '', tracks: new Set(), tags: new Set(), statuses: new Set() })
   const [quickOpen, setQuickOpen] = useState(false)
@@ -34,6 +38,32 @@ export default function App() {
   const nextDue = upcomingDeadlines(store.apps, { now, activeOnly: true })[0]
 
   const open = (id) => setDetailId(id)
+
+  // Count of fresh discovered listings (not yet tracked or dismissed) for a tab badge.
+  const discoverCount = useMemo(() => {
+    const listings = discovered.data?.listings ?? []
+    if (listings.length === 0) return 0
+    const urls = new Set(store.apps.map((a) => (a.url || '').replace(/^https?:\/\//, '').replace(/\/+$/, '').toLowerCase()).filter(Boolean))
+    const dismissed = new Set(store.dismissed)
+    return listings.filter((l) => {
+      if (dismissed.has(l.id)) return false
+      const u = (l.url || '').replace(/^https?:\/\//, '').replace(/\/+$/, '').toLowerCase()
+      return !(u && urls.has(u))
+    }).length
+  }, [discovered.data, store.apps, store.dismissed])
+
+  // Add a discovered listing to the board (as a Saved card) and clear it from the inbox.
+  const addFromListing = (listing) => {
+    store.actions.addApplication({
+      company: listing.company,
+      role: listing.title,
+      track: listing.track,
+      status: 'Saved',
+      url: listing.url,
+      notes: `Discovered via ${listing.source}${listing.location ? ` · ${listing.location}` : ''}`,
+    })
+    store.actions.dismissListing(listing.id)
+  }
 
   const exportJson = () => {
     const blob = new Blob([JSON.stringify({ apps: store.apps, tags: store.tags }, null, 2)], {
@@ -144,6 +174,9 @@ export default function App() {
                 {t.id === 'deadlines' && overdue > 0 && (
                   <span className="ml-1.5 rounded-full bg-rose-500 px-1.5 text-xs text-white">{overdue}</span>
                 )}
+                {t.id === 'discover' && discoverCount > 0 && (
+                  <span className="ml-1.5 rounded-full bg-emerald-500 px-1.5 text-xs text-white">{discoverCount}</span>
+                )}
               </button>
             ))}
           </nav>
@@ -164,6 +197,18 @@ export default function App() {
               emptyAction={<Button onClick={() => setQuickOpen(true)}>+ Add your first application</Button>}
             />
           </>
+        )}
+
+        {tab === 'discover' && (
+          <Discover
+            data={discovered.data}
+            status={discovered.status}
+            apps={store.apps}
+            dismissed={store.dismissed}
+            onAdd={addFromListing}
+            onDismiss={store.actions.dismissListing}
+            onReload={discovered.reload}
+          />
         )}
 
         {tab === 'deadlines' && (

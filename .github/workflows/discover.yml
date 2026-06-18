@@ -1,0 +1,66 @@
+name: Daily job discovery
+
+# Once a day: sweep job sources, regenerate public/discovered-jobs.json, commit
+# it for history, then rebuild and publish to Pages so the Discover tab is fresh.
+# Also runnable on demand. Missing API-key secrets just skip those sources.
+on:
+  schedule:
+    - cron: '0 11 * * *' # 11:00 UTC daily (~7am ET)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  discover-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Run discovery sweep
+        run: node discovery/run.js
+        env:
+          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+
+      - name: Commit refreshed listings (history)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- public/discovered-jobs.json; then
+            git add public/discovered-jobs.json
+            git commit -m "chore: refresh discovered job listings [skip ci]"
+            git push
+          else
+            echo "No changes in discovered listings."
+          fi
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASE: /resume-tracker/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -10,18 +10,19 @@ function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) {
-      return { version: SCHEMA_VERSION, apps: seedApplications(), tags: [...DEFAULT_TAGS], seeded: true }
+      return { version: SCHEMA_VERSION, apps: seedApplications(), tags: [...DEFAULT_TAGS], dismissed: [], seeded: true }
     }
     const parsed = JSON.parse(raw)
     return {
       version: SCHEMA_VERSION,
       apps: (parsed.apps ?? []).map(normalizeApplication),
       tags: dedupeTags(parsed.tags ?? DEFAULT_TAGS),
+      dismissed: Array.isArray(parsed.dismissed) ? parsed.dismissed : [],
       seeded: parsed.seeded ?? false,
     }
   } catch (e) {
     console.error('Failed to load tracker data, starting fresh', e)
-    return { version: SCHEMA_VERSION, apps: [], tags: [...DEFAULT_TAGS], seeded: false }
+    return { version: SCHEMA_VERSION, apps: [], tags: [...DEFAULT_TAGS], dismissed: [], seeded: false }
   }
 }
 
@@ -96,17 +97,23 @@ export function useStore() {
     setState((s) => ({ ...s, tags: [...new Set([...s.tags, t])] }))
   }, [])
 
+  // Hide a discovered listing from the Discover inbox (persisted).
+  const dismissListing = useCallback((listingId) => {
+    setState((s) => ({ ...s, dismissed: [...new Set([...s.dismissed, listingId])] }))
+  }, [])
+
   const replaceAll = useCallback((data) => {
     setState({
       version: SCHEMA_VERSION,
       apps: (data.apps ?? []).map(normalizeApplication),
       tags: dedupeTags(data.tags ?? DEFAULT_TAGS),
+      dismissed: Array.isArray(data.dismissed) ? data.dismissed : [],
       seeded: true,
     })
   }, [])
 
   const clearAll = useCallback(() => {
-    setState({ version: SCHEMA_VERSION, apps: [], tags: [...DEFAULT_TAGS], seeded: true })
+    setState({ version: SCHEMA_VERSION, apps: [], tags: [...DEFAULT_TAGS], dismissed: [], seeded: true })
   }, [])
 
   const actions = useMemo(
@@ -117,11 +124,12 @@ export function useStore() {
       deleteApplication,
       addNote,
       addTag,
+      dismissListing,
       replaceAll,
       clearAll,
     }),
-    [addApplication, updateApplication, moveApplication, deleteApplication, addNote, addTag, replaceAll, clearAll],
+    [addApplication, updateApplication, moveApplication, deleteApplication, addNote, addTag, dismissListing, replaceAll, clearAll],
   )
 
-  return { apps: state.apps, tags: state.tags, actions }
+  return { apps: state.apps, tags: state.tags, dismissed: state.dismissed, actions }
 }
