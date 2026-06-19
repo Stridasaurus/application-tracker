@@ -96,9 +96,26 @@ export function capPerTrack(listings, max) {
   return out
 }
 
+// Keep at most `max` listings per company (assumes input already sorted by
+// preference). Stops one employer (e.g. a defense prime with hundreds of
+// matching roles) from monopolizing a track so the inbox stays varied.
+export function capPerCompany(listings, max) {
+  if (!max || max <= 0) return listings
+  const counts = {}
+  const out = []
+  for (const l of listings) {
+    const key = (l.company || '').toLowerCase().trim()
+    counts[key] = (counts[key] ?? 0) + 1
+    if (counts[key] <= max) out.push(l)
+  }
+  return out
+}
+
 // Full pipeline: dedupe -> keyword filter (every source) -> sort newest-first
-// -> cap per track. `maxPerTrack` keeps the Discover inbox curated, not a flood.
-export function processListings(listings, keywordsByTrack, { maxPerTrack = 50 } = {}) {
+// -> cap per company -> cap per track. The caps keep the Discover inbox a
+// curated, varied queue rather than a flood from one source.
+export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6 } = {}) {
   const filtered = filterByKeywords(dedupeListings(listings), keywordsByTrack)
-  return capPerTrack(sortByPostedDesc(filtered), maxPerTrack)
+  const sorted = sortByPostedDesc(filtered)
+  return capPerTrack(capPerCompany(sorted, maxPerCompany), maxPerTrack)
 }

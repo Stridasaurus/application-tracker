@@ -8,6 +8,7 @@ import {
   filterByKeywords,
   sortByPostedDesc,
   capPerTrack,
+  capPerCompany,
   processListings,
 } from './normalize.js'
 
@@ -103,6 +104,18 @@ describe('capPerTrack', () => {
   })
 })
 
+describe('capPerCompany', () => {
+  it('limits each company independently, preserving order', () => {
+    const ls = [
+      makeListing({ title: 'a1', url: 'a1', company: 'Anduril' }),
+      makeListing({ title: 'a2', url: 'a2', company: 'anduril' }), // case-insensitive
+      makeListing({ title: 'a3', url: 'a3', company: 'Anduril' }),
+      makeListing({ title: 'e1', url: 'e1', company: 'Epirus' }),
+    ]
+    expect(capPerCompany(ls, 2).map((l) => l.title)).toEqual(['a1', 'a2', 'e1'])
+  })
+})
+
 describe('processListings', () => {
   it('dedupes, keyword-filters every source, sorts, and caps per track', () => {
     const kw = { defense: ['radar'], quant: ['quant'] }
@@ -112,8 +125,20 @@ describe('processListings', () => {
       makeListing({ title: 'Recruiter', track: 'defense', url: 'c', source: 'greenhouse:x' }), // filtered out
       makeListing({ title: 'Quant Researcher', track: 'quant', url: 'd', postedAt: '2026-06-02' }),
     ]
-    const out = processListings(ls, kw, { maxPerTrack: 1 })
+    const out = processListings(ls, kw, { maxPerTrack: 1, maxPerCompany: 10 })
     // company-board listings are now keyword-filtered (no bypass), newest first, 1 per track
     expect(out.map((l) => l.title)).toEqual(['Radar Sci', 'Quant Researcher'])
+  })
+
+  it('caps per company so one employer cannot fill a track', () => {
+    const kw = { defense: ['radar'] }
+    const ls = [
+      makeListing({ title: 'Radar 1', track: 'defense', url: 'r1', company: 'Anduril', postedAt: '2026-06-05' }),
+      makeListing({ title: 'Radar 2', track: 'defense', url: 'r2', company: 'Anduril', postedAt: '2026-06-04' }),
+      makeListing({ title: 'Radar 3', track: 'defense', url: 'r3', company: 'Anduril', postedAt: '2026-06-03' }),
+      makeListing({ title: 'Radar X', track: 'defense', url: 'rx', company: 'Epirus', postedAt: '2026-06-02' }),
+    ]
+    const out = processListings(ls, kw, { maxPerTrack: 50, maxPerCompany: 2 })
+    expect(out.map((l) => l.title)).toEqual(['Radar 1', 'Radar 2', 'Radar X'])
   })
 })

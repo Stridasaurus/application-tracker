@@ -79,9 +79,9 @@ async function main() {
     console.log('Adzuna: skipped (no ADZUNA_APP_ID / ADZUNA_APP_KEY secret)')
   }
 
-  // Keyword-filter every source (even company boards) so large boards like big
-  // defense primes don't flood a track, and cap per track for a curated inbox.
-  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50 })
+  // Keyword-filter every source (even company boards), then cap per company and
+  // per track so no single employer or track floods the curated inbox.
+  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6 })
 
   const payload = {
     generatedAt: new Date().toISOString(),
