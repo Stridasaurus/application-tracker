@@ -1,42 +1,17 @@
 {
-  "generatedAt": "2026-06-19T10:57:31.739Z",
+  "generatedAt": "2026-06-19T11:02:18.896Z",
   "total": 15,
   "counts": {
     "defense": 6,
     "quant": 9
   },
   "sources": {
-    "greenhouse:twosigma": 0,
     "greenhouse:jumptrading": 61,
-    "greenhouse:wearehrt": 0,
-    "greenhouse:susquehannainternationalgroup": 0,
     "greenhouse:akunacapital": 28,
     "greenhouse:imc": 132,
-    "greenhouse:fiverings": 0,
     "greenhouse:oldmissioncapital": 31,
-    "greenhouse:wolverinetrading": 0,
-    "greenhouse:paradromics": 0,
-    "lever:synchron": 0,
-    "greenhouse:kernel": 0,
-    "greenhouse:precisionneuroscience": 0,
-    "greenhouse:sciencecorp": 0,
-    "ashby:forestneurotech": 0,
-    "ashby:motifneurotech": 0,
-    "greenhouse:openwater": 0,
     "greenhouse:andurilindustries": 2075,
-    "greenhouse:shieldai": 0,
-    "greenhouse:epirus": 39,
-    "greenhouse:saronic": 0,
-    "greenhouse:appliedintuition": 0,
-    "lever:vannevarlabs": 0,
-    "greenhouse:castelion": 0,
-    "greenhouse:commonwealthfusionsystems": 0,
-    "lever:tae": 0,
-    "lever:zapenergy": 0,
-    "greenhouse:helionenergy": 0,
-    "greenhouse:typeoneenergy": 0,
-    "greenhouse:realtafusion": 0,
-    "greenhouse:xcimerenergy": 0
+    "greenhouse:epirus": 39
   },
   "listings": [
     {
