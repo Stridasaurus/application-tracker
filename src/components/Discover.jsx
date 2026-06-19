@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { TRACK_BY_ID, TRACKS } from '../domain/constants.js'
 import { normalizeUrl } from '../../discovery/normalize.js'
 import { formatDate } from '../domain/dates.js'
@@ -33,6 +33,15 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
   }, [visible])
 
   const generated = data?.generatedAt ? formatDate(data.generatedAt) : null
+  const [openTracks, setOpenTracks] = useState(new Set())
+
+  function toggleTrack(id) {
+    setOpenTracks((prev) => {
+      const next = new Set(prev)
+      next.has(id) ? next.delete(id) : next.add(id)
+      return next
+    })
+  }
 
   return (
     <div>
@@ -62,23 +71,32 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
         />
       )}
 
-      <div className="space-y-6">
-        {TRACKS.filter((t) => byTrack[t.id]?.length).map((track) => (
-          <section key={track.id}>
-            <div className="mb-2 flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full" style={{ backgroundColor: track.color }} />
-              <h3 className="font-semibold">{track.label}</h3>
-              <span className="rounded-full bg-slate-200 px-2 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-300">
-                {byTrack[track.id].length}
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              {byTrack[track.id].map((l) => (
-                <ListingCard key={l.id} listing={l} onAdd={() => onAdd(l)} onDismiss={() => onDismiss(l.id)} />
-              ))}
-            </div>
-          </section>
-        ))}
+      <div className="space-y-2">
+        {TRACKS.filter((t) => byTrack[t.id]?.length).map((track) => {
+          const isOpen = openTracks.has(track.id)
+          return (
+            <section key={track.id} className="rounded-xl border border-slate-200 dark:border-slate-700">
+              <button
+                onClick={() => toggleTrack(track.id)}
+                className="flex w-full items-center gap-2 px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-slate-800/60 rounded-xl transition-colors"
+              >
+                <span className="h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: track.color }} />
+                <span className="font-semibold flex-1">{track.label}</span>
+                <span className="rounded-full bg-slate-200 px-2 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                  {byTrack[track.id].length}
+                </span>
+                <span className={cx('text-slate-400 transition-transform text-xs', isOpen && 'rotate-180')}>▼</span>
+              </button>
+              {isOpen && (
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 px-4 pb-4">
+                  {byTrack[track.id].map((l) => (
+                    <ListingCard key={l.id} listing={l} onAdd={() => onAdd(l)} onDismiss={() => onDismiss(l.id)} />
+                  ))}
+                </div>
+              )}
+            </section>
+          )
+        })}
       </div>
     </div>
   )
