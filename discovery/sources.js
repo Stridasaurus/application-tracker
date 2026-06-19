@@ -1,58 +1,39 @@
 // Configuration for the daily discovery sweep.
 //
-// COMPANY_BOARDS: companies that expose a public ATS job board (Greenhouse,
-// Lever, or Ashby). The `token` is the board slug in that ATS. These are
-// best-effort and validated by the first scheduled run — the runner logs a
-// per-source count, so any wrong/empty token is easy to spot and fix here.
-// Listings from these boards bypass the keyword filter (we already trust the
-// company), but are still tagged with their track.
+// COMPANY_BOARDS below are VERIFIED working against the live ATS APIs (each
+// returned jobs in a real run). Companies whose public board slug we haven't
+// confirmed live in CANDIDATE_BOARDS and are NOT queried — flip one into
+// COMPANY_BOARDS once you confirm its slug (open
+// https://boards-api.greenhouse.io/v1/boards/<slug>/jobs or
+// https://api.lever.co/v0/postings/<slug>?mode=json and check it returns JSON).
 //
-// KEYWORDS_BY_TRACK: used to filter the broad sources (USAJOBS, Adzuna) and to
-// build their search queries.
+// Companies on custom ATSs (Citadel, Jane Street, Neuralink, L3Harris, most
+// fusion startups…) don't expose a queryable public board — those are best
+// covered by the Adzuna keyword sweep (set ADZUNA_APP_ID/ADZUNA_APP_KEY).
 
-// NOTE: ATS slugs are best-effort and verified by the live run (the runner logs
-// a per-source count). Entries that return 0 are harmless; prune or correct
-// them here as you learn the right tokens. Companies on custom ATSs (Citadel,
-// Jane Street, Neuralink, L3Harris…) are covered via the Adzuna keyword sweep.
 export const COMPANY_BOARDS = [
-  // --- Quant finance ---
-  { company: 'Two Sigma', ats: 'greenhouse', token: 'twosigma', track: 'quant' },
+  // --- Quant finance (verified) ---
   { company: 'Jump Trading', ats: 'greenhouse', token: 'jumptrading', track: 'quant' },
-  { company: 'Hudson River Trading', ats: 'greenhouse', token: 'wearehrt', track: 'quant' },
-  { company: 'SIG', ats: 'greenhouse', token: 'susquehannainternationalgroup', track: 'quant' },
   { company: 'Akuna Capital', ats: 'greenhouse', token: 'akunacapital', track: 'quant' },
   { company: 'IMC Trading', ats: 'greenhouse', token: 'imc', track: 'quant' },
-  { company: 'Five Rings', ats: 'greenhouse', token: 'fiverings', track: 'quant' },
   { company: 'Old Mission', ats: 'greenhouse', token: 'oldmissioncapital', track: 'quant' },
-  { company: 'Wolverine Trading', ats: 'greenhouse', token: 'wolverinetrading', track: 'quant' },
 
-  // --- Neurotech / BCI ---
-  { company: 'Paradromics', ats: 'greenhouse', token: 'paradromics', track: 'neuro' },
-  { company: 'Synchron', ats: 'lever', token: 'synchron', track: 'neuro' },
-  { company: 'Kernel', ats: 'greenhouse', token: 'kernel', track: 'neuro' },
-  { company: 'Precision Neuroscience', ats: 'greenhouse', token: 'precisionneuroscience', track: 'neuro' },
-  { company: 'Science Corp', ats: 'greenhouse', token: 'sciencecorp', track: 'neuro' },
-  { company: 'Forest Neurotech', ats: 'ashby', token: 'forestneurotech', track: 'neuro' },
-  { company: 'Motif Neurotech', ats: 'ashby', token: 'motifneurotech', track: 'neuro' },
-  { company: 'Openwater', ats: 'greenhouse', token: 'openwater', track: 'neuro' },
-
-  // --- Defense / aerospace ---
+  // --- Defense / aerospace (verified) ---
   { company: 'Anduril', ats: 'greenhouse', token: 'andurilindustries', track: 'defense' },
-  { company: 'Shield AI', ats: 'greenhouse', token: 'shieldai', track: 'defense' },
   { company: 'Epirus', ats: 'greenhouse', token: 'epirus', track: 'defense' },
-  { company: 'Saronic', ats: 'greenhouse', token: 'saronic', track: 'defense' },
-  { company: 'Applied Intuition', ats: 'greenhouse', token: 'appliedintuition', track: 'defense' },
-  { company: 'Vannevar Labs', ats: 'lever', token: 'vannevarlabs', track: 'defense' },
-  { company: 'Castelion', ats: 'greenhouse', token: 'castelion', track: 'defense' },
+]
 
-  // --- Fusion ---
-  { company: 'Commonwealth Fusion Systems', ats: 'greenhouse', token: 'commonwealthfusionsystems', track: 'fusion' },
-  { company: 'TAE Technologies', ats: 'lever', token: 'tae', track: 'fusion' },
-  { company: 'Zap Energy', ats: 'lever', token: 'zapenergy', track: 'fusion' },
-  { company: 'Helion Energy', ats: 'greenhouse', token: 'helionenergy', track: 'fusion' },
-  { company: 'Type One Energy', ats: 'greenhouse', token: 'typeoneenergy', track: 'fusion' },
-  { company: 'Realta Fusion', ats: 'greenhouse', token: 'realtafusion', track: 'fusion' },
-  { company: 'Xcimer Energy', ats: 'greenhouse', token: 'xcimerenergy', track: 'fusion' },
+// Unverified slugs (returned 404 in testing — the company may use a different
+// slug or a custom ATS). Find the correct slug, then move the entry up into
+// COMPANY_BOARDS. Until then, Adzuna keyword search is the path for these
+// (especially the neuro + fusion tracks, which have no verified board yet).
+export const CANDIDATE_BOARDS = [
+  // Quant: { company: 'Two Sigma', ats: 'greenhouse', token: '?', track: 'quant' },
+  // Neuro: Paradromics, Synchron, Precision Neuroscience, Science Corp, Forest
+  //        Neurotech, Motif Neurotech, Kernel, Openwater
+  // Defense: Shield AI, Saronic, Applied Intuition, Vannevar Labs, Castelion
+  // Fusion: Commonwealth Fusion Systems, TAE, Zap Energy, Helion, Type One,
+  //         Realta Fusion, Xcimer
 ]
 
 export const KEYWORDS_BY_TRACK = {
@@ -68,6 +49,7 @@ export const KEYWORDS_BY_TRACK = {
   neuro: [
     'signal processing',
     'neural',
+    'neuroscience',
     'brain computer interface',
     'brain-computer',
     'bci',
@@ -79,26 +61,40 @@ export const KEYWORDS_BY_TRACK = {
   defense: [
     'signal processing',
     'radar',
-    'rf engineer',
     'sensor fusion',
     'estimation',
     'dsp',
     'electromagnetic',
+    'microwave',
+    'antenna',
+    'phased array',
+    'electronic warfare',
+    'electro-optical',
     'guidance',
+    'navigation',
   ],
-  fusion: ['plasma', 'fusion', 'mhd', 'magnetohydrodynamic', 'diagnostic', 'tokamak', 'magnet'],
+  fusion: [
+    'plasma',
+    'fusion',
+    'mhd',
+    'magnetohydrodynamic',
+    'diagnostic',
+    'tokamak',
+    'magnet',
+    'superconducting',
+    'cryogenic',
+  ],
 }
 
 // Tracks that have meaningful coverage on job boards. PhD programs are not on
-// job boards, so the discovery sweep intentionally skips that track (PhD apps
-// stay manual).
+// job boards, so the discovery sweep intentionally skips that track.
 export const DISCOVERY_TRACKS = ['quant', 'neuro', 'defense', 'fusion']
 
 // Named companies to also feed into the Adzuna keyword sweep so they are
 // covered even when they use a custom ATS we can't query directly.
 export const ADZUNA_COMPANY_HINTS = {
   quant: ['Citadel', 'Jane Street', 'D.E. Shaw', 'Point72', 'Optiver', 'DRW'],
-  neuro: ['Neuralink', 'Blackrock Neurotech', 'Cognixion'],
+  neuro: ['Neuralink', 'Synchron', 'Paradromics', 'Blackrock Neurotech', 'Precision Neuroscience'],
   defense: ['L3Harris', 'Northrop Grumman', 'Lockheed Martin', 'Raytheon', 'Leidos'],
-  fusion: ['Helion', 'Tokamak Energy', 'Type One Energy'],
+  fusion: ['Commonwealth Fusion', 'Helion', 'TAE Technologies', 'Tokamak Energy', 'Type One Energy'],
 }

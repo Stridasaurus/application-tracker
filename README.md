@@ -37,8 +37,12 @@ Programs (and an Other catch-all).
 `.github/workflows/discover.yml` runs once a day (and on demand). It executes
 `discovery/run.js`, which sweeps:
 
-- **Company job boards** — public Greenhouse / Lever / Ashby APIs for the
-  companies listed in `discovery/sources.js` (edit that file to add your own).
+- **Company job boards** — public Greenhouse / Lever / Ashby APIs. The
+  verified-working boards live in `COMPANY_BOARDS` in `discovery/sources.js`
+  (currently Jump, Akuna, IMC, Old Mission, Anduril, Epirus). Unconfirmed slugs
+  sit in `CANDIDATE_BOARDS` and are not queried until you confirm the slug and
+  move them up. Neuro and fusion have no verified public board yet, so those
+  tracks rely on the Adzuna sweep below.
 - **USAJOBS** — the official US federal jobs API (great for the Defense track
   and clearance-sponsored roles). Requires `USAJOBS_API_KEY` + `USAJOBS_EMAIL`.
 - **Adzuna** — broad keyword search across many boards. Requires
