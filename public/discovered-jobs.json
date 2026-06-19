@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-06-19T11:40:34.672Z",
-  "total": 163,
+  "generatedAt": "2026-06-19T14:13:31.784Z",
+  "total": 161,
   "counts": {
     "fusion": 42,
-    "defense": 31,
+    "defense": 30,
     "neuro": 42,
-    "quant": 48
+    "quant": 47
   },
   "sources": {
     "greenhouse:jumptrading": 61,
     "greenhouse:akunacapital": 28,
-    "greenhouse:imc": 132,
+    "greenhouse:imc": 133,
     "greenhouse:oldmissioncapital": 31,
-    "greenhouse:andurilindustries": 2075,
+    "greenhouse:andurilindustries": 2074,
     "greenhouse:epirus": 39
   },
   "listings": [
@@ -22,7 +22,7 @@
       "company": "Realta Fusion Inc.",
       "track": "fusion",
       "location": "Madison, Dane County",
-      "url": "https://www.adzuna.com/land/ad/5769017279?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=86BAEE8A40A258AF4439525586377CD20D3CEACA",
+      "url": "https://www.adzuna.com/land/ad/5769017279?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=86BAEE8A40A258AF4439525586377CD20D3CEACA",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -33,7 +33,7 @@
       "company": "Colorado Coalition for the Homeless",
       "track": "fusion",
       "location": "Denver, Colorado",
-      "url": "https://www.adzuna.com/land/ad/5769032283?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=DBEAB0CBFD8FF9F29CB494CFF7333B59EA7771D9",
+      "url": "https://www.adzuna.com/land/ad/5769032283?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=DBEAB0CBFD8FF9F29CB494CFF7333B59EA7771D9",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -44,7 +44,7 @@
       "company": "Octagon Talent",
       "track": "fusion",
       "location": "Fort Lauderdale, Broward County",
-      "url": "https://www.adzuna.com/land/ad/5769020147?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=0D4F740D54391B6BD8AA6132D7F9149FC8236837",
+      "url": "https://www.adzuna.com/land/ad/5769020147?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=0D4F740D54391B6BD8AA6132D7F9149FC8236837",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -55,7 +55,7 @@
       "company": "Avalanche Energy",
       "track": "fusion",
       "location": "Tukwila, King County",
-      "url": "https://www.adzuna.com/land/ad/5768912669?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=4D34145F7CC2AE9F7A194169997FF3A6EB30FAA8",
+      "url": "https://www.adzuna.com/land/ad/5768912669?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=4D34145F7CC2AE9F7A194169997FF3A6EB30FAA8",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -66,7 +66,7 @@
       "company": "CHAOS Industries",
       "track": "defense",
       "location": "Hawthorne, Los Angeles County",
-      "url": "https://www.adzuna.com/land/ad/5769178193?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=3BB5AE4507ADAD097F845E9C2350083BE5FBA5F4",
+      "url": "https://www.adzuna.com/land/ad/5769178193?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=3BB5AE4507ADAD097F845E9C2350083BE5FBA5F4",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -77,7 +77,7 @@
       "company": "Leidos",
       "track": "defense",
       "location": "Huntsville, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5768932013?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=D32FEFA4B9E1884F770C0FD52BF1ABE8AC776983",
+      "url": "https://www.adzuna.com/land/ad/5768932013?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=D32FEFA4B9E1884F770C0FD52BF1ABE8AC776983",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -88,7 +88,7 @@
       "company": "Nudge",
       "track": "neuro",
       "location": "San Francisco, California",
-      "url": "https://www.adzuna.com/land/ad/5769033997?se=OgHkqNNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=22626D45B5682AD4F9C4946207635A65FAD5F4A2",
+      "url": "https://www.adzuna.com/land/ad/5769033997?se=YHGTB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=22626D45B5682AD4F9C4946207635A65FAD5F4A2",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -99,7 +99,7 @@
       "company": "STR",
       "track": "neuro",
       "location": "State Farm, Arlington County",
-      "url": "https://www.adzuna.com/land/ad/5769292958?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=D3AD93EC8051DA9CBFB7BE950B7100E698DC9B06",
+      "url": "https://www.adzuna.com/land/ad/5769292958?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=D3AD93EC8051DA9CBFB7BE950B7100E698DC9B06",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -110,7 +110,7 @@
       "company": "K2 Space",
       "track": "neuro",
       "location": "Los Angeles, Los Angeles County",
-      "url": "https://www.adzuna.com/land/ad/5769018514?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=E602B5DCA0649C04957D680FCD83E1FC6873801E",
+      "url": "https://www.adzuna.com/land/ad/5769018514?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=E602B5DCA0649C04957D680FCD83E1FC6873801E",
       "source": "adzuna",
       "postedAt": "2026-06-19",
       "remote": false
@@ -143,7 +143,7 @@
       "company": "Talent Groups",
       "track": "fusion",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5768360285?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=E32B2FA9165E79BF25182D75E29871D0C1D4DBAA",
+      "url": "https://www.adzuna.com/land/ad/5768360285?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=E32B2FA9165E79BF25182D75E29871D0C1D4DBAA",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -154,7 +154,7 @@
       "company": "Satwic Inc",
       "track": "fusion",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768231205?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=D2FF98836EBC5636103ADF0498A05C44A32D42FD",
+      "url": "https://www.adzuna.com/land/ad/5768231205?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=D2FF98836EBC5636103ADF0498A05C44A32D42FD",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -165,7 +165,7 @@
       "company": "Techgroup America Inc.",
       "track": "fusion",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768328066?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=E0963B1CE0215B272768DEF4B5B60B7A6107E1ED",
+      "url": "https://www.adzuna.com/land/ad/5768328066?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=E0963B1CE0215B272768DEF4B5B60B7A6107E1ED",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -176,7 +176,7 @@
       "company": "SRI Tech Solutions",
       "track": "fusion",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5768200779?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=AAEFE6AA5AEB5539070BC626ABAFC77C595E9530",
+      "url": "https://www.adzuna.com/land/ad/5768200779?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=AAEFE6AA5AEB5539070BC626ABAFC77C595E9530",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -187,7 +187,7 @@
       "company": "iSphere Innovation Partners, LLC",
       "track": "fusion",
       "location": "Houston, Harris County",
-      "url": "https://www.adzuna.com/land/ad/5767649072?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=4E765356D82A9B34BD81C35491D879AE1FB37E94",
+      "url": "https://www.adzuna.com/land/ad/5767649072?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=4E765356D82A9B34BD81C35491D879AE1FB37E94",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -198,7 +198,7 @@
       "company": "StratEdge It consulting INC",
       "track": "fusion",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768757883?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=A973C8A0182AEBEC281036340E6CDD56AC35A95B",
+      "url": "https://www.adzuna.com/land/ad/5768757883?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=A973C8A0182AEBEC281036340E6CDD56AC35A95B",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -209,7 +209,7 @@
       "company": "Kedplasma",
       "track": "fusion",
       "location": "Youngstown, Mahoning County",
-      "url": "https://www.adzuna.com/land/ad/5768843970?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=43CF0FE0531876C6991DB6A013F391E2946711EC",
+      "url": "https://www.adzuna.com/land/ad/5768843970?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=43CF0FE0531876C6991DB6A013F391E2946711EC",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -220,7 +220,7 @@
       "company": "SpecSys",
       "track": "fusion",
       "location": "New Ulm, Brown County",
-      "url": "https://www.adzuna.com/land/ad/5768258765?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=2147C9BF743DC0D707F44E16E2A154997F50D604",
+      "url": "https://www.adzuna.com/land/ad/5768258765?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=2147C9BF743DC0D707F44E16E2A154997F50D604",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -231,18 +231,7 @@
       "company": "Grifols",
       "track": "fusion",
       "location": "Bordersville, Houston",
-      "url": "https://www.adzuna.com/land/ad/5768074627?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=E201B003630A30EF44D3634C6DE7859A784D0A56",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d12sipe3",
-      "title": "Radar Modeling Engineer with Security Clearance",
-      "company": "LEIDOS",
-      "track": "defense",
-      "location": "Madison, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5767557800?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=91C85FB096396B13B7B88A5B09DAE46A39260711",
+      "url": "https://www.adzuna.com/land/ad/5768074627?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=E201B003630A30EF44D3634C6DE7859A784D0A56",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -253,7 +242,18 @@
       "company": "RTX Corporation",
       "track": "defense",
       "location": "White Sands, Doña Ana County",
-      "url": "https://www.adzuna.com/land/ad/5768691967?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=9C3888F665E4A310DDFA53EA018AB853A70E6CE9",
+      "url": "https://www.adzuna.com/land/ad/5768691967?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=9C3888F665E4A310DDFA53EA018AB853A70E6CE9",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false
+    },
+    {
+      "id": "d12sipe3",
+      "title": "Radar Modeling Engineer with Security Clearance",
+      "company": "LEIDOS",
+      "track": "defense",
+      "location": "Madison, Madison County",
+      "url": "https://www.adzuna.com/land/ad/5767557800?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=91C85FB096396B13B7B88A5B09DAE46A39260711",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -264,7 +264,7 @@
       "company": "Advanced Sciences and Technologies",
       "track": "defense",
       "location": "Moorestown, Missaukee County",
-      "url": "https://www.adzuna.com/land/ad/5768907170?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=4C480824566487C1D214A2E34AF7541000E5D4CA",
+      "url": "https://www.adzuna.com/land/ad/5768907170?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=4C480824566487C1D214A2E34AF7541000E5D4CA",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -275,7 +275,7 @@
       "company": "Kapta Space",
       "track": "defense",
       "location": "Seattle, King County",
-      "url": "https://www.adzuna.com/land/ad/5768244955?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=9FDAA491E668AC03E0B41AC5403AB84296EF5583",
+      "url": "https://www.adzuna.com/land/ad/5768244955?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=9FDAA491E668AC03E0B41AC5403AB84296EF5583",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -286,7 +286,7 @@
       "company": "Kettering Health",
       "track": "neuro",
       "location": "Centerville, Montgomery County",
-      "url": "https://www.adzuna.com/land/ad/5767556458?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=DA7DC1B40ECF0AA36CD174AC56DA014F60216FE8",
+      "url": "https://www.adzuna.com/land/ad/5767556458?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=DA7DC1B40ECF0AA36CD174AC56DA014F60216FE8",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -297,7 +297,7 @@
       "company": "Leidos",
       "track": "neuro",
       "location": "Redstone Arsenal, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5768830740?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=B7F0A99DC8C2008D2E8F2F5489310251B7AE9378",
+      "url": "https://www.adzuna.com/land/ad/5768830740?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=B7F0A99DC8C2008D2E8F2F5489310251B7AE9378",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -308,7 +308,7 @@
       "company": "Leidos",
       "track": "neuro",
       "location": "Redstone Arsenal, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5768830734?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=40DB076B624D07F4C495D5F8C2FA773A396373E6",
+      "url": "https://www.adzuna.com/land/ad/5768830734?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=40DB076B624D07F4C495D5F8C2FA773A396373E6",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -341,7 +341,7 @@
       "company": "The Rockridge Group",
       "track": "quant",
       "location": "New York City, New York",
-      "url": "https://www.adzuna.com/land/ad/5767669879?se=8uBTptNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=799BCD50BBEAE757708784A897E79D462CF87D18",
+      "url": "https://www.adzuna.com/land/ad/5767669879?se=psBzBelr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=799BCD50BBEAE757708784A897E79D462CF87D18",
       "source": "adzuna",
       "postedAt": "2026-06-18",
       "remote": false
@@ -517,7 +517,7 @@
       "company": "Los Alamos National Laboratory",
       "track": "fusion",
       "location": "White Rock, Los Alamos County",
-      "url": "https://www.adzuna.com/land/ad/5767313922?se=rlXzrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=5DAE33085BAD02E34B59C8391FABA1CD14382090",
+      "url": "https://www.adzuna.com/land/ad/5767313922?se=JrjhC-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=5DAE33085BAD02E34B59C8391FABA1CD14382090",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -539,7 +539,7 @@
       "company": "Tidal Impact LLC",
       "track": "fusion",
       "location": "Scottsdale, Maricopa County",
-      "url": "https://www.adzuna.com/land/ad/5767371556?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=ACC273E6463DD0F116BDC6877AD435D370333866",
+      "url": "https://www.adzuna.com/land/ad/5767371556?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=ACC273E6463DD0F116BDC6877AD435D370333866",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -550,7 +550,7 @@
       "company": "Raytheon",
       "track": "defense",
       "location": "Portsmouth, Portsmouth City",
-      "url": "https://www.adzuna.com/land/ad/5766773977?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=EB1EBBDEDB573F4C1A3A91D3683EFB4B4EAEC8D8",
+      "url": "https://www.adzuna.com/land/ad/5766773977?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=EB1EBBDEDB573F4C1A3A91D3683EFB4B4EAEC8D8",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -561,7 +561,7 @@
       "company": "AbbVie",
       "track": "neuro",
       "location": "South Waltham, Middlesex County",
-      "url": "https://www.adzuna.com/land/ad/5767461189?se=JjtTqtNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=2D82BFB1D1D214D3D2B274DF9D97F5674039FD19",
+      "url": "https://www.adzuna.com/land/ad/5767461189?se=EOvvCOlr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=2D82BFB1D1D214D3D2B274DF9D97F5674039FD19",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -572,7 +572,7 @@
       "company": "American Traveler",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5766770857?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=524A2EF7C7DA2D43E7E97A102F0D3F4AA1038BB2",
+      "url": "https://www.adzuna.com/land/ad/5766770857?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=524A2EF7C7DA2D43E7E97A102F0D3F4AA1038BB2",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -583,7 +583,7 @@
       "company": "Solomon Page",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5766750544?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=76D9F562D856E318CA40D1FEB4AA279CB36EB878",
+      "url": "https://www.adzuna.com/land/ad/5766750544?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=76D9F562D856E318CA40D1FEB4AA279CB36EB878",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -594,18 +594,18 @@
       "company": "Assured Nursing",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5766773264?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=828038C023630796FF69C93FEF27E54ED9E5B2F9",
+      "url": "https://www.adzuna.com/land/ad/5766773264?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=828038C023630796FF69C93FEF27E54ED9E5B2F9",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
     },
     {
-      "id": "d11gi50q",
+      "id": "d11gi4yv",
       "title": "Registered Nurse (RN) Neuroscience / Neurology",
       "company": "University of New Mexico - Hospitals",
       "track": "neuro",
-      "location": "San Felipe Pb, Sandoval County",
-      "url": "https://www.adzuna.com/land/ad/5767337335?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=9362DE12EDE48D7D8BAF0A8EC73B368EB8B21E3F",
+      "location": "Agua Fria, Santa Fe County",
+      "url": "https://www.adzuna.com/land/ad/5767337314?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=D48AD31375AE491F158FA279BE1633E9A7A23C76",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -616,7 +616,7 @@
       "company": "Northwell Health",
       "track": "neuro",
       "location": "Manhasset, Nassau County",
-      "url": "https://www.adzuna.com/land/ad/5767498087?se=OgHkqNNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=3631263B03E448A4DB109A47E8B298F80DAD72AB",
+      "url": "https://www.adzuna.com/land/ad/5767498087?se=YHGTB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=3631263B03E448A4DB109A47E8B298F80DAD72AB",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -627,7 +627,7 @@
       "company": "LEIDOS",
       "track": "neuro",
       "location": "Madison, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5766303910?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=DB3D077C3D91749B125376BDD3D541B158374B67",
+      "url": "https://www.adzuna.com/land/ad/5766303910?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=DB3D077C3D91749B125376BDD3D541B158374B67",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -638,7 +638,7 @@
       "company": "LEIDOS",
       "track": "neuro",
       "location": "Madison, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5766302858?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=AC7DFB911E4B7E2367955A5F9FC21C3E37963718",
+      "url": "https://www.adzuna.com/land/ad/5766302858?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=AC7DFB911E4B7E2367955A5F9FC21C3E37963718",
       "source": "adzuna",
       "postedAt": "2026-06-17",
       "remote": false
@@ -677,17 +677,6 @@
       "remote": false
     },
     {
-      "id": "d1gvvg28",
-      "title": "Machine Learning Engineer",
-      "company": "IMC Trading",
-      "track": "quant",
-      "location": "Amsterdam, Netherlands; London, United Kingdom",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4567047101",
-      "source": "greenhouse:imc",
-      "postedAt": "2026-06-17",
-      "remote": false
-    },
-    {
       "id": "daks7q0",
       "title": "Staff Engineer/Physicist 2 - Nuclear Fusion Research",
       "company": "ARA Career",
@@ -704,7 +693,7 @@
       "company": "Applied Research Associates, Inc.",
       "track": "fusion",
       "location": "Benson, Douglas County",
-      "url": "https://www.adzuna.com/land/ad/5766280077?se=rlXzrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=58B07DBBB4212B67BDA2864BBC9BE5C5BEEF557B",
+      "url": "https://www.adzuna.com/land/ad/5766280077?se=JrjhC-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=58B07DBBB4212B67BDA2864BBC9BE5C5BEEF557B",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -715,7 +704,7 @@
       "company": "Akshaya Inc",
       "track": "fusion",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5766156899?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=68D9D9AADD17EE0E9951A8CCE958B5B71BA3EC34",
+      "url": "https://www.adzuna.com/land/ad/5766156899?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=68D9D9AADD17EE0E9951A8CCE958B5B71BA3EC34",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -726,7 +715,7 @@
       "company": "Symantrix Inc",
       "track": "fusion",
       "location": "Sleepy Eye, Brown County",
-      "url": "https://www.adzuna.com/land/ad/5765741447?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=8DE4CA9294BC36F9FB8ACE2E9DFDFF3E809A59EA",
+      "url": "https://www.adzuna.com/land/ad/5765741447?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=8DE4CA9294BC36F9FB8ACE2E9DFDFF3E809A59EA",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -737,7 +726,7 @@
       "company": "Grifols",
       "track": "fusion",
       "location": "Corpus Christi, Nueces County",
-      "url": "https://www.adzuna.com/land/ad/5765512607?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=A8201DCE8198AE0BC8DA31713ECBA2BA502B2AD7",
+      "url": "https://www.adzuna.com/land/ad/5765512607?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=A8201DCE8198AE0BC8DA31713ECBA2BA502B2AD7",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -748,7 +737,7 @@
       "company": "Lockheed Martin Corporation",
       "track": "defense",
       "location": "Moorestown, Burlington County",
-      "url": "https://www.adzuna.com/land/ad/5765589934?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=1536969A986234ECE4731C9A9430ADD155651467",
+      "url": "https://www.adzuna.com/land/ad/5765589934?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=1536969A986234ECE4731C9A9430ADD155651467",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -759,7 +748,7 @@
       "company": "TravSource",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5765675948?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=5B97B6E674AD21DCE065A7A5F2A9DF2C00947516",
+      "url": "https://www.adzuna.com/land/ad/5765675948?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=5B97B6E674AD21DCE065A7A5F2A9DF2C00947516",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -770,7 +759,7 @@
       "company": "Anduril Industries",
       "track": "neuro",
       "location": "Washington, D.C., US",
-      "url": "https://www.adzuna.com/land/ad/5766157053?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=9F8EB367061F779A538B580FDAC15092E5B00B34",
+      "url": "https://www.adzuna.com/land/ad/5766157053?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=9F8EB367061F779A538B580FDAC15092E5B00B34",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -781,7 +770,7 @@
       "company": "IO Associates",
       "track": "quant",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5766202773?se=tteApdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=019D3C2C279B02C508C84EA2ED6FCDAECDA6713B",
+      "url": "https://www.adzuna.com/land/ad/5766202773?se=DIzABOlr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=019D3C2C279B02C508C84EA2ED6FCDAECDA6713B",
       "source": "adzuna",
       "postedAt": "2026-06-16",
       "remote": false
@@ -792,7 +781,7 @@
       "company": "ScrumLink, Inc.",
       "track": "fusion",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5764590722?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=73B511C41E79757A9567A93F626A621EEC557F4B",
+      "url": "https://www.adzuna.com/land/ad/5764590722?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=73B511C41E79757A9567A93F626A621EEC557F4B",
       "source": "adzuna",
       "postedAt": "2026-06-15",
       "remote": false
@@ -803,7 +792,7 @@
       "company": "The Contractor Consultants",
       "track": "fusion",
       "location": "Hartford, Hartford County",
-      "url": "https://www.adzuna.com/land/ad/5764119885?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=F0B093CE5399EC14B060180D9BEF1A5D956958C0",
+      "url": "https://www.adzuna.com/land/ad/5764119885?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=F0B093CE5399EC14B060180D9BEF1A5D956958C0",
       "source": "adzuna",
       "postedAt": "2026-06-15",
       "remote": false
@@ -814,7 +803,7 @@
       "company": "Lockheed Martin Corporation",
       "track": "defense",
       "location": "Moorestown, Burlington County",
-      "url": "https://www.adzuna.com/land/ad/5764813136?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=554E376F4E8A1227C88BFF4BA27EDE3AE9275BC3",
+      "url": "https://www.adzuna.com/land/ad/5764813136?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=554E376F4E8A1227C88BFF4BA27EDE3AE9275BC3",
       "source": "adzuna",
       "postedAt": "2026-06-15",
       "remote": false
@@ -825,7 +814,7 @@
       "company": "Lockheed Martin Corporation",
       "track": "neuro",
       "location": "Moorestown, Burlington County",
-      "url": "https://www.adzuna.com/land/ad/5764811098?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=30B3E875F2FC5A7E1EA8381842F4548C96C8B428",
+      "url": "https://www.adzuna.com/land/ad/5764811098?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=30B3E875F2FC5A7E1EA8381842F4548C96C8B428",
       "source": "adzuna",
       "postedAt": "2026-06-15",
       "remote": false
@@ -847,7 +836,7 @@
       "company": "Biolife Plasma Services",
       "track": "fusion",
       "location": "Fruitland, Wicomico County",
-      "url": "https://www.adzuna.com/land/ad/5764029187?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=7CFAE619221290E7849F9C51981DA852885895AC",
+      "url": "https://www.adzuna.com/land/ad/5764029187?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=7CFAE619221290E7849F9C51981DA852885895AC",
       "source": "adzuna",
       "postedAt": "2026-06-14",
       "remote": false
@@ -858,7 +847,7 @@
       "company": "Biolife Plasma Services",
       "track": "fusion",
       "location": "Bonsack, Roanoke",
-      "url": "https://www.adzuna.com/land/ad/5764029186?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=0B5B9F1C8DA0172B41DB3F8462577EA0637BAE1A",
+      "url": "https://www.adzuna.com/land/ad/5764029186?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=0B5B9F1C8DA0172B41DB3F8462577EA0637BAE1A",
       "source": "adzuna",
       "postedAt": "2026-06-14",
       "remote": false
@@ -869,7 +858,7 @@
       "company": "Bank of America",
       "track": "quant",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5763292912?se=8uBTptNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=7BF247EFD174964A40C064B38E5FA62CFFEF5D82",
+      "url": "https://www.adzuna.com/land/ad/5763292912?se=psBzBelr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=7BF247EFD174964A40C064B38E5FA62CFFEF5D82",
       "source": "adzuna",
       "postedAt": "2026-06-14",
       "remote": false
@@ -880,7 +869,7 @@
       "company": "GDH",
       "track": "fusion",
       "location": "East Irvine, Orange County",
-      "url": "https://www.adzuna.com/land/ad/5762052058?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=D06FF4F8322B74FA6CC53DCE7E7B177E484DAC16",
+      "url": "https://www.adzuna.com/land/ad/5762052058?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=D06FF4F8322B74FA6CC53DCE7E7B177E484DAC16",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -891,7 +880,7 @@
       "company": "Diversified Sourcing Solutions",
       "track": "fusion",
       "location": "Odessa, Hillsborough County",
-      "url": "https://www.adzuna.com/land/ad/5763066328?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=ADF6E04430EBEF9229EE9BCD39EF299E5FF958B6",
+      "url": "https://www.adzuna.com/land/ad/5763066328?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=ADF6E04430EBEF9229EE9BCD39EF299E5FF958B6",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -902,7 +891,7 @@
       "company": "Anduril Industries",
       "track": "defense",
       "location": "Costa Mesa, Orange County",
-      "url": "https://www.adzuna.com/land/ad/5763061917?se=pMANq9Nr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=505FF67709FD81EE90A7FFF63132D647C9AAB57E",
+      "url": "https://www.adzuna.com/land/ad/5763061917?se=yAmHCelr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=505FF67709FD81EE90A7FFF63132D647C9AAB57E",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -913,7 +902,7 @@
       "company": "Lockheed Martin",
       "track": "defense",
       "location": "Moorestown, Burlington County",
-      "url": "https://www.adzuna.com/land/ad/5763176212?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=DE3F04B373B7F778FE39BE8885F934B2F30E78C1",
+      "url": "https://www.adzuna.com/land/ad/5763176212?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=DE3F04B373B7F778FE39BE8885F934B2F30E78C1",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -924,7 +913,7 @@
       "company": "KBR",
       "track": "defense",
       "location": "Triana, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5762500401?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=1558E00B07B595C09D68C7376F190EFCB19F4EE6",
+      "url": "https://www.adzuna.com/land/ad/5762500401?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=1558E00B07B595C09D68C7376F190EFCB19F4EE6",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -935,7 +924,7 @@
       "company": "Anduril Industries",
       "track": "defense",
       "location": "Fort Collins, Larimer County",
-      "url": "https://www.adzuna.com/land/ad/5763067817?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=AC235A429DFBD50F3E1A29EF481D88B5B46E8FD5",
+      "url": "https://www.adzuna.com/land/ad/5763067817?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=AC235A429DFBD50F3E1A29EF481D88B5B46E8FD5",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -946,7 +935,7 @@
       "company": "SAIC",
       "track": "defense",
       "location": "Glendale, Denver",
-      "url": "https://www.adzuna.com/land/ad/5762284085?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=95544E30850605BE3389094FCEF3DD457C42AB07",
+      "url": "https://www.adzuna.com/land/ad/5762284085?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=95544E30850605BE3389094FCEF3DD457C42AB07",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -968,7 +957,7 @@
       "company": "The MITRE Corporation",
       "track": "neuro",
       "location": "San Diego, San Diego County",
-      "url": "https://www.adzuna.com/land/ad/5763019748?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=5DBDC9D7FD94890FCF1F6651A50BF51E2F2289F2",
+      "url": "https://www.adzuna.com/land/ad/5763019748?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=5DBDC9D7FD94890FCF1F6651A50BF51E2F2289F2",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -990,7 +979,7 @@
       "company": "LSEG",
       "track": "quant",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5762499243?se=uLrwpdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=F16E03A2A7C5C36CC3265B6396A92572F61C439E",
+      "url": "https://www.adzuna.com/land/ad/5762499243?se=6q4eBelr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=F16E03A2A7C5C36CC3265B6396A92572F61C439E",
       "source": "adzuna",
       "postedAt": "2026-06-13",
       "remote": false
@@ -1001,7 +990,7 @@
       "company": "Caresoft",
       "track": "fusion",
       "location": "Northlake, DeKalb County",
-      "url": "https://www.adzuna.com/land/ad/5761867131?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=A77DC6A4C8738B41E683E42AA8A5F44DDC831BD3",
+      "url": "https://www.adzuna.com/land/ad/5761867131?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=A77DC6A4C8738B41E683E42AA8A5F44DDC831BD3",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1012,7 +1001,7 @@
       "company": "Yochana IT Solutions",
       "track": "fusion",
       "location": "Five Corners, Hudson County",
-      "url": "https://www.adzuna.com/land/ad/5761887024?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=EE7694E87488D639774BD7E95B1E39B117639DD8",
+      "url": "https://www.adzuna.com/land/ad/5761887024?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=EE7694E87488D639774BD7E95B1E39B117639DD8",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1023,7 +1012,7 @@
       "company": "Amentum",
       "track": "defense",
       "location": "Vandenberg Air Force Base, Santa Barbara County",
-      "url": "https://www.adzuna.com/land/ad/5761860179?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=AF1E7B57B32AC2EB379C38641B811DC8334D3F5B",
+      "url": "https://www.adzuna.com/land/ad/5761860179?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=AF1E7B57B32AC2EB379C38641B811DC8334D3F5B",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1034,7 +1023,7 @@
       "company": "UIC Government Services and the Bowhead Family of Companies",
       "track": "defense",
       "location": "Aberdeen, Harford County",
-      "url": "https://www.adzuna.com/land/ad/5761856849?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=F772C78BE4E39CE6F4B0C027A2EFD3247837E366",
+      "url": "https://www.adzuna.com/land/ad/5761856849?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=F772C78BE4E39CE6F4B0C027A2EFD3247837E366",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1045,7 +1034,7 @@
       "company": "MIT Lincoln Laboratory",
       "track": "defense",
       "location": "Lexington, Middlesex County",
-      "url": "https://www.adzuna.com/land/ad/5761510484?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=1BC7306C00DB929E40FEC3422E1B483488B956C7",
+      "url": "https://www.adzuna.com/land/ad/5761510484?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=1BC7306C00DB929E40FEC3422E1B483488B956C7",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1056,18 +1045,7 @@
       "company": "MITRE Corporation",
       "track": "neuro",
       "location": "San Diego, San Diego County",
-      "url": "https://www.adzuna.com/land/ad/5761545209?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=42C8FFBE586B388A63CA8329E904964E1D728C96",
-      "source": "adzuna",
-      "postedAt": "2026-06-12",
-      "remote": false
-    },
-    {
-      "id": "d1di3sxp",
-      "title": "Equities Quantitative Analyst, AVP",
-      "company": "Barclays",
-      "track": "quant",
-      "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5761072305?se=8uBTptNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=6B7CFABE0A17F77E7F5E88D52F8F5FA7B13779F4",
+      "url": "https://www.adzuna.com/land/ad/5761545209?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=42C8FFBE586B388A63CA8329E904964E1D728C96",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1078,7 +1056,7 @@
       "company": "IMC",
       "track": "quant",
       "location": "Schiller Park, Cook County",
-      "url": "https://www.adzuna.com/land/ad/5761864587?se=uLrwpdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=AE529142166216FAA61AE8A013357E892DBED0F8",
+      "url": "https://www.adzuna.com/land/ad/5761864587?se=6q4eBelr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=AE529142166216FAA61AE8A013357E892DBED0F8",
       "source": "adzuna",
       "postedAt": "2026-06-12",
       "remote": false
@@ -1089,7 +1067,7 @@
       "company": "HII Mission Technologies",
       "track": "defense",
       "location": "Dayton, Montgomery County",
-      "url": "https://www.adzuna.com/land/ad/5759565008?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=265D0F5F696D1DB3F88A08F2873E9943BEE593D9",
+      "url": "https://www.adzuna.com/land/ad/5759565008?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=265D0F5F696D1DB3F88A08F2873E9943BEE593D9",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1100,7 +1078,7 @@
       "company": "Assured Nursing",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5760047128?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=6E03B3C54E3E44DA6A97FA6BDE17F5D1E92B5765",
+      "url": "https://www.adzuna.com/land/ad/5760047128?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=6E03B3C54E3E44DA6A97FA6BDE17F5D1E92B5765",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1111,7 +1089,7 @@
       "company": "Anders Group",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5760068231?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=1D80AD0B674E7DD3C684D8F3056CE7F2700ABD1C",
+      "url": "https://www.adzuna.com/land/ad/5760068231?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=1D80AD0B674E7DD3C684D8F3056CE7F2700ABD1C",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1122,7 +1100,7 @@
       "company": "Uniti Med",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5760064081?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=6758B804010E288A0C0F804B181931F4A84A539D",
+      "url": "https://www.adzuna.com/land/ad/5760064081?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=6758B804010E288A0C0F804B181931F4A84A539D",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1133,7 +1111,7 @@
       "company": "Care Career",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5760064207?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=5A1AA5D7BEA13064E8C85A1BAD0F10598D74BA24",
+      "url": "https://www.adzuna.com/land/ad/5760064207?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=5A1AA5D7BEA13064E8C85A1BAD0F10598D74BA24",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1144,7 +1122,7 @@
       "company": "Focus Staff",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5760083878?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=A6B204BFC9F23444F363DA8ECBE7FD20658EAB1A",
+      "url": "https://www.adzuna.com/land/ad/5760083878?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=A6B204BFC9F23444F363DA8ECBE7FD20658EAB1A",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1155,7 +1133,7 @@
       "company": "Stability Healthcare",
       "track": "neuro",
       "location": "Saint Louis, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5760050624?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=7C42889468F6829C8BBDA42DE4EF6D386B17661C",
+      "url": "https://www.adzuna.com/land/ad/5760050624?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=7C42889468F6829C8BBDA42DE4EF6D386B17661C",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1166,7 +1144,7 @@
       "company": "Mercy",
       "track": "neuro",
       "location": "Westwood, Saint Louis County",
-      "url": "https://www.adzuna.com/land/ad/5759832365?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=0DEB5CB179541C82A2AF7BC60306DC4B6EB40FB6",
+      "url": "https://www.adzuna.com/land/ad/5759832365?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=0DEB5CB179541C82A2AF7BC60306DC4B6EB40FB6",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1177,7 +1155,7 @@
       "company": "HII Mission Technologies",
       "track": "neuro",
       "location": "Dayton, Montgomery County",
-      "url": "https://www.adzuna.com/land/ad/5759552673?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=686EC80ABDFCC14869C30EC007D93CB463E32CEE",
+      "url": "https://www.adzuna.com/land/ad/5759552673?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=686EC80ABDFCC14869C30EC007D93CB463E32CEE",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1188,7 +1166,7 @@
       "company": "HII Mission Technologies",
       "track": "neuro",
       "location": "Dayton, Montgomery County",
-      "url": "https://www.adzuna.com/land/ad/5759535189?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=09117EE6A08C3A8AAB9C8653C12AC577F9AB3AB2",
+      "url": "https://www.adzuna.com/land/ad/5759535189?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=09117EE6A08C3A8AAB9C8653C12AC577F9AB3AB2",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1199,7 +1177,7 @@
       "company": "Point72",
       "track": "quant",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5760921494?se=al5dp9Nr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=71A53D108A7A28AE5FFBE229F3185933A16DD909",
+      "url": "https://www.adzuna.com/land/ad/5760921494?se=yMl0Bulr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=71A53D108A7A28AE5FFBE229F3185933A16DD909",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1210,7 +1188,7 @@
       "company": "EY",
       "track": "quant",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5760782046?se=8uBTptNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=CEA3EC57C5D4B1F2B4439E2368A9E97DABA38B13",
+      "url": "https://www.adzuna.com/land/ad/5760782046?se=psBzBelr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=CEA3EC57C5D4B1F2B4439E2368A9E97DABA38B13",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1232,7 +1210,7 @@
       "company": "C2R Ventures",
       "track": "quant",
       "location": "New York City, New York",
-      "url": "https://www.adzuna.com/land/ad/5760084503?se=uLrwpdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=7081EA91AE31D51C64C3D377B4F3DB3F9ADFFCC5",
+      "url": "https://www.adzuna.com/land/ad/5760084503?se=6q4eBelr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=7081EA91AE31D51C64C3D377B4F3DB3F9ADFFCC5",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1243,7 +1221,7 @@
       "company": "Quanta Search",
       "track": "quant",
       "location": "Lazy Lake, Broward County",
-      "url": "https://www.adzuna.com/land/ad/5760884151?se=tteApdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=1C81F2CFCA4B2B264D693453B0E93E1522971780",
+      "url": "https://www.adzuna.com/land/ad/5760884151?se=DIzABOlr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=1C81F2CFCA4B2B264D693453B0E93E1522971780",
       "source": "adzuna",
       "postedAt": "2026-06-11",
       "remote": false
@@ -1254,7 +1232,7 @@
       "company": "Apex Systems",
       "track": "fusion",
       "location": "Five Corners, Hudson County",
-      "url": "https://www.adzuna.com/land/ad/5758524651?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=F0BA0A06B7FF54F8378782F0E9D336ECDE37A2B6",
+      "url": "https://www.adzuna.com/land/ad/5758524651?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=F0BA0A06B7FF54F8378782F0E9D336ECDE37A2B6",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1265,7 +1243,7 @@
       "company": "Programmers.io",
       "track": "fusion",
       "location": "Dearborn, Wayne County",
-      "url": "https://www.adzuna.com/land/ad/5758689013?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=93F7EB458AD3F810A09AA549FEEC742EF879C715",
+      "url": "https://www.adzuna.com/land/ad/5758689013?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=93F7EB458AD3F810A09AA549FEEC742EF879C715",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1276,7 +1254,7 @@
       "company": "Robert Half",
       "track": "fusion",
       "location": "Sleepy Eye, Brown County",
-      "url": "https://www.adzuna.com/land/ad/5759393032?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=B66F098A2FF3C2392DF575BF227D05B6D80D0679",
+      "url": "https://www.adzuna.com/land/ad/5759393032?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=B66F098A2FF3C2392DF575BF227D05B6D80D0679",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1287,7 +1265,7 @@
       "company": "RTX Corporation",
       "track": "defense",
       "location": "Fort Wayne, Allen County",
-      "url": "https://www.adzuna.com/land/ad/5759298574?se=GGVTrNNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=21232F4396D0C8D09A26082731A9841D8E69DD78",
+      "url": "https://www.adzuna.com/land/ad/5759298574?se=FnKsCulr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=21232F4396D0C8D09A26082731A9841D8E69DD78",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1298,7 +1276,7 @@
       "company": "Anduril Industries",
       "track": "defense",
       "location": "Costa Mesa, Orange County",
-      "url": "https://www.adzuna.com/land/ad/5758375917?se=pMANq9Nr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=69A3EF2DC28CDE0A32A7AF271CDD3DFB7DEE311F",
+      "url": "https://www.adzuna.com/land/ad/5758375917?se=yAmHCelr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=69A3EF2DC28CDE0A32A7AF271CDD3DFB7DEE311F",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1309,7 +1287,7 @@
       "company": "Actalent",
       "track": "defense",
       "location": "Quivira, Johnson County",
-      "url": "https://www.adzuna.com/land/ad/5759354001?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=7309C13B300F66E93753591E29705579816EB2C9",
+      "url": "https://www.adzuna.com/land/ad/5759354001?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=7309C13B300F66E93753591E29705579816EB2C9",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1320,7 +1298,7 @@
       "company": "Decision Technologies, Inc.",
       "track": "defense",
       "location": "Virginia Beach, Virginia Beach City",
-      "url": "https://www.adzuna.com/land/ad/5759427530?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=9C259605EC8AB0236857950204A8AD618CC0A3E5",
+      "url": "https://www.adzuna.com/land/ad/5759427530?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=9C259605EC8AB0236857950204A8AD618CC0A3E5",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1331,7 +1309,7 @@
       "company": "UCHealth",
       "track": "neuro",
       "location": "Glendale, Denver",
-      "url": "https://www.adzuna.com/land/ad/5758052934?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=28F8714BF4CEA76E08E4008156488C73178160D7",
+      "url": "https://www.adzuna.com/land/ad/5758052934?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=28F8714BF4CEA76E08E4008156488C73178160D7",
       "source": "adzuna",
       "postedAt": "2026-06-10",
       "remote": false
@@ -1408,7 +1386,7 @@
       "company": "dotSolved",
       "track": "fusion",
       "location": "Pleasanton, Alameda County",
-      "url": "https://www.adzuna.com/land/ad/5757836370?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=A1621DE12D40DF4C1771AD364EDBEEC8C9C2C8D1",
+      "url": "https://www.adzuna.com/land/ad/5757836370?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=A1621DE12D40DF4C1771AD364EDBEEC8C9C2C8D1",
       "source": "adzuna",
       "postedAt": "2026-06-09",
       "remote": false
@@ -1419,18 +1397,7 @@
       "company": "Grifols Shared Services North America, Inc",
       "track": "fusion",
       "location": "Glendale, Maricopa County",
-      "url": "https://www.adzuna.com/land/ad/5757884774?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=21B5DE0A850D84160CBBD3F2D16CC5D0DDD745FC",
-      "source": "adzuna",
-      "postedAt": "2026-06-09",
-      "remote": false
-    },
-    {
-      "id": "d19jmwzr",
-      "title": "2026 Raytheon Full Time - Systems Engineer I - Electronic Warfare - Fort Wayne, IN (Onsite)",
-      "company": "RTX",
-      "track": "defense",
-      "location": "Fort Wayne, Allen County",
-      "url": "https://www.adzuna.com/land/ad/5757748102?se=GGVTrNNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=99EE894BFEF3A153B7BE57FEFD3C743DA88A72D3",
+      "url": "https://www.adzuna.com/land/ad/5757884774?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=21B5DE0A850D84160CBBD3F2D16CC5D0DDD745FC",
       "source": "adzuna",
       "postedAt": "2026-06-09",
       "remote": false
@@ -1441,7 +1408,7 @@
       "company": "RTX",
       "track": "neuro",
       "location": "Tucson, Pima County",
-      "url": "https://www.adzuna.com/land/ad/5757746251?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=A7B7306C723675B19BD80387C3D6FE2B52118064",
+      "url": "https://www.adzuna.com/land/ad/5757746251?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=A7B7306C723675B19BD80387C3D6FE2B52118064",
       "source": "adzuna",
       "postedAt": "2026-06-09",
       "remote": false
@@ -1463,7 +1430,7 @@
       "company": "IMC",
       "track": "quant",
       "location": "Schiller Park, Cook County",
-      "url": "https://www.adzuna.com/land/ad/5757785830?se=uLrwpdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=E8ADC168EF3FA405CC4C36387FFF76B7AFB5D472",
+      "url": "https://www.adzuna.com/land/ad/5757785830?se=6q4eBelr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=E8ADC168EF3FA405CC4C36387FFF76B7AFB5D472",
       "source": "adzuna",
       "postedAt": "2026-06-09",
       "remote": false
@@ -1474,7 +1441,7 @@
       "company": "Next Step Systems",
       "track": "quant",
       "location": "Schiller Park, Cook County",
-      "url": "https://www.adzuna.com/land/ad/5757292418?se=tteApdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=2891381882BB2951DEC321B9463D8E0A9E31C123",
+      "url": "https://www.adzuna.com/land/ad/5757292418?se=DIzABOlr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=2891381882BB2951DEC321B9463D8E0A9E31C123",
       "source": "adzuna",
       "postedAt": "2026-06-09",
       "remote": false
@@ -1502,12 +1469,23 @@
       "remote": false
     },
     {
+      "id": "d15tnya3",
+      "title": "Machine Learning Engineer",
+      "company": "IMC Trading",
+      "track": "quant",
+      "location": "Chicago, United States; Hong Kong, Hong Kong; Sydney,  Australia",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4570309101",
+      "source": "greenhouse:imc",
+      "postedAt": "2026-06-09",
+      "remote": false
+    },
+    {
       "id": "do594uo",
       "title": "AI  Domain Fusion Specialist",
       "company": "AspireIT Solutions",
       "track": "fusion",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5756725198?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=0C80831AD3DDB3E11465EC4E2CD7660E049EE178",
+      "url": "https://www.adzuna.com/land/ad/5756725198?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=0C80831AD3DDB3E11465EC4E2CD7660E049EE178",
       "source": "adzuna",
       "postedAt": "2026-06-08",
       "remote": false
@@ -1518,7 +1496,7 @@
       "company": "TechDigital Corporation",
       "track": "fusion",
       "location": "Lehigh Valley, Northampton County",
-      "url": "https://www.adzuna.com/land/ad/5756812575?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=1F4DC24340C3270E6C20875FAA02BD404B186874",
+      "url": "https://www.adzuna.com/land/ad/5756812575?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=1F4DC24340C3270E6C20875FAA02BD404B186874",
       "source": "adzuna",
       "postedAt": "2026-06-08",
       "remote": false
@@ -1529,7 +1507,7 @@
       "company": "Maritime Fusion",
       "track": "fusion",
       "location": "Hayes Valley, San Francisco",
-      "url": "https://www.adzuna.com/land/ad/5756239637?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=E6F2805240834AE514E87A834E2487A6DB2BE151",
+      "url": "https://www.adzuna.com/land/ad/5756239637?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=E6F2805240834AE514E87A834E2487A6DB2BE151",
       "source": "adzuna",
       "postedAt": "2026-06-08",
       "remote": false
@@ -1551,7 +1529,7 @@
       "company": "OXACA LIVE",
       "track": "fusion",
       "location": "Los Angeles, Los Angeles County",
-      "url": "https://www.adzuna.com/land/ad/5755580404?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=9FB2E6DB54543C90E9C9A8C5BD727F38E0475FBC",
+      "url": "https://www.adzuna.com/land/ad/5755580404?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=9FB2E6DB54543C90E9C9A8C5BD727F38E0475FBC",
       "source": "adzuna",
       "postedAt": "2026-06-07",
       "remote": false
@@ -1562,7 +1540,7 @@
       "company": "American StaffCorp Job Board",
       "track": "fusion",
       "location": "Claremore, Rogers County",
-      "url": "https://www.adzuna.com/land/ad/5755074118?se=gpYqrdNr8RGlvMlWgKV60g&utm_medium=api&utm_source=f83c0ab9&v=91908E09A352443A1AABAA40EB955CF45193D480",
+      "url": "https://www.adzuna.com/land/ad/5755074118?se=VHg6C-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=f83c0ab9&v=91908E09A352443A1AABAA40EB955CF45193D480",
       "source": "adzuna",
       "postedAt": "2026-06-07",
       "remote": false
@@ -1573,7 +1551,7 @@
       "company": "Anduril Industries",
       "track": "defense",
       "location": "Fort Collins, Larimer County",
-      "url": "https://www.adzuna.com/land/ad/5755774816?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=682889E5A5C199DAFD048E587DA99C793A02E5EF",
+      "url": "https://www.adzuna.com/land/ad/5755774816?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=682889E5A5C199DAFD048E587DA99C793A02E5EF",
       "source": "adzuna",
       "postedAt": "2026-06-07",
       "remote": false
@@ -1595,7 +1573,7 @@
       "company": "Google",
       "track": "quant",
       "location": "International, King County",
-      "url": "https://www.adzuna.com/land/ad/5755131955?se=tteApdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=07F25B3630BE45BBFB4B966778A9E95794FEA182",
+      "url": "https://www.adzuna.com/land/ad/5755131955?se=DIzABOlr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=07F25B3630BE45BBFB4B966778A9E95794FEA182",
       "source": "adzuna",
       "postedAt": "2026-06-07",
       "remote": false
@@ -1606,7 +1584,7 @@
       "company": "Xantium Group - Tudor Investment Corporation",
       "track": "quant",
       "location": "Salt Lake City, Salt Lake County",
-      "url": "https://www.adzuna.com/land/ad/5755625159?se=tteApdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=0C2B341ACFF1FC9E721158C959345A2E90B51C22",
+      "url": "https://www.adzuna.com/land/ad/5755625159?se=DIzABOlr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=0C2B341ACFF1FC9E721158C959345A2E90B51C22",
       "source": "adzuna",
       "postedAt": "2026-06-07",
       "remote": false
@@ -1617,7 +1595,7 @@
       "company": "STR",
       "track": "neuro",
       "location": "Woburn, Middlesex County",
-      "url": "https://www.adzuna.com/land/ad/5754588186?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=2D232B2B36EB4A95C32A93230524FEB7513C6AD5",
+      "url": "https://www.adzuna.com/land/ad/5754588186?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=2D232B2B36EB4A95C32A93230524FEB7513C6AD5",
       "source": "adzuna",
       "postedAt": "2026-06-06",
       "remote": false
@@ -1650,7 +1628,7 @@
       "company": "Randstad Digital",
       "track": "fusion",
       "location": "Durham, Durham County",
-      "url": "https://www.adzuna.com/land/ad/5753741038?se=bPSMrdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=76B359166C6F90E9C01CD25FE22C84B0C9B09B6D",
+      "url": "https://www.adzuna.com/land/ad/5753741038?se=voOhC-lr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=76B359166C6F90E9C01CD25FE22C84B0C9B09B6D",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1661,7 +1639,7 @@
       "company": "Leonardo DRS, Inc.",
       "track": "defense",
       "location": "Germantown, Montgomery County",
-      "url": "https://www.adzuna.com/land/ad/5753700232?se=IqC6qtNr8RGGRacH1UHyYw&utm_medium=api&utm_source=f83c0ab9&v=861F08B3578600D48B94E04643CD141CEE31D645",
+      "url": "https://www.adzuna.com/land/ad/5753700232?se=0ElECelr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=861F08B3578600D48B94E04643CD141CEE31D645",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1672,7 +1650,7 @@
       "company": "Prisma Health",
       "track": "neuro",
       "location": "Maryville, Blount County",
-      "url": "https://www.adzuna.com/land/ad/5753727757?se=oJ8lqdNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=73A9206CE88FC0F5027B809A6AA2574385441E60",
+      "url": "https://www.adzuna.com/land/ad/5753727757?se=vjvjB-lr8RGIUNkHEw8ATw&utm_medium=api&utm_source=f83c0ab9&v=73A9206CE88FC0F5027B809A6AA2574385441E60",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1705,7 +1683,7 @@
       "company": "Teledyne",
       "track": "neuro",
       "location": "Spring Valley, Rockland County",
-      "url": "https://www.adzuna.com/land/ad/5753865956?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=C679E19BC38DC0254ACEADC6B60E39B24F5A4924",
+      "url": "https://www.adzuna.com/land/ad/5753865956?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=C679E19BC38DC0254ACEADC6B60E39B24F5A4924",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1716,7 +1694,7 @@
       "company": "Judge Group, Inc.",
       "track": "neuro",
       "location": "Berkeley Lake, Gwinnett County",
-      "url": "https://www.adzuna.com/land/ad/5753272910?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=674182C40020313E37B504C52CAF872BADDACE37",
+      "url": "https://www.adzuna.com/land/ad/5753272910?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=674182C40020313E37B504C52CAF872BADDACE37",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1727,7 +1705,7 @@
       "company": "Judge Group, Inc.",
       "track": "neuro",
       "location": "Triana, Madison County",
-      "url": "https://www.adzuna.com/land/ad/5753276311?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=7040871C0F4E57B667914B0DA84242F0962D0C39",
+      "url": "https://www.adzuna.com/land/ad/5753276311?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=7040871C0F4E57B667914B0DA84242F0962D0C39",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1738,7 +1716,7 @@
       "company": "Penn State University",
       "track": "neuro",
       "location": "University Park, Centre County",
-      "url": "https://www.adzuna.com/land/ad/5753186345?se=BsV8qNNr8RG1KrqUQMYhOw&utm_medium=api&utm_source=f83c0ab9&v=2492BE285A2CE1662A2552BA33D119346DADC5F2",
+      "url": "https://www.adzuna.com/land/ad/5753186345?se=NuBTB-lr8RG89tHA0ACrYg&utm_medium=api&utm_source=f83c0ab9&v=2492BE285A2CE1662A2552BA33D119346DADC5F2",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
@@ -1771,7 +1749,7 @@
       "company": "Google",
       "track": "quant",
       "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5753883622?se=tteApdNr8RG9auKyc94d5w&utm_medium=api&utm_source=f83c0ab9&v=4BAFECDC95700C9268D328AF2F1B20DD68BA00E4",
+      "url": "https://www.adzuna.com/land/ad/5753883622?se=DIzABOlr8RGKqM96V0W6_Q&utm_medium=api&utm_source=f83c0ab9&v=4BAFECDC95700C9268D328AF2F1B20DD68BA00E4",
       "source": "adzuna",
       "postedAt": "2026-06-05",
       "remote": false
