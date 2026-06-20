@@ -111,11 +111,20 @@ export function capPerCompany(listings, max) {
   return out
 }
 
+const LOCAL_PATTERNS = [/melbourne/i, /\bfl\b/i, /florida/i, /brevard/i, /palm bay/i, /cocoa beach/i]
+
+// Float listings whose location matches the user's area (Melbourne, FL) to the
+// top within each track so they survive the per-track cap.
+export function boostLocalListings(listings) {
+  const isLocal = (l) => LOCAL_PATTERNS.some((re) => re.test(l.location))
+  return [...listings.filter(isLocal), ...listings.filter((l) => !isLocal(l))]
+}
+
 // Full pipeline: dedupe -> keyword filter (every source) -> sort newest-first
-// -> cap per company -> cap per track. The caps keep the Discover inbox a
-// curated, varied queue rather than a flood from one source.
+// -> boost local -> cap per company -> cap per track. The caps keep the Discover
+// inbox a curated, varied queue rather than a flood from one source.
 export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6 } = {}) {
   const filtered = filterByKeywords(dedupeListings(listings), keywordsByTrack)
-  const sorted = sortByPostedDesc(filtered)
-  return capPerTrack(capPerCompany(sorted, maxPerCompany), maxPerTrack)
+  const boosted = boostLocalListings(sortByPostedDesc(filtered))
+  return capPerTrack(capPerCompany(boosted, maxPerCompany), maxPerTrack)
 }
