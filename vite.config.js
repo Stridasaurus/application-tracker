@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages serves from /<repo>/. Allow override via env for local/preview.
-const base = process.env.VITE_BASE ?? '/resume-tracker/'
+// Netlify/local serve from root; GitHub Pages needs /application-tracker/
+// (set via VITE_BASE env var in the Actions workflow).
+const base = process.env.VITE_BASE ?? '/'
 
 export default defineConfig({
   base,
