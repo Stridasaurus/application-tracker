@@ -12,6 +12,7 @@ import {
   KEYWORDS_BY_TRACK,
   DISCOVERY_TRACKS,
   ADZUNA_COMPANY_HINTS,
+  EXCLUDE_TITLE_KEYWORDS,
 } from './sources.js'
 import { fetchCompanyBoard, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
 import { processListings } from './normalize.js'
@@ -81,7 +82,7 @@ async function main() {
 
   // Keyword-filter every source (even company boards), then cap per company and
   // per track so no single employer or track floods the curated inbox.
-  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6 })
+  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6, excludeTitleKeywords: EXCLUDE_TITLE_KEYWORDS })
 
   const payload = {
     generatedAt: new Date().toISOString(),

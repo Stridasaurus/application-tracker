@@ -111,6 +111,12 @@ export function capPerCompany(listings, max) {
   return out
 }
 
+// Remove listings whose title matches any exclusion keyword (seniority, clinical, ERP).
+export function filterByExcludeKeywords(listings, excludeKeywords) {
+  if (!excludeKeywords || excludeKeywords.length === 0) return listings
+  return listings.filter((l) => !matchesAnyKeyword(l.title, excludeKeywords))
+}
+
 const LOCAL_PATTERNS = [/melbourne/i, /\bfl\b/i, /florida/i, /brevard/i, /palm bay/i, /cocoa beach/i]
 
 // Float listings whose location matches the user's area (Melbourne, FL) to the
@@ -120,11 +126,11 @@ export function boostLocalListings(listings) {
   return [...listings.filter(isLocal), ...listings.filter((l) => !isLocal(l))]
 }
 
-// Full pipeline: dedupe -> keyword filter (every source) -> sort newest-first
-// -> boost local -> cap per company -> cap per track. The caps keep the Discover
-// inbox a curated, varied queue rather than a flood from one source.
-export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6 } = {}) {
-  const filtered = filterByKeywords(dedupeListings(listings), keywordsByTrack)
-  const boosted = boostLocalListings(sortByPostedDesc(filtered))
+// Full pipeline: dedupe -> keyword filter -> exclude title filter -> sort newest-first
+// -> boost local -> cap per company -> cap per track.
+export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6, excludeTitleKeywords = [] } = {}) {
+  const included = filterByKeywords(dedupeListings(listings), keywordsByTrack)
+  const excluded = filterByExcludeKeywords(included, excludeTitleKeywords)
+  const boosted = boostLocalListings(sortByPostedDesc(excluded))
   return capPerTrack(capPerCompany(boosted, maxPerCompany), maxPerTrack)
 }

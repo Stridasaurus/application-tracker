@@ -6,6 +6,7 @@ import {
   makeListing,
   dedupeListings,
   filterByKeywords,
+  filterByExcludeKeywords,
   sortByPostedDesc,
   capPerTrack,
   capPerCompany,
@@ -77,6 +78,25 @@ describe('filterByKeywords', () => {
   it('alwaysKeepSources bypass the keyword filter', () => {
     const ls = [makeListing({ title: 'Anything', track: 'quant', url: 'a', source: 'greenhouse:twosigma' })]
     expect(filterByKeywords(ls, kw, { alwaysKeepSources: ['greenhouse:'] }).length).toBe(1)
+  })
+})
+
+describe('filterByExcludeKeywords', () => {
+  const excl = ['senior', 'nurse', 'oracle', 'vp ']
+  it('removes listings whose title matches an exclude keyword', () => {
+    const ls = [
+      makeListing({ title: 'Senior Plasma Physicist', url: 'a', track: 'fusion' }),
+      makeListing({ title: 'Plasma Physicist', url: 'b', track: 'fusion' }),
+      makeListing({ title: 'Neuro ICU Nurse', url: 'c', track: 'neuro' }),
+      makeListing({ title: 'Oracle Fusion Consultant', url: 'd', track: 'fusion' }),
+      makeListing({ title: 'VP Engineering', url: 'e', track: 'quant' }),
+    ]
+    const out = filterByExcludeKeywords(ls, excl)
+    expect(out.map((l) => l.title)).toEqual(['Plasma Physicist'])
+  })
+  it('returns all listings when excludeKeywords is empty', () => {
+    const ls = [makeListing({ title: 'Senior Engineer', url: 'a', track: 'quant' })]
+    expect(filterByExcludeKeywords(ls, []).length).toBe(1)
   })
 })
 

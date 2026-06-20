@@ -105,6 +105,18 @@ export const KEYWORDS_BY_TRACK = {
 // job boards, so the discovery sweep intentionally skips that track.
 export const DISCOVERY_TRACKS = ['quant', 'neuro', 'defense', 'fusion']
 
+// Job title substrings that disqualify a listing regardless of track. Applied
+// to the title only (not description) to avoid over-filtering.
+export const EXCLUDE_TITLE_KEYWORDS = [
+  // Seniority beyond entry-level / new grad (physics undergrad, May 2027)
+  'senior', 'sr.', 'principal', 'staff engineer', 'staff scientist', 'staff researcher',
+  'vp ', 'president', 'director', 'manager', 'chief', 'head of',
+  // Clinical / medical — not relevant to this physics + BCI profile
+  'nurse', 'nursing', 'physician', 'surgeon', 'therapist', 'pharmacist',
+  // ERP / enterprise software false positives
+  'oracle', 'erp', 'sap',
+]
+
 // Named companies to also feed into the Adzuna keyword sweep so they are
 // covered even when they use a custom ATS we can't query directly.
 export const ADZUNA_COMPANY_HINTS = {
