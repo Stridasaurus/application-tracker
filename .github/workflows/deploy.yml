@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /resume-tracker/
+          VITE_BASE: /application-tracker/
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
