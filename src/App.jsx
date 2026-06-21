@@ -20,6 +20,8 @@ const TABS = [
   { id: 'analytics', label: 'Analytics' },
 ]
 
+const DRIVE_ENABLED = !!import.meta.env.VITE_GOOGLE_CLIENT_ID
+
 export default function App() {
   const store = useStore()
   const { theme, toggle } = useTheme()
@@ -150,6 +152,33 @@ export default function App() {
                     <MenuItem onClick={() => { toggle(); setMenuOpen(false) }}>
                       {theme === 'dark' ? '☀ Light theme' : '🌙 Dark theme'}
                     </MenuItem>
+                    {DRIVE_ENABLED && (
+                      <>
+                        <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
+                        {store.driveStatus === 'synced' ? (
+                          <>
+                            <div className="px-3 py-1.5 text-xs text-slate-400 dark:text-slate-500 select-none">
+                              ☁ Synced · {store.driveUser}
+                            </div>
+                            <MenuItem onClick={() => { store.actions.disconnectDrive(); setMenuOpen(false) }}>
+                              Disconnect Drive
+                            </MenuItem>
+                          </>
+                        ) : store.driveStatus === 'connecting' ? (
+                          <div className="px-3 py-2 text-sm text-slate-400 dark:text-slate-500 select-none">
+                            ☁ Connecting…
+                          </div>
+                        ) : store.driveStatus === 'error' ? (
+                          <MenuItem onClick={() => { store.actions.connectDrive(); setMenuOpen(false) }}>
+                            ⚠ Drive error · Reconnect
+                          </MenuItem>
+                        ) : (
+                          <MenuItem onClick={() => { store.actions.connectDrive(); setMenuOpen(false) }}>
+                            ☁ Sync with Google Drive
+                          </MenuItem>
+                        )}
+                      </>
+                    )}
                     <div className="my-1 border-t border-slate-200 dark:border-slate-700" />
                     <MenuItem onClick={clearData} danger>
                       🗑 Clear all data
@@ -256,7 +285,9 @@ export default function App() {
       )}
 
       <footer className="mx-auto max-w-6xl px-3 pb-8 pt-2 text-center text-xs text-slate-400 sm:px-6 no-print">
-        Data stays in your browser (localStorage). Back it up via the ⋯ menu.
+        {store.driveStatus === 'synced'
+          ? `Data synced to Google Drive (${store.driveUser}). Also cached locally.`
+          : 'Data stays in your browser (localStorage). Back it up via the ⋯ menu.'}
       </footer>
     </div>
   )
