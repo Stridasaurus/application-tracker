@@ -63,6 +63,44 @@ export async function fetchAshby({ company, token, track }) {
   )
 }
 
+// --- Workday (public CXS job-board API). Many defense/aerospace primes
+// (Northrop Grumman, RTX/Collins, Boeing) run Workday, which exposes no GET
+// board but does answer a POST to /wday/cxs/{tenant}/{site}/jobs with JSON.
+// Response: { jobPostings: [{ title, externalPath, locationsText, postedOn }] }.
+// We query with a location `searchText` and paginate (limit 20/page); callers
+// filter the results down to the target metro. Never throws (callers wrap it).
+export async function fetchWorkday({ company, track, host, tenant, site, searchText = '', maxPages = 2 }) {
+  const base = `https://${host}/wday/cxs/${tenant}/${site}`
+  const origin = `https://${host}`
+  const out = []
+  for (let page = 0; page < maxPages; page++) {
+    const res = await fetch(`${base}/jobs`, {
+      method: 'POST',
+      headers: { 'User-Agent': UA, 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: page * 20, searchText }),
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json()
+    const postings = data.jobPostings ?? []
+    for (const j of postings) {
+      out.push(
+        makeListing({
+          title: j.title,
+          company,
+          track,
+          location: j.locationsText ?? '',
+          // externalPath is locale-less and starts with "/job/…"
+          url: j.externalPath ? `${origin}/${site}${j.externalPath}` : '',
+          source: `workday:${tenant}`,
+          postedAt: null, // list view only gives relative text ("Posted 3 Days Ago")
+        }),
+      )
+    }
+    if (postings.length < 20) break
+  }
+  return out
+}
+
 const ATS = { greenhouse: fetchGreenhouse, lever: fetchLever, ashby: fetchAshby }
 
 export async function fetchCompanyBoard(board) {

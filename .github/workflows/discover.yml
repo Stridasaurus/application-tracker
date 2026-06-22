@@ -39,7 +39,11 @@ jobs:
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
 
+      # Commit/build/deploy only on the default branch (the daily schedule). A
+      # manual dispatch on a feature branch runs the sweep only — handy for
+      # verifying new sources without publishing to the live site.
       - name: Commit refreshed listings (history)
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -52,15 +56,19 @@ jobs:
           fi
 
       - name: Build
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         run: npm run build
         env:
           VITE_BASE: /application-tracker/
 
       - name: Configure Pages
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         with:
           path: dist
       - name: Deploy to GitHub Pages
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
         id: deployment
         uses: actions/deploy-pages@v4

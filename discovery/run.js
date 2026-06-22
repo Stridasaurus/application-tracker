@@ -9,13 +9,14 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   COMPANY_BOARDS,
+  WORKDAY_BOARDS,
   KEYWORDS_BY_TRACK,
   DISCOVERY_TRACKS,
   ADZUNA_COMPANY_HINTS,
   EXCLUDE_TITLE_KEYWORDS,
   LOCAL_SWEEP,
 } from './sources.js'
-import { fetchCompanyBoard, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
+import { fetchCompanyBoard, fetchWorkday, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
 import { processListings } from './normalize.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -45,6 +46,20 @@ async function main() {
     const items = await safe(`${board.company} (${board.ats}:${board.token})`, () => fetchCompanyBoard(board))
     sourceCounts[`${board.ats}:${board.token}`] = items.length
     all.push(...items)
+  }
+
+  // Workday boards for the defense/aerospace primes (no API key needed). Queried
+  // with local searchText so the Melbourne/Space Coast roles surface; keepLocal
+  // + boostLocalListings then keep them. Wrapped so a bad slug never fails the run.
+  console.log('Workday (local — Melbourne, FL):')
+  for (const board of WORKDAY_BOARDS) {
+    for (const searchText of LOCAL_SWEEP.workdaySearch) {
+      const items = await safe(`${board.company}/"${searchText}"`, () =>
+        fetchWorkday({ ...board, searchText }),
+      )
+      sourceCounts[`workday:${board.tenant}`] = (sourceCounts[`workday:${board.tenant}`] ?? 0) + items.length
+      all.push(...items)
+    }
   }
 
   if (usajobs.apiKey && usajobs.email) {

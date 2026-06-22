@@ -36,6 +36,24 @@ export const CANDIDATE_BOARDS = [
   //         Realta Fusion, Xcimer
 ]
 
+// Workday public CXS boards for defense/aerospace primes with a Melbourne /
+// Space Coast presence. Workday hides no GET board but answers a POST to
+// /wday/cxs/{tenant}/{site}/jobs — this is how we reach primes that the ATS
+// fetchers (Greenhouse/Lever/Ashby) and even Adzuna only partially mirror.
+// Verify a board with:
+//   curl -s -XPOST https://<host>/wday/cxs/<tenant>/<site>/jobs \
+//     -H 'content-type: application/json' -d '{"limit":1,"offset":0,"searchText":"Melbourne"}'
+// and check it returns JSON with a jobPostings array.
+//
+// Not added (no usable Workday board): L3Harris (custom careers.l3harris.com),
+// Leonardo DRS (the leonardocompany tenant is Italy's Leonardo, not the US DRS
+// sub), Embraer — these stay covered by the Adzuna company hints below.
+export const WORKDAY_BOARDS = [
+  { company: 'Northrop Grumman', track: 'defense', host: 'ngc.wd1.myworkdayjobs.com', tenant: 'ngc', site: 'Northrop_Grumman_External_Site' },
+  { company: 'RTX', track: 'defense', host: 'globalhr.wd5.myworkdayjobs.com', tenant: 'globalhr', site: 'REC_RTX_Ext_Gateway' },
+  { company: 'Boeing', track: 'defense', host: 'boeing.wd1.myworkdayjobs.com', tenant: 'boeing', site: 'EXTERNAL_CAREERS' },
+]
+
 export const KEYWORDS_BY_TRACK = {
   quant: [
     'quantitative researcher',
@@ -137,6 +155,9 @@ export const LOCAL_SWEEP = {
   adzuna: { where: 'Melbourne, Florida', distance: 80 },
   // USAJOBS: LocationName + Radius (miles) — Patrick SFB / Cape Canaveral roles.
   usajobs: { locationName: 'Melbourne, Florida', radius: 75 },
+  // Workday: searchText terms (Workday ranks location matches), then results are
+  // filtered to the local area downstream via keepLocal / boostLocalListings.
+  workdaySearch: ['Melbourne', 'Palm Bay'],
   // Broad terms for the geo sweep: inside the local radius we can afford to be
   // generous, since almost any defense/aerospace role here is on-target.
   keywords: [
