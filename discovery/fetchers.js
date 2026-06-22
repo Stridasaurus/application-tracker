@@ -101,6 +101,64 @@ export async function fetchWorkday({ company, track, host, tenant, site, searchT
   return out
 }
 
+// --- Phenom People (public career-site search). L3Harris (careers.l3harris.com)
+// runs Phenom, which answers a POST to /widgets with ddoKey "refineSearch".
+// Response: { refineSearch: { data: { jobs: [{ title, cityStateCountry,
+// jobSeoUrl, postedDate, jobId }] } } }. We pass a location `keyword` (Phenom
+// search matches location), paginate, and let callers filter to the metro.
+// Field names vary by tenant, so the mapper reads several fallbacks. Never throws.
+export async function fetchPhenom({ company, track, host, keyword = '', size = 20, maxPages = 2, country = 'us' }) {
+  const origin = `https://${host}`
+  const out = []
+  for (let page = 0; page < maxPages; page++) {
+    const res = await fetch(`${origin}/widgets`, {
+      method: 'POST',
+      headers: { 'User-Agent': UA, 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        lang: 'en',
+        deviceType: 'desktop',
+        country,
+        pageName: 'search-results',
+        ddoKey: 'refineSearch',
+        stateInfo: { sk: '', pageNumber: page },
+        userType: 'external',
+        jobs: true,
+        counts: false,
+        all_fields: [],
+        pageId: 'page1',
+        siteType: 'external',
+        keywords: keyword,
+        global: true,
+        size,
+        from: page * size,
+        clearAll: false,
+        jdsource: 'facets',
+        isSliderEnable: false,
+        selected_fields: {},
+        locationData: {},
+      }),
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json()
+    const jobs = data?.refineSearch?.data?.jobs ?? []
+    for (const j of jobs) {
+      const seo = j.jobSeoUrl || j.applyUrl || j.jobUrl || ''
+      const url = seo.startsWith('http') ? seo : seo ? `${origin}${seo}` : ''
+      const location =
+        j.cityStateCountry || j.cityState || [j.city, j.state].filter(Boolean).join(', ') || j.location || ''
+      let postedAt = null
+      const pd = j.postedDate || j.dateCreated || j.postedOn
+      if (pd) {
+        const d = new Date(/^\d+$/.test(String(pd)) ? Number(pd) : pd)
+        if (!isNaN(d.getTime())) postedAt = d.toISOString().slice(0, 10)
+      }
+      out.push(makeListing({ title: j.title, company, track, location, url, source: `phenom:${host}`, postedAt }))
+    }
+    if (jobs.length < size) break
+  }
+  return out
+}
+
 const ATS = { greenhouse: fetchGreenhouse, lever: fetchLever, ashby: fetchAshby }
 
 export async function fetchCompanyBoard(board) {

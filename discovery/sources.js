@@ -65,6 +65,14 @@ export const WORKDAY_BOARDS = [
   { company: 'Boeing', track: 'defense', host: 'boeing.wd1.myworkdayjobs.com', tenant: 'boeing', site: 'EXTERNAL_CAREERS' },
 ]
 
+// Phenom People career sites (public /widgets refineSearch API). L3Harris is
+// HQ'd in Melbourne and runs Phenom (careers.l3harris.com, tenant 4832), so this
+// is the first-party path to its Space Coast roles. Queried with local keywords;
+// results are filtered to the metro downstream (keepLocal / boostLocalListings).
+export const PHENOM_BOARDS = [
+  { company: 'L3Harris', track: 'defense', host: 'careers.l3harris.com' },
+]
+
 export const KEYWORDS_BY_TRACK = {
   quant: [
     'quantitative researcher',

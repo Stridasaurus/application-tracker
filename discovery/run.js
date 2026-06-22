@@ -10,13 +10,14 @@ import { fileURLToPath } from 'node:url'
 import {
   COMPANY_BOARDS,
   WORKDAY_BOARDS,
+  PHENOM_BOARDS,
   KEYWORDS_BY_TRACK,
   DISCOVERY_TRACKS,
   ADZUNA_COMPANY_HINTS,
   EXCLUDE_TITLE_KEYWORDS,
   LOCAL_SWEEP,
 } from './sources.js'
-import { fetchCompanyBoard, fetchWorkday, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
+import { fetchCompanyBoard, fetchWorkday, fetchPhenom, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
 import { processListings } from './normalize.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -60,6 +61,21 @@ async function main() {
       sourceCounts[`workday:${board.tenant}`] = (sourceCounts[`workday:${board.tenant}`] ?? 0) + items.length
       all.push(...items)
     }
+  }
+
+  // Phenom career sites (L3Harris — Melbourne HQ). No API key needed.
+  console.log('Phenom (local — Melbourne, FL):')
+  for (const board of PHENOM_BOARDS) {
+    for (const keyword of LOCAL_SWEEP.workdaySearch) {
+      const items = await safe(`${board.company}/"${keyword}"`, () => fetchPhenom({ ...board, keyword }))
+      sourceCounts[`phenom:${board.host}`] = (sourceCounts[`phenom:${board.host}`] ?? 0) + items.length
+      all.push(...items)
+    }
+  }
+  // TEMP (verification) — print a few Phenom listings to confirm field mapping.
+  {
+    const sample = all.filter((l) => l.source.startsWith('phenom')).slice(0, 4)
+    console.log('PHENOM SAMPLE:', JSON.stringify(sample))
   }
 
   if (usajobs.apiKey && usajobs.email) {
