@@ -3,6 +3,10 @@ name: Daily job discovery
 # Once a day: sweep job sources, regenerate public/discovered-jobs.json, commit
 # it for history, then rebuild and publish to Pages so the Discover tab is fresh.
 # Also runnable on demand. Missing API-key secrets just skip those sources.
+#
+# The sweep and the deploy are separate jobs so a manual dispatch on a feature
+# branch can run the sweep alone (to verify new sources) — the deploy job carries
+# the protected github-pages environment, which only permits the default branch.
 on:
   schedule:
     - cron: '0 11 * * *' # 11:00 UTC daily (~7am ET)
@@ -18,11 +22,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  discover-and-deploy:
+  sweep:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -39,9 +40,8 @@ jobs:
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
 
-      # Commit/build/deploy only on the default branch (the daily schedule). A
-      # manual dispatch on a feature branch runs the sweep only — handy for
-      # verifying new sources without publishing to the live site.
+      # Persist refreshed listings only on the default branch (the daily run). A
+      # feature-branch dispatch runs the sweep above for verification, then stops.
       - name: Commit refreshed listings (history)
         if: ${{ github.ref_name == github.event.repository.default_branch }}
         run: |
@@ -55,20 +55,35 @@ jobs:
             echo "No changes in discovered listings."
           fi
 
+  deploy:
+    needs: sweep
+    if: ${{ github.ref_name == github.event.repository.default_branch }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Check out the default branch so we pick up the listings the sweep job
+      # just committed (the run's triggering SHA predates that commit).
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
       - name: Build
-        if: ${{ github.ref_name == github.event.repository.default_branch }}
         run: npm run build
         env:
           VITE_BASE: /application-tracker/
 
       - name: Configure Pages
-        if: ${{ github.ref_name == github.event.repository.default_branch }}
         uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
-        if: ${{ github.ref_name == github.event.repository.default_branch }}
         with:
           path: dist
       - name: Deploy to GitHub Pages
-        if: ${{ github.ref_name == github.event.repository.default_branch }}
         id: deployment
         uses: actions/deploy-pages@v4
