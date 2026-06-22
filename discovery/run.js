@@ -13,6 +13,7 @@ import {
   DISCOVERY_TRACKS,
   ADZUNA_COMPANY_HINTS,
   EXCLUDE_TITLE_KEYWORDS,
+  LOCAL_SWEEP,
 } from './sources.js'
 import { fetchCompanyBoard, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
 import { processListings } from './normalize.js'
@@ -56,6 +57,14 @@ async function main() {
         all.push(...items)
       }
     }
+    // Local federal roles (Patrick SFB / Cape Canaveral / Melbourne FL).
+    console.log('USAJOBS (local — Melbourne, FL):')
+    for (const keyword of LOCAL_SWEEP.keywords.slice(0, 6)) {
+      const items = await safe(`local/"${keyword}"`, () =>
+        fetchUsaJobs({ keyword, track: 'defense', ...usajobs, ...LOCAL_SWEEP.usajobs }),
+      )
+      all.push(...items)
+    }
   } else {
     console.log('USAJOBS: skipped (no USAJOBS_API_KEY / USAJOBS_EMAIL secret)')
   }
@@ -76,13 +85,26 @@ async function main() {
         all.push(...items)
       }
     }
+
+    // Location-targeted sweep: explicitly fetch defense/aerospace roles within
+    // the Melbourne, FL radius so local jobs make it into the pool at all (a
+    // nationwide search would never surface them). keepLocal in processListings
+    // then lets them through the keyword gate, and boostLocalListings floats
+    // them to the top so they survive the per-track cap.
+    console.log('Adzuna (local — Melbourne, FL):')
+    for (const what of LOCAL_SWEEP.keywords) {
+      const items = await safe(`local/"${what}"`, () =>
+        fetchAdzuna({ what, track: 'defense', ...adzuna, ...LOCAL_SWEEP.adzuna }),
+      )
+      all.push(...items)
+    }
   } else {
     console.log('Adzuna: skipped (no ADZUNA_APP_ID / ADZUNA_APP_KEY secret)')
   }
 
   // Keyword-filter every source (even company boards), then cap per company and
   // per track so no single employer or track floods the curated inbox.
-  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6, excludeTitleKeywords: EXCLUDE_TITLE_KEYWORDS })
+  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6, excludeTitleKeywords: EXCLUDE_TITLE_KEYWORDS, keepLocal: true })
 
   const payload = {
     generatedAt: new Date().toISOString(),

@@ -10,6 +10,8 @@ import {
   sortByPostedDesc,
   capPerTrack,
   capPerCompany,
+  isLocalListing,
+  boostLocalListings,
   processListings,
 } from './normalize.js'
 
@@ -136,7 +138,53 @@ describe('capPerCompany', () => {
   })
 })
 
+describe('isLocalListing', () => {
+  it('matches Space Coast / Brevard towns, not all of Florida', () => {
+    expect(isLocalListing(makeListing({ location: 'Melbourne, FL', url: 'a' }))).toBe(true)
+    expect(isLocalListing(makeListing({ location: 'Palm Bay, Florida', url: 'b' }))).toBe(true)
+    expect(isLocalListing(makeListing({ location: 'Cape Canaveral, FL', url: 'c' }))).toBe(true)
+    expect(isLocalListing(makeListing({ location: 'Miami, FL', url: 'd' }))).toBe(false)
+    expect(isLocalListing(makeListing({ location: 'Remote, USA', url: 'e' }))).toBe(false)
+  })
+})
+
+describe('boostLocalListings', () => {
+  it('floats local listings to the front, preserving relative order', () => {
+    const ls = [
+      makeListing({ title: 'remote', location: 'Austin, TX', url: 'a' }),
+      makeListing({ title: 'local1', location: 'Palm Bay, FL', url: 'b' }),
+      makeListing({ title: 'remote2', location: 'Denver, CO', url: 'c' }),
+      makeListing({ title: 'local2', location: 'Melbourne, FL', url: 'd' }),
+    ]
+    expect(boostLocalListings(ls).map((l) => l.title)).toEqual(['local1', 'local2', 'remote', 'remote2'])
+  })
+})
+
+describe('filterByKeywords keepLocal', () => {
+  const kw = { defense: ['radar'] }
+  it('keeps local listings even when keywords do not match', () => {
+    const ls = [
+      makeListing({ title: 'Avionics Technician', track: 'defense', location: 'Melbourne, FL', url: 'a' }),
+      makeListing({ title: 'Avionics Technician', track: 'defense', location: 'Seattle, WA', url: 'b' }),
+    ]
+    expect(filterByKeywords(ls, kw, { keepLocal: true }).map((l) => l.location)).toEqual(['Melbourne, FL'])
+    expect(filterByKeywords(ls, kw, { keepLocal: false }).length).toBe(0)
+  })
+})
+
 describe('processListings', () => {
+  it('keepLocal lets a non-keyword local role through but still drops senior local roles', () => {
+    const kw = { defense: ['radar'] }
+    const ls = [
+      makeListing({ title: 'Avionics Technician', track: 'defense', location: 'Melbourne, FL', url: 'a', postedAt: '2026-06-05' }),
+      makeListing({ title: 'Senior Avionics Engineer', track: 'defense', location: 'Palm Bay, FL', url: 'b', postedAt: '2026-06-06' }),
+      makeListing({ title: 'Janitor', track: 'defense', location: 'Boston, MA', url: 'c', postedAt: '2026-06-07' }),
+    ]
+    const out = processListings(ls, kw, { maxPerTrack: 50, maxPerCompany: 10, excludeTitleKeywords: ['senior'], keepLocal: true })
+    // local non-keyword role kept; senior local role excluded; non-local non-keyword dropped
+    expect(out.map((l) => l.title)).toEqual(['Avionics Technician'])
+  })
+
   it('dedupes, keyword-filters every source, sorts, and caps per track', () => {
     const kw = { defense: ['radar'], quant: ['quant'] }
     const ls = [

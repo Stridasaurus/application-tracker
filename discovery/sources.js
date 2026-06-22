@@ -64,6 +64,7 @@ export const KEYWORDS_BY_TRACK = {
     'neurotech',
   ],
   defense: [
+    // Signal / RF / sensing (original focus)
     'signal processing',
     'radar',
     'sensor fusion',
@@ -77,6 +78,26 @@ export const KEYWORDS_BY_TRACK = {
     'electro-optical',
     'guidance',
     'navigation',
+    // Aerospace / space — Melbourne FL & the Space Coast are aerospace-heavy
+    // (L3Harris, Northrop, Embraer, Boeing, Collins, Leonardo DRS) and were
+    // being missed by the RF-only keyword set above.
+    'aerospace',
+    'avionics',
+    'aircraft',
+    'spacecraft',
+    'satellite',
+    'propulsion',
+    'flight test',
+    'flight software',
+    'aerodynamics',
+    'gnc',
+    'guidance navigation and control',
+    'rf engineer',
+    'systems engineer',
+    'embedded',
+    'fpga',
+    'mission systems',
+    'payload',
   ],
   fusion: [
     'plasma physics',
@@ -105,6 +126,26 @@ export const KEYWORDS_BY_TRACK = {
 // job boards, so the discovery sweep intentionally skips that track.
 export const DISCOVERY_TRACKS = ['quant', 'neuro', 'defense', 'fusion']
 
+// Location-targeted sweep config. The user's home metro (Melbourne, FL) is a
+// major defense/aerospace hub, but a nationwide keyword search returns only the
+// newest 25 hits and buries local roles. These drive a dedicated geo sweep
+// (Adzuna `where`/`distance`, USAJOBS `LocationName`/`Radius`) so local jobs are
+// actually fetched, then float to the top via boostLocalListings.
+export const LOCAL_SWEEP = {
+  // Adzuna: where = town/region, distance = km radius (~80km ≈ 50mi covers all
+  // of Brevard County + Orlando's eastern edge).
+  adzuna: { where: 'Melbourne, Florida', distance: 80 },
+  // USAJOBS: LocationName + Radius (miles) — Patrick SFB / Cape Canaveral roles.
+  usajobs: { locationName: 'Melbourne, Florida', radius: 75 },
+  // Broad terms for the geo sweep: inside the local radius we can afford to be
+  // generous, since almost any defense/aerospace role here is on-target.
+  keywords: [
+    'aerospace', 'defense', 'radar', 'avionics', 'signal processing',
+    'rf engineer', 'systems engineer', 'embedded', 'electrical engineer',
+    'mechanical engineer', 'flight', 'satellite',
+  ],
+}
+
 // Job title substrings that disqualify a listing regardless of track. Applied
 // to the title only (not description) to avoid over-filtering.
 export const EXCLUDE_TITLE_KEYWORDS = [
@@ -122,6 +163,11 @@ export const EXCLUDE_TITLE_KEYWORDS = [
 export const ADZUNA_COMPANY_HINTS = {
   quant: ['Citadel', 'Jane Street', 'D.E. Shaw', 'Point72', 'Optiver', 'DRW'],
   neuro: ['Neuralink', 'Synchron', 'Paradromics', 'Blackrock Neurotech', 'Precision Neuroscience'],
-  defense: ['L3Harris', 'Northrop Grumman', 'Lockheed Martin', 'Raytheon', 'Leidos'],
+  defense: [
+    'L3Harris', 'Northrop Grumman', 'Lockheed Martin', 'Raytheon', 'Leidos',
+    // Melbourne / Space Coast employers (custom ATSs — reachable via Adzuna):
+    'Embraer', 'Leonardo DRS', 'Collins Aerospace', 'BAE Systems', 'GE Aerospace',
+    'Boeing', 'General Dynamics', 'Sierra Nevada', 'Rockwell Collins',
+  ],
   fusion: ['Commonwealth Fusion', 'Helion', 'TAE Technologies', 'Tokamak Energy', 'Type One Energy'],
 }

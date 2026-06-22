@@ -64,8 +64,12 @@ export function dedupeListings(listings) {
 
 // Keep only listings whose title (or optional description) matches the track's
 // keywords. Listings from a company-specific board can opt out via alwaysKeep.
-export function filterByKeywords(listings, keywordsByTrack, { alwaysKeepSources = [] } = {}) {
+// With keepLocal, listings in the user's home metro skip the positive-keyword
+// gate entirely (a defense/aerospace role in Melbourne FL is almost certainly
+// on-target) — they still face the exclude-title filter downstream.
+export function filterByKeywords(listings, keywordsByTrack, { alwaysKeepSources = [], keepLocal = false } = {}) {
   return listings.filter((l) => {
+    if (keepLocal && isLocalListing(l)) return true
     if (alwaysKeepSources.some((s) => l.source.startsWith(s))) return true
     const kws = keywordsByTrack[l.track]
     if (!kws || kws.length === 0) return true
@@ -117,19 +121,31 @@ export function filterByExcludeKeywords(listings, excludeKeywords) {
   return listings.filter((l) => !matchesAnyKeyword(l.title, excludeKeywords))
 }
 
-const LOCAL_PATTERNS = [/melbourne/i, /\bfl\b/i, /florida/i, /brevard/i, /palm bay/i, /cocoa beach/i]
+// Space Coast / Brevard County, FL — the user's target metro. Deliberately
+// narrower than "anywhere in Florida": a quant role in Miami shouldn't be
+// treated as local. Town names are specific enough to avoid false positives.
+const LOCAL_PATTERNS = [
+  /melbourne/i, /palm bay/i, /brevard/i, /titusville/i, /\bcocoa\b/i,
+  /rockledge/i, /viera/i, /satellite beach/i, /indialantic/i,
+  /cape canaveral/i, /merritt island/i, /space coast/i,
+]
+
+// True when a listing's location is in the user's home metro.
+export function isLocalListing(l) {
+  return LOCAL_PATTERNS.some((re) => re.test(l.location || ''))
+}
 
 // Float listings whose location matches the user's area (Melbourne, FL) to the
 // top within each track so they survive the per-track cap.
 export function boostLocalListings(listings) {
-  const isLocal = (l) => LOCAL_PATTERNS.some((re) => re.test(l.location))
-  return [...listings.filter(isLocal), ...listings.filter((l) => !isLocal(l))]
+  return [...listings.filter(isLocalListing), ...listings.filter((l) => !isLocalListing(l))]
 }
 
-// Full pipeline: dedupe -> keyword filter -> exclude title filter -> sort newest-first
-// -> boost local -> cap per company -> cap per track.
-export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6, excludeTitleKeywords = [] } = {}) {
-  const included = filterByKeywords(dedupeListings(listings), keywordsByTrack)
+// Full pipeline: dedupe -> keyword filter (local roles may bypass via keepLocal)
+// -> exclude title filter -> sort newest-first -> boost local -> cap per company
+// -> cap per track.
+export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6, excludeTitleKeywords = [], keepLocal = false } = {}) {
+  const included = filterByKeywords(dedupeListings(listings), keywordsByTrack, { keepLocal })
   const excluded = filterByExcludeKeywords(included, excludeTitleKeywords)
   const boosted = boostLocalListings(sortByPostedDesc(excluded))
   return capPerTrack(capPerCompany(boosted, maxPerCompany), maxPerTrack)

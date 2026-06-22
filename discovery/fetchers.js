@@ -73,11 +73,15 @@ export async function fetchCompanyBoard(board) {
 
 // --- USAJOBS (official federal API). Requires API key + registered email. ---
 // Docs: https://developer.usajobs.gov/  Headers: Authorization-Key, User-Agent=email
-export async function fetchUsaJobs({ keyword, track, apiKey, email }) {
+// Pass locationName + radius (miles) to scope to a metro, e.g. Patrick SFB /
+// Cape Canaveral / Melbourne FL federal roles.
+export async function fetchUsaJobs({ keyword, track, apiKey, email, locationName, radius }) {
   if (!apiKey || !email) return []
-  const url =
+  let url =
     `https://data.usajobs.gov/api/search?Keyword=${encodeURIComponent(keyword)}` +
     `&ResultsPerPage=25&SortField=DatePosted&SortDirection=Desc`
+  if (locationName) url += `&LocationName=${encodeURIComponent(locationName)}`
+  if (radius) url += `&Radius=${radius}`
   const data = await getJson(url, { 'Authorization-Key': apiKey, 'User-Agent': email, Host: 'data.usajobs.gov' })
   const items = data.SearchResult?.SearchResultItems ?? []
   return items.map((it) => {
@@ -96,13 +100,18 @@ export async function fetchUsaJobs({ keyword, track, apiKey, email }) {
 
 // --- Adzuna (free tier). Requires app_id + app_key. ---
 // Docs: https://developer.adzuna.com/
-export async function fetchAdzuna({ what, track, appId, appKey, country = 'us', maxDaysOld = 14 }) {
+// Pass `where` (town/region/postcode) + `distance` (km radius, max ~80) to run a
+// location-targeted sweep — this is how local roles get fetched at all, since a
+// nationwide `what` search returns only the newest 25 and buries metro results.
+export async function fetchAdzuna({ what, track, appId, appKey, country = 'us', maxDaysOld = 14, where, distance }) {
   if (!appId || !appKey) return []
-  const url =
+  let url =
     `https://api.adzuna.com/v1/api/jobs/${country}/search/1` +
     `?app_id=${appId}&app_key=${appKey}` +
     `&what=${encodeURIComponent(what)}&results_per_page=25&max_days_old=${maxDaysOld}` +
     `&content-type=application/json`
+  if (where) url += `&where=${encodeURIComponent(where)}`
+  if (distance) url += `&distance=${distance}`
   const data = await getJson(url)
   return (data.results ?? []).map((j) =>
     makeListing({
