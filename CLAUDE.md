@@ -91,15 +91,22 @@ on click to keep the initial bundle down.
 ### Discovery pipeline (`discovery/`) — runs in CI, not the app
 - `sources.js` — `COMPANY_BOARDS` are **verified-working** ATS slugs only;
   unconfirmed companies sit in `CANDIDATE_BOARDS` (not queried) until a slug is
-  confirmed and promoted. Also holds per-track keyword lists and Adzuna company
-  hints. Editing the discovered companies/keywords happens here.
-- `fetchers.js` — Greenhouse / Lever / Ashby public boards + USAJOBS + Adzuna.
-  Each fetcher returns normalized listings and **never throws** (logs and returns
-  `[]` on error). USAJOBS/Adzuna are skipped unless their API-key env vars are set.
+  confirmed and promoted. `WORKDAY_BOARDS` are verified Workday tenants for the
+  defense/aerospace primes (Northrop/RTX/Boeing). Also holds per-track keyword
+  lists, Adzuna company hints, and `LOCAL_SWEEP` (the Melbourne, FL geo-targeted
+  sweep config). Editing the discovered companies/keywords happens here.
+- `fetchers.js` — Greenhouse / Lever / Ashby + Workday public boards + USAJOBS +
+  Adzuna. Each fetcher returns normalized listings and **never throws** (logs and
+  returns `[]` on error). USAJOBS/Adzuna are skipped unless their API-key env vars
+  are set; Adzuna/USAJOBS take optional geo params (`where`/`distance`,
+  `LocationName`/`Radius`) for the local sweep. Workday uses a POST to the CXS
+  endpoint and needs no key.
 - `normalize.js` — pure, unit-tested: `makeListing` (stable id from URL),
-  dedupe, keyword filter, `capPerCompany`, `capPerTrack`, and the `processListings`
-  pipeline (dedupe → keyword-filter every source → sort newest-first → cap per
-  company → cap per track). PhD track is intentionally excluded from discovery.
+  dedupe, keyword filter, `capPerCompany`, `capPerTrack`, `isLocalListing` /
+  `boostLocalListings` (Space Coast/Brevard area), and the `processListings`
+  pipeline (dedupe → keyword-filter — local roles bypass via `keepLocal` →
+  exclude-title filter → sort newest-first → boost local → cap per company → cap
+  per track). PhD track is intentionally excluded from discovery.
 - `run.js` — orchestrates the sweep and writes `public/discovered-jobs.json`.
 
 ### Deploy & discovery automation (`.github/workflows/`)

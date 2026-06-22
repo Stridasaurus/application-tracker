@@ -48,6 +48,9 @@ export const CANDIDATE_BOARDS = [
 // Not added (no usable Workday board): L3Harris (custom careers.l3harris.com),
 // Leonardo DRS (the leonardocompany tenant is Italy's Leonardo, not the US DRS
 // sub), Embraer — these stay covered by the Adzuna company hints below.
+//
+// VERIFIED live (2026-06-22 sweep): Northrop Grumman returned 40 "Melbourne" +
+// 14 "Palm Bay" roles, RTX 24, Boeing 4 — all three tenants/sites are good.
 export const WORKDAY_BOARDS = [
   { company: 'Northrop Grumman', track: 'defense', host: 'ngc.wd1.myworkdayjobs.com', tenant: 'ngc', site: 'Northrop_Grumman_External_Site' },
   { company: 'RTX', track: 'defense', host: 'globalhr.wd5.myworkdayjobs.com', tenant: 'globalhr', site: 'REC_RTX_Ext_Gateway' },
