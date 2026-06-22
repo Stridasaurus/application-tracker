@@ -178,10 +178,11 @@ describe('processListings', () => {
     const ls = [
       makeListing({ title: 'Avionics Technician', track: 'defense', location: 'Melbourne, FL', url: 'a', postedAt: '2026-06-05' }),
       makeListing({ title: 'Senior Avionics Engineer', track: 'defense', location: 'Palm Bay, FL', url: 'b', postedAt: '2026-06-06' }),
+      makeListing({ title: 'HVAC Technician', track: 'defense', location: 'Melbourne, FL', url: 'd', postedAt: '2026-06-08' }),
       makeListing({ title: 'Janitor', track: 'defense', location: 'Boston, MA', url: 'c', postedAt: '2026-06-07' }),
     ]
-    const out = processListings(ls, kw, { maxPerTrack: 50, maxPerCompany: 10, excludeTitleKeywords: ['senior'], keepLocal: true })
-    // local non-keyword role kept; senior local role excluded; non-local non-keyword dropped
+    const out = processListings(ls, kw, { maxPerTrack: 50, maxPerCompany: 10, excludeTitleKeywords: ['senior', 'hvac'], keepLocal: true })
+    // local non-keyword role kept; senior + trades local roles excluded; non-local non-keyword dropped
     expect(out.map((l) => l.title)).toEqual(['Avionics Technician'])
   })
 

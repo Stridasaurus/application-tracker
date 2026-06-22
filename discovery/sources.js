@@ -45,9 +45,17 @@ export const CANDIDATE_BOARDS = [
 //     -H 'content-type: application/json' -d '{"limit":1,"offset":0,"searchText":"Melbourne"}'
 // and check it returns JSON with a jobPostings array.
 //
-// Not added (no usable Workday board): L3Harris (custom careers.l3harris.com),
-// Leonardo DRS (the leonardocompany tenant is Italy's Leonardo, not the US DRS
-// sub), Embraer — these stay covered by the Adzuna company hints below.
+// Not added (no usable Workday board): L3Harris, Leonardo DRS, Embraer — these
+// stay covered by the Adzuna company hints below (and L3Harris, being HQ'd in
+// Melbourne, is mostly local so the geo sweep catches it too).
+//
+// TODO (needs a live-verified pass): L3Harris runs Phenom People — careers URLs
+// carry tenant id 4832 (careers.l3harris.com/en/location/melbourne-jobs/4832/…).
+// Phenom exposes a public search via POST https://careers.l3harris.com/widgets
+// with body { ddoKey:'refineSearch', location:'Melbourne, FL', size, from, … };
+// the response shape is tenant-specific, so confirm it with a sweep run (like
+// the Workday boards) before wiring in a fetcher. Leonardo's US sub (DRS) uses
+// careers.leonardodrs.com, a separate ATS from the Italian leonardocompany tenant.
 //
 // VERIFIED live (2026-06-22 sweep): Northrop Grumman returned 40 "Melbourne" +
 // 14 "Palm Bay" roles, RTX 24, Boeing 4 — all three tenants/sites are good.
@@ -161,12 +169,14 @@ export const LOCAL_SWEEP = {
   // Workday: searchText terms (Workday ranks location matches), then results are
   // filtered to the local area downstream via keepLocal / boostLocalListings.
   workdaySearch: ['Melbourne', 'Palm Bay'],
-  // Broad terms for the geo sweep: inside the local radius we can afford to be
-  // generous, since almost any defense/aerospace role here is on-target.
+  // Defense/aerospace-specific terms only: these bias Adzuna's local results to
+  // on-target roles. (keepLocal still lets a local role through even when its
+  // title misses the per-track keywords — so we don't need generic terms like
+  // "mechanical engineer" here, which would pull in unrelated local jobs.)
   keywords: [
     'aerospace', 'defense', 'radar', 'avionics', 'signal processing',
-    'rf engineer', 'systems engineer', 'embedded', 'electrical engineer',
-    'mechanical engineer', 'flight', 'satellite',
+    'rf engineer', 'electro-optical', 'guidance navigation', 'flight test',
+    'missile', 'spacecraft', 'electronic warfare',
   ],
 }
 
@@ -180,6 +190,11 @@ export const EXCLUDE_TITLE_KEYWORDS = [
   'nurse', 'nursing', 'physician', 'surgeon', 'therapist', 'pharmacist',
   // ERP / enterprise software false positives
   'oracle', 'erp', 'sap',
+  // Trades / retail / hospitality — surfaced by the broad local geo sweep but
+  // never on-target for this profile. (Substrings chosen to avoid clobbering
+  // real titles: 'electrician' ≠ 'electrical engineer'.)
+  'hvac', 'plumber', 'electrician', 'landscap', 'janitor', 'custodian',
+  'cashier', 'barista', 'dishwasher', 'housekeep', 'caregiver', 'warehouse associate',
 ]
 
 // Named companies to also feed into the Adzuna keyword sweep so they are
