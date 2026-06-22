@@ -65,13 +65,17 @@ export const WORKDAY_BOARDS = [
   { company: 'Boeing', track: 'defense', host: 'boeing.wd1.myworkdayjobs.com', tenant: 'boeing', site: 'EXTERNAL_CAREERS' },
 ]
 
-// Phenom People career sites (public /widgets refineSearch API). L3Harris is
-// HQ'd in Melbourne and runs Phenom (careers.l3harris.com, tenant 4832), so this
-// is the first-party path to its Space Coast roles. Queried with local keywords;
-// results are filtered to the metro downstream (keepLocal / boostLocalListings).
-export const PHENOM_BOARDS = [
-  { company: 'L3Harris', track: 'defense', host: 'careers.l3harris.com' },
-]
+// Phenom People career sites (public /widgets refineSearch API). `fetchPhenom`
+// implements the documented contract and is unit-tested, but no board is enabled
+// yet: a live sweep against L3Harris (careers.l3harris.com, Phenom tenant 4832)
+// returned HTTP 404 on POST /widgets — Phenom requires a site-specific `refNum`
+// and the exact endpoint/redirect differs per tenant, which needs confirming via
+// the site's network calls (browser devtools on /en/search-jobs). Until then
+// L3Harris stays covered by the Adzuna company hint + local geo sweep. To enable:
+// grab the refNum, pass it through fetchPhenom, and add the board here once a
+// sweep run (DEBUG sample) shows real listings — same flow used for WORKDAY_BOARDS.
+//   { company: 'L3Harris', track: 'defense', host: 'careers.l3harris.com', refNum: '<from devtools>' }
+export const PHENOM_BOARDS = []
 
 export const KEYWORDS_BY_TRACK = {
   quant: [

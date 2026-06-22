@@ -63,19 +63,17 @@ async function main() {
     }
   }
 
-  // Phenom career sites (L3Harris — Melbourne HQ). No API key needed.
-  console.log('Phenom (local — Melbourne, FL):')
-  for (const board of PHENOM_BOARDS) {
-    for (const keyword of LOCAL_SWEEP.workdaySearch) {
-      const items = await safe(`${board.company}/"${keyword}"`, () => fetchPhenom({ ...board, keyword }))
-      sourceCounts[`phenom:${board.host}`] = (sourceCounts[`phenom:${board.host}`] ?? 0) + items.length
-      all.push(...items)
+  // Phenom career sites (e.g. L3Harris). Empty until a tenant's refNum/endpoint
+  // is confirmed (see PHENOM_BOARDS) — the loop no-ops until then.
+  if (PHENOM_BOARDS.length) {
+    console.log('Phenom (local — Melbourne, FL):')
+    for (const board of PHENOM_BOARDS) {
+      for (const keyword of LOCAL_SWEEP.workdaySearch) {
+        const items = await safe(`${board.company}/"${keyword}"`, () => fetchPhenom({ ...board, keyword }))
+        sourceCounts[`phenom:${board.host}`] = (sourceCounts[`phenom:${board.host}`] ?? 0) + items.length
+        all.push(...items)
+      }
     }
-  }
-  // TEMP (verification) — print a few Phenom listings to confirm field mapping.
-  {
-    const sample = all.filter((l) => l.source.startsWith('phenom')).slice(0, 4)
-    console.log('PHENOM SAMPLE:', JSON.stringify(sample))
   }
 
   if (usajobs.apiKey && usajobs.email) {

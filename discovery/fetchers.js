@@ -107,7 +107,7 @@ export async function fetchWorkday({ company, track, host, tenant, site, searchT
 // jobSeoUrl, postedDate, jobId }] } } }. We pass a location `keyword` (Phenom
 // search matches location), paginate, and let callers filter to the metro.
 // Field names vary by tenant, so the mapper reads several fallbacks. Never throws.
-export async function fetchPhenom({ company, track, host, keyword = '', size = 20, maxPages = 2, country = 'us' }) {
+export async function fetchPhenom({ company, track, host, refNum = '', keyword = '', size = 20, maxPages = 2, country = 'us' }) {
   const origin = `https://${host}`
   const out = []
   for (let page = 0; page < maxPages; page++) {
@@ -122,6 +122,7 @@ export async function fetchPhenom({ company, track, host, keyword = '', size = 2
         ddoKey: 'refineSearch',
         stateInfo: { sk: '', pageNumber: page },
         userType: 'external',
+        refNum, // site-specific reference; required by most Phenom tenants
         jobs: true,
         counts: false,
         all_fields: [],
