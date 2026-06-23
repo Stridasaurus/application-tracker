@@ -15,6 +15,7 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
     [apps],
   )
   const dismissedSet = useMemo(() => new Set(dismissed), [dismissed])
+  const [targetsOnly, setTargetsOnly] = useState(false)
 
   const visible = useMemo(() => {
     const listings = data?.listings ?? []
@@ -22,15 +23,18 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
       if (dismissedSet.has(l.id)) return false
       if (l.url && existingUrls.has(normalizeUrl(l.url))) return false
       if (existingPairs.has(`${l.company}|${l.title}`.toLowerCase())) return false
+      if (targetsOnly && !l.target) return false
       return true
     })
-  }, [data, dismissedSet, existingUrls, existingPairs])
+  }, [data, dismissedSet, existingUrls, existingPairs, targetsOnly])
 
   const byTrack = useMemo(() => {
     const groups = {}
     for (const l of visible) (groups[l.track] ??= []).push(l)
     return groups
   }, [visible])
+
+  const targetTotal = useMemo(() => visible.filter((l) => l.target).length, [visible])
 
   const generated = data?.generatedAt ? formatDate(data.generatedAt) : null
   const [openTracks, setOpenTracks] = useState(new Set())
@@ -53,9 +57,23 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
             {generated ? ` Last updated ${generated}.` : ' Waiting for the first scheduled run.'}
           </p>
         </div>
-        <Button variant="secondary" onClick={onReload}>
-          ↻ Refresh
-        </Button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setTargetsOnly((v) => !v)}
+            aria-pressed={targetsOnly}
+            className={cx(
+              'rounded-lg border px-3 py-2 text-sm font-medium transition-colors',
+              targetsOnly
+                ? 'border-amber-400 bg-amber-100 text-amber-800 dark:border-amber-500/60 dark:bg-amber-500/15 dark:text-amber-300'
+                : 'border-slate-200 text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800/60',
+            )}
+          >
+            ★ Targets only{targetTotal ? ` (${targetTotal})` : ''}
+          </button>
+          <Button variant="secondary" onClick={onReload}>
+            ↻ Refresh
+          </Button>
+        </div>
       </div>
 
       {status === 'loading' && <p className="text-sm text-slate-400">Loading listings…</p>}
@@ -82,6 +100,11 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
               >
                 <span className="h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: track.color }} />
                 <span className="font-semibold flex-1">{track.label}</span>
+                {byTrack[track.id].some((l) => l.target) && (
+                  <span className="rounded-full bg-amber-100 px-2 text-xs font-medium text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                    {byTrack[track.id].filter((l) => l.target).length}★
+                  </span>
+                )}
                 <span className="rounded-full bg-slate-200 px-2 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-300">
                   {byTrack[track.id].length}
                 </span>
@@ -106,7 +129,12 @@ function ListingCard({ listing, onAdd, onDismiss }) {
   const track = TRACK_BY_ID[listing.track]
   return (
     <div
-      className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+      className={cx(
+        'flex flex-col justify-between rounded-xl border bg-white p-3 shadow-sm dark:bg-slate-800',
+        listing.target
+          ? 'border-amber-300 ring-1 ring-amber-300 dark:border-amber-500/50 dark:ring-amber-500/40'
+          : 'border-slate-200 dark:border-slate-700',
+      )}
       style={{ borderLeft: `3px solid ${track?.color ?? '#64748b'}` }}
     >
       <div>
@@ -120,6 +148,9 @@ function ListingCard({ listing, onAdd, onDismiss }) {
           </div>
         </div>
         <div className="mt-2 flex flex-wrap items-center gap-1">
+          {listing.target && (
+            <Pill className="!bg-amber-100 !text-amber-800 dark:!bg-amber-500/15 dark:!text-amber-300">★ target</Pill>
+          )}
           <Pill className={cx('!bg-slate-100 dark:!bg-slate-700')}>{sourceLabel(listing.source)}</Pill>
           {listing.postedAt && <span className="text-xs text-slate-400">posted {formatDate(listing.postedAt)}</span>}
         </div>

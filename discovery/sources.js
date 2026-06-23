@@ -210,10 +210,14 @@ export const EXCLUDE_TITLE_KEYWORDS = [
 ]
 
 // Named companies to also feed into the Adzuna keyword sweep so they are
-// covered even when they use a custom ATS we can't query directly.
+// covered even when they use a custom ATS we can't query directly. This is a
+// high-value SUBSET of the curated target list (discovery/targets.js) — kept to
+// ~10 firms/track to stay within the Adzuna free-tier daily call budget. Target
+// tagging in normalize.js applies to ALL firms in targets.js regardless of
+// whether they're explicitly queried here (boards + keyword sweeps surface them).
 export const ADZUNA_COMPANY_HINTS = {
-  quant: ['Citadel', 'Jane Street', 'D.E. Shaw', 'Point72', 'Optiver', 'DRW'],
-  neuro: ['Neuralink', 'Synchron', 'Paradromics', 'Blackrock Neurotech', 'Precision Neuroscience'],
+  quant: ['Citadel', 'Jane Street', 'D.E. Shaw', 'Point72', 'Optiver', 'DRW', 'Two Sigma', 'Hudson River Trading', 'WorldQuant', 'Squarepoint'],
+  neuro: ['Neuralink', 'Synchron', 'Paradromics', 'Blackrock Neurotech', 'Precision Neuroscience', 'Science Corp', 'MEGIN', 'Rune Labs', 'Ceribell', 'Motif Neurotech'],
   defense: [
     'L3Harris', 'Northrop Grumman', 'Lockheed Martin', 'Raytheon', 'Leidos',
     // Melbourne / Space Coast employers (custom ATSs — reachable via Adzuna):

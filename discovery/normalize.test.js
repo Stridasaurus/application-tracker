@@ -12,6 +12,9 @@ import {
   capPerCompany,
   isLocalListing,
   boostLocalListings,
+  matchesTargetFirm,
+  isTargetListing,
+  boostTargetListings,
   processListings,
 } from './normalize.js'
 
@@ -172,7 +175,63 @@ describe('filterByKeywords keepLocal', () => {
   })
 })
 
+describe('matchesTargetFirm', () => {
+  it('substring-matches long names but word-boundary-matches short acronyms', () => {
+    expect(matchesTargetFirm('Citadel Securities', ['Citadel'])).toBe(true)
+    expect(matchesTargetFirm('Susquehanna International Group', ['Susquehanna', 'SIG'])).toBe(true)
+    expect(matchesTargetFirm('SIG Trading', ['SIG'])).toBe(true)
+    // short acronym must not match as a substring inside another word
+    expect(matchesTargetFirm('Designium Studios', ['SIG'])).toBe(false)
+    expect(matchesTargetFirm('Bet365', ['Citadel', 'Jane Street'])).toBe(false)
+  })
+})
+
+describe('isTargetListing', () => {
+  const targets = { quant: ['BlackRock'], neuro: ['Blackrock Neurotech'] }
+  it('is track-scoped so same-name firms in different tracks do not collide', () => {
+    expect(isTargetListing(makeListing({ company: 'BlackRock', track: 'quant', url: 'a' }), targets)).toBe(true)
+    expect(isTargetListing(makeListing({ company: 'Blackrock Neurotech', track: 'neuro', url: 'b' }), targets)).toBe(true)
+    // a neuro listing for the asset manager isn't a neuro target
+    expect(isTargetListing(makeListing({ company: 'BlackRock', track: 'neuro', url: 'c' }), targets)).toBe(false)
+  })
+})
+
+describe('boostTargetListings', () => {
+  it('floats target listings first, preserving order', () => {
+    const ls = [
+      { title: 'a', target: false },
+      { title: 'b', target: true },
+      { title: 'c', target: false },
+      { title: 'd', target: true },
+    ]
+    expect(boostTargetListings(ls).map((l) => l.title)).toEqual(['b', 'd', 'a', 'c'])
+  })
+})
+
 describe('processListings', () => {
+  it('tags target firms, floats them above the per-track cap, and ranks target > local', () => {
+    const kw = { quant: ['quant'] }
+    const targets = { quant: ['WorldQuant'] }
+    const ls = [
+      makeListing({ title: 'Quant Researcher', company: 'Morningstar', track: 'quant', url: 'm', postedAt: '2026-06-10' }),
+      makeListing({ title: 'Quant Researcher', company: 'WorldQuant', track: 'quant', url: 'w', postedAt: '2026-06-01' }),
+    ]
+    // cap of 1 per track: the older WorldQuant role must win because it's a target
+    const out = processListings(ls, kw, { maxPerTrack: 1, maxPerCompany: 10, targetFirms: targets })
+    expect(out.map((l) => l.company)).toEqual(['WorldQuant'])
+    expect(out[0].target).toBe(true)
+  })
+
+  it('stamps target:false on non-target listings', () => {
+    const kw = { quant: ['quant'] }
+    const out = processListings(
+      [makeListing({ title: 'Quant Analyst', company: 'Bet365', track: 'quant', url: 'b', postedAt: '2026-06-01' })],
+      kw,
+      { targetFirms: { quant: ['WorldQuant'] } },
+    )
+    expect(out[0].target).toBe(false)
+  })
+
   it('keepLocal lets a non-keyword local role through but still drops senior local roles', () => {
     const kw = { defense: ['radar'] }
     const ls = [
