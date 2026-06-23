@@ -1,21 +1,26 @@
 {
-  "generatedAt": "2026-06-22T15:50:23.988Z",
+  "generatedAt": "2026-06-23T05:33:13.283Z",
   "total": 93,
   "counts": {
     "defense": 50,
-    "quant": 38,
-    "fusion": 3,
-    "neuro": 2
+    "quant": 40,
+    "neuro": 1,
+    "fusion": 2
+  },
+  "targetCounts": {
+    "defense": 50,
+    "quant": 14,
+    "neuro": 1
   },
   "sources": {
-    "greenhouse:jumptrading": 61,
-    "greenhouse:akunacapital": 29,
-    "greenhouse:imc": 132,
+    "greenhouse:jumptrading": 60,
+    "greenhouse:akunacapital": 30,
+    "greenhouse:imc": 130,
     "greenhouse:oldmissioncapital": 31,
-    "greenhouse:andurilindustries": 2080,
+    "greenhouse:andurilindustries": 2060,
     "greenhouse:epirus": 39,
     "workday:ngc": 53,
-    "workday:globalhr": 24,
+    "workday:globalhr": 25,
     "workday:boeing": 4
   },
   "listings": [
@@ -25,21 +30,11 @@
       "company": "L3Harris Technologies",
       "track": "defense",
       "location": "Cocoa Beach, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772325664?se=okXZElJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=9201EAEF0B8E89F7FE375E302B53FC1FAD91281A",
+      "url": "https://www.adzuna.com/land/ad/5772325664?se=0F4IBsVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=9201EAEF0B8E89F7FE375E302B53FC1FAD91281A",
       "source": "adzuna",
       "postedAt": "2026-06-22",
-      "remote": false
-    },
-    {
-      "id": "d1x6trqb",
-      "title": "Engineering Technician",
-      "company": "Jobot",
-      "track": "defense",
-      "location": "West Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772634404?se=okXZElJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=FA916DC9DE7FF773F05CCD08FE71079EA37B97F5",
-      "source": "adzuna",
-      "postedAt": "2026-06-22",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1v88pd2",
@@ -47,10 +42,11 @@
       "company": "L3Harris Technologies",
       "track": "defense",
       "location": "Cocoa Beach, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772325464?se=RtTyEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=5D63B773DBD87C5BD30CC7C60FACF31B2AC8141F",
+      "url": "https://www.adzuna.com/land/ad/5772325464?se=WipZBcVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=5D63B773DBD87C5BD30CC7C60FACF31B2AC8141F",
       "source": "adzuna",
       "postedAt": "2026-06-22",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1v88q3l",
@@ -58,32 +54,47 @@
       "company": "L3Harris Technologies",
       "track": "defense",
       "location": "Patrick Air Force Base, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772325522?se=1NatDFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=76682BCE60F027D2ED644976F2B967324FD85E1E",
+      "url": "https://www.adzuna.com/land/ad/5772325522?se=CPbTAcVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=76682BCE60F027D2ED644976F2B967324FD85E1E",
       "source": "adzuna",
       "postedAt": "2026-06-22",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d1ulkzad",
-      "title": "Electrophysiologist Opportunity on Florida's Space Coast",
-      "company": "Health First Medical Group",
+      "id": "d17sd40",
+      "title": "Technical Recruiter",
+      "company": "Anduril",
       "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772232349?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=284C17C0D09204ED7954CAB0AEAC52A15A3FF681",
-      "source": "adzuna",
-      "postedAt": "2026-06-21",
-      "remote": false
+      "location": "Melbourne, Victoria, Australia",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5159440007?gh_jid=5159440007",
+      "source": "greenhouse:andurilindustries",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d1ul093f",
-      "title": "General Cardiologist Opportunity in Coastal Florida – Expanding Heart & VascularProgram",
-      "company": "Health First Medical Group",
+      "id": "dr4pgyx",
+      "title": "Staff Robotics Engineer",
+      "company": "Anduril",
       "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772228638?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=126620B27639A0971A5DDBFCB1AD3E2092AA8F84",
+      "location": "Melbourne, Victoria, Australia",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/4972429007?gh_jid=4972429007",
+      "source": "greenhouse:andurilindustries",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1ulnd0o",
+      "title": "Lead, Systems Software Engineer",
+      "company": "L3Harris Technologies",
+      "track": "defense",
+      "location": "Melbourne, Brevard County",
+      "url": "https://www.adzuna.com/land/ad/5772235655?se=WipZBcVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=4694DDED8770E6ECFCF6232ED6AF10E4D85DF412",
       "source": "adzuna",
       "postedAt": "2026-06-21",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1ulndrd",
@@ -91,21 +102,35 @@
       "company": "L3Harris Technologies",
       "track": "defense",
       "location": "West Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5772235719?se=1NatDFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=ACBCD12C9CC3F55035817D029EFF08386C98FF06",
+      "url": "https://www.adzuna.com/land/ad/5772235719?se=CPbTAcVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=ACBCD12C9CC3F55035817D029EFF08386C98FF06",
       "source": "adzuna",
       "postedAt": "2026-06-21",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "db1jlwt",
-      "title": "Systems Engineering Stf with Security Clearance",
+      "id": "dchu378",
+      "title": "Staff Systems Engineer - Systems Integration",
       "company": "Lockheed Martin",
       "track": "defense",
       "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5769610576?se=NF8YFFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=FA5071E8C86FB8A1E2A8006B67847E1309D4947F",
+      "url": "https://www.adzuna.com/land/ad/5769892490?se=nPuoBsVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=9127BCAB13FB81647BABF653B1F6FDDC31A03906",
       "source": "adzuna",
       "postedAt": "2026-06-19",
-      "remote": false
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1qpsjaj",
+      "title": "Staff Systems Engineer - Electromagnetic Environmental Effects (E3)",
+      "company": "Northrop Grumman",
+      "track": "defense",
+      "location": "Melbourne, Brevard County",
+      "url": "https://www.adzuna.com/land/ad/5768941811?se=0F4IBsVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=BA39B8C3D7759B4FE71A82AB9BD97CF1CAFFA92A",
+      "source": "adzuna",
+      "postedAt": "2026-06-19",
+      "remote": false,
+      "target": true
     },
     {
       "id": "db1l8ra",
@@ -113,10 +138,23 @@
       "company": "Northrop Grumman",
       "track": "defense",
       "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5769612988?se=okXZElJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=43527ACB551C72A2C0CB63DE9C775337F79D6804",
+      "url": "https://www.adzuna.com/land/ad/5769612988?se=0F4IBsVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=43527ACB551C72A2C0CB63DE9C775337F79D6804",
       "source": "adzuna",
       "postedAt": "2026-06-19",
-      "remote": false
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d7ulpaf",
+      "title": "Staff Avionics Architecture Engineer",
+      "company": "Northrop Grumman",
+      "track": "defense",
+      "location": "Melbourne, Brevard County",
+      "url": "https://www.adzuna.com/land/ad/5769137107?se=vPSzBcVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=082600D342C66122B1DE3DB497785C7D7DCAFCCD",
+      "source": "adzuna",
+      "postedAt": "2026-06-19",
+      "remote": false,
+      "target": true
     },
     {
       "id": "db1l7ww",
@@ -124,43 +162,11 @@
       "company": "Northrop Grumman",
       "track": "defense",
       "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5769612883?se=gmNjElJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=9D8AB0475D05EADC90E22175383D28D3B69D0394",
+      "url": "https://www.adzuna.com/land/ad/5769612883?se=vPSzBcVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=9D8AB0475D05EADC90E22175383D28D3B69D0394",
       "source": "adzuna",
       "postedAt": "2026-06-19",
-      "remote": false
-    },
-    {
-      "id": "dnanh7n",
-      "title": "General Urologist Opportunity - Robotic Surgery (Da Vinci) - Cocoa Beach /CapeCanaveral, FL",
-      "company": "Health First Medical Group",
-      "track": "defense",
-      "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5770165407?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=4FFC04610384DA3B2246686EBF97FFF99595A15F",
-      "source": "adzuna",
-      "postedAt": "2026-06-19",
-      "remote": false
-    },
-    {
-      "id": "dn9722n",
-      "title": "Urology Opening in Brevard County, Florida!",
-      "company": "Health First Medical Group",
-      "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5770143254?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=B283107C0438D772892DD880BDB1A03DA4F9226A",
-      "source": "adzuna",
-      "postedAt": "2026-06-19",
-      "remote": false
-    },
-    {
-      "id": "d1ln1lt7",
-      "title": "Software Engineer (TS/SCI) - Vantor",
-      "company": "Vantor",
-      "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5768197034?se=NF8YFFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=8FB64CAB9F346605660F8F4F0ABC7E07867FCC9E",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1msopft",
@@ -168,10 +174,11 @@
       "company": "Lockheed Martin",
       "track": "defense",
       "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5768326812?se=NF8YFFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=2A7C77AF6541844B5D7963BB0A65E57A1BA78967",
+      "url": "https://www.adzuna.com/land/ad/5768326812?se=nPuoBsVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=2A7C77AF6541844B5D7963BB0A65E57A1BA78967",
       "source": "adzuna",
       "postedAt": "2026-06-18",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1msq9vc",
@@ -179,32 +186,11 @@
       "company": "Northrop Grumman",
       "track": "defense",
       "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5768328969?se=suLaE1Ju8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=3DA3D3BD72DD60E49FC6263112A818E512AA4129",
+      "url": "https://www.adzuna.com/land/ad/5768328969?se=7AiDBsVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=3DA3D3BD72DD60E49FC6263112A818E512AA4129",
       "source": "adzuna",
       "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1mspc5f",
-      "title": "DO-254 Engineer (Contract)",
-      "company": "IO Associates",
-      "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5768327220?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=A96E091E9DA98D2418AE8B671AC472A638437936",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "dgor8f5",
-      "title": "IT Operations Analyst, Jr. with Security Clearance",
-      "company": "By Light Professional IT Services",
-      "track": "defense",
-      "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5766406132?se=suLaE1Ju8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=73B377FE0192B2C3A184A4F90DB0CA5CFF522201",
-      "source": "adzuna",
-      "postedAt": "2026-06-17",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dwkz2rq",
@@ -215,18 +201,32 @@
       "url": "https://www.adzuna.com/details/5767391848?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-17",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d1rui5m2",
-      "title": "Launch Vehicle Project Engineer with Security Clearance",
-      "company": "MANTECH",
+      "id": "d1sf3xfu",
+      "title": "Quality Control Supervisor",
+      "company": "Lockheed Martin",
       "track": "defense",
-      "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5765042794?se=FOR8E1Ju8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=515F646238F2AE9B6C4380894D88E0C341E5E9EC",
+      "location": "Titusville, Brevard County",
+      "url": "https://www.adzuna.com/land/ad/5765108818?se=MovdBsVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=B0A7255F52FF2D599E8778CFA244721584C018F8",
       "source": "adzuna",
       "postedAt": "2026-06-16",
-      "remote": false
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1sgchlp",
+      "title": "Range Safety Integration Engineer",
+      "company": "Lockheed Martin",
+      "track": "defense",
+      "location": "Cape Canaveral, Brevard County",
+      "url": "https://www.adzuna.com/land/ad/5765120343?se=nPuoBsVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=E8607B22F6515982B377DFE3E2FF08C40280998A",
+      "source": "adzuna",
+      "postedAt": "2026-06-16",
+      "remote": false,
+      "target": true
     },
     {
       "id": "d9w1w66",
@@ -237,40 +237,8 @@
       "url": "https://www.adzuna.com/details/5766171476?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-16",
-      "remote": false
-    },
-    {
-      "id": "d17sd40",
-      "title": "Technical Recruiter",
-      "company": "Anduril",
-      "track": "defense",
-      "location": "Melbourne, Victoria, Australia",
-      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5159440007?gh_jid=5159440007",
-      "source": "greenhouse:andurilindustries",
-      "postedAt": "2026-06-16",
-      "remote": false
-    },
-    {
-      "id": "dr4pgyx",
-      "title": "Staff Robotics Engineer",
-      "company": "Anduril",
-      "track": "defense",
-      "location": "Melbourne, Victoria, Australia",
-      "url": "https://boards.greenhouse.io/andurilindustries/jobs/4972429007?gh_jid=4972429007",
-      "source": "greenhouse:andurilindustries",
-      "postedAt": "2026-06-16",
-      "remote": false
-    },
-    {
-      "id": "dr4n5s6",
-      "title": "Robotics Engineer",
-      "company": "Anduril",
-      "track": "defense",
-      "location": "Melbourne, Victoria, Australia",
-      "url": "https://boards.greenhouse.io/andurilindustries/jobs/4972426007?gh_jid=4972426007",
-      "source": "greenhouse:andurilindustries",
-      "postedAt": "2026-06-16",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1blymud",
@@ -278,10 +246,11 @@
       "company": "Lockheed Martin Corporation",
       "track": "defense",
       "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5764816070?se=suLaE1Ju8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=8EA943C240312044F17B14516892ADB55B9A8C72",
+      "url": "https://www.adzuna.com/land/ad/5764816070?se=7AiDBsVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=8EA943C240312044F17B14516892ADB55B9A8C72",
       "source": "adzuna",
       "postedAt": "2026-06-15",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1blutr9",
@@ -289,10 +258,11 @@
       "company": "Lockheed Martin Corporation",
       "track": "defense",
       "location": "Titusville, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5764811228?se=suLaE1Ju8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=DC868AEE1D0C78EF57D13CBC709F85CA6D347F75",
+      "url": "https://www.adzuna.com/land/ad/5764811228?se=7AiDBsVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=DC868AEE1D0C78EF57D13CBC709F85CA6D347F75",
       "source": "adzuna",
       "postedAt": "2026-06-15",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1blzf9l",
@@ -300,10 +270,11 @@
       "company": "Lockheed Martin Corporation",
       "track": "defense",
       "location": "Titusville, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5764817118?se=gmNjElJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=78760616FD1C2FEABB74EDE72346FD95FB665975",
+      "url": "https://www.adzuna.com/land/ad/5764817118?se=vPSzBcVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=78760616FD1C2FEABB74EDE72346FD95FB665975",
       "source": "adzuna",
       "postedAt": "2026-06-15",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1blutsx",
@@ -311,10 +282,11 @@
       "company": "Lockheed Martin Corporation",
       "track": "defense",
       "location": "Titusville, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5764811242?se=gmNjElJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=CD88AD22F701786C304D5C48AA00FF7B09AD0D31",
+      "url": "https://www.adzuna.com/land/ad/5764811242?se=vPSzBcVu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=CD88AD22F701786C304D5C48AA00FF7B09AD0D31",
       "source": "adzuna",
       "postedAt": "2026-06-15",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dlxczyy",
@@ -325,7 +297,8 @@
       "url": "https://www.adzuna.com/details/5763923713?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-14",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dlxcz8i",
@@ -336,29 +309,8 @@
       "url": "https://www.adzuna.com/details/5763923658?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-14",
-      "remote": false
-    },
-    {
-      "id": "diqxl2r",
-      "title": "Contract Administrator",
-      "company": "C Speed",
-      "track": "defense",
-      "location": "Titusville, Brevard County",
-      "url": "https://www.adzuna.com/details/5763451332?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-14",
-      "remote": false
-    },
-    {
-      "id": "d49g7ex",
-      "title": "Range Safety Integration Engineer with Security Clearance",
-      "company": "Lockheed Martin",
-      "track": "defense",
-      "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5762721468?se=NF8YFFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=2FC327A0659234673CEDA0BB67C038AA5CD83202",
-      "source": "adzuna",
-      "postedAt": "2026-06-13",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dg7vb84",
@@ -369,73 +321,8 @@
       "url": "https://www.adzuna.com/details/5763082036?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-13",
-      "remote": false
-    },
-    {
-      "id": "dhyxds",
-      "title": "Machine Learning Engineer with Security Clearance",
-      "company": "ENSCO",
-      "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5762185320?se=3JihElJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=472F08E3CDA9471B971434007780D8C970B2C3D5",
-      "source": "adzuna",
-      "postedAt": "2026-06-13",
-      "remote": false
-    },
-    {
-      "id": "dikg2p",
-      "title": "Junior Machine Learning Engineer with Security Clearance",
-      "company": "ENSCO",
-      "track": "defense",
-      "location": "Suntree, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5762190109?se=3JihElJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=ACCA5B04D4EB0F0365554E29E1ACA2BAC67CC5E4",
-      "source": "adzuna",
-      "postedAt": "2026-06-13",
-      "remote": false
-    },
-    {
-      "id": "dikffo",
-      "title": "RF Systems Engineer-Patrick Air Force Base, Florida with Security Clearance",
-      "company": "V2X",
-      "track": "defense",
-      "location": "Patrick Air Force Base, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5762190085?se=UEsmElJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=B18E59E64CB4D3E0C1FB0606659C12EA9EC55004",
-      "source": "adzuna",
-      "postedAt": "2026-06-13",
-      "remote": false
-    },
-    {
-      "id": "dsx4ggz",
-      "title": "Remote Satellite Systems I&T Engineer",
-      "company": "Red Canyon Engineering & Software",
-      "track": "defense",
-      "location": "Merritt Island, Brevard County",
-      "url": "https://www.adzuna.com/details/5760941896?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-12",
-      "remote": false
-    },
-    {
-      "id": "d1glr4xz",
-      "title": "FPGA Engineer",
-      "company": "TechSpace Solutions Inc.",
-      "track": "defense",
-      "location": "Eau Gallie, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5761506970?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=1E13CD910769A3ABD943CA8F8656B3F10F2CD8E3",
-      "source": "adzuna",
-      "postedAt": "2026-06-12",
-      "remote": false
-    },
-    {
-      "id": "du0963n",
-      "title": "Quality Engineer with Security Clearance",
-      "company": "Lockheed Martin",
-      "track": "defense",
-      "location": "Kennedy Space Center, Merritt Island",
-      "url": "https://www.adzuna.com/land/ad/5760331476?se=yDVTFFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=A4EF9A6BA8611C776D6C02FFFC32EA840F8C18C0",
-      "source": "adzuna",
-      "postedAt": "2026-06-11",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dgjjf8p",
@@ -443,120 +330,11 @@
       "company": "Northrop Grumman",
       "track": "defense",
       "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5759624181?se=FOR8E1Ju8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=0D18E347EA1CEE903AB1526829E2FDC9622A34E9",
+      "url": "https://www.adzuna.com/land/ad/5759624181?se=bOlZBsVu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=0D18E347EA1CEE903AB1526829E2FDC9622A34E9",
       "source": "adzuna",
       "postedAt": "2026-06-11",
-      "remote": false
-    },
-    {
-      "id": "duobns4",
-      "title": "Staff Guidance Navigation and Controls Engineer with Security Clearance",
-      "company": "Northrop Grumman",
-      "track": "defense",
-      "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5760444292?se=FOR8E1Ju8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=1E2C1E4133F15DDCA37FFE9C37BDBB39B3FBA6E2",
-      "source": "adzuna",
-      "postedAt": "2026-06-11",
-      "remote": false
-    },
-    {
-      "id": "drkjxcp",
-      "title": "Avionics Systems Traffic Surveillence",
-      "company": "Kelly Services",
-      "track": "defense",
-      "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/details/5760718605?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-11",
-      "remote": false
-    },
-    {
-      "id": "drkjxdh",
-      "title": "System Architect - Traffic Survellance",
-      "company": "Kelly Services",
-      "track": "defense",
-      "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/details/5760718610?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-11",
-      "remote": false
-    },
-    {
-      "id": "dcmzosg",
-      "title": "2026 Associate Logistics Planner/Logistics Planner with Security Clearance",
-      "company": "Northrop Grumman",
-      "track": "defense",
-      "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5759012451?se=suLaE1Ju8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=1000A21C295050B335A0CDD028BB6C808BB20F10",
-      "source": "adzuna",
-      "postedAt": "2026-06-10",
-      "remote": false
-    },
-    {
-      "id": "ddz2cte",
-      "title": "Avionics Technician",
-      "company": "STS Aviation Services",
-      "track": "defense",
-      "location": "Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5759235032?se=gmNjElJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=299C351AF8C65258FAC401134CD0D2209F2B9D54",
-      "source": "adzuna",
-      "postedAt": "2026-06-10",
-      "remote": false
-    },
-    {
-      "id": "d1ro1kls",
-      "title": "Mechanical Aerospace Engineer - Deployable Space Systems",
-      "company": "ACE Partners",
-      "track": "defense",
-      "location": "Cape Canaveral, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5758248376?se=FCamEVJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=B00C5F6272DCF1E33DD6FA5A9FFCEA67856F6D8C",
-      "source": "adzuna",
-      "postedAt": "2026-06-10",
-      "remote": false
-    },
-    {
-      "id": "d1lbn51c",
-      "title": "Space Engineer",
-      "company": "Nightwing Intelligence Solutions",
-      "track": "defense",
-      "location": "Palm Bay, Brevard County",
-      "url": "https://www.adzuna.com/details/5758016578?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-09",
-      "remote": false
-    },
-    {
-      "id": "d156jqrl",
-      "title": "Space Engineer",
-      "company": "Nightwing",
-      "track": "defense",
-      "location": "West Melbourne, Brevard County",
-      "url": "https://www.adzuna.com/details/5757836318?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-09",
-      "remote": false
-    },
-    {
-      "id": "doxk7a1",
-      "title": "Space Engineer with Security Clearance",
-      "company": "Nightwing",
-      "track": "defense",
-      "location": "Palm Bay, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5756898259?se=OoqRFFJu8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=630236244C5095C58423838482BF597D23F4DFD4",
-      "source": "adzuna",
-      "postedAt": "2026-06-09",
-      "remote": false
-    },
-    {
-      "id": "d19meg59",
-      "title": "Electronics Engineer IV, Avionics with Security Clearance",
-      "company": "Global Edge Group, LLC",
-      "track": "defense",
-      "location": "Titusville, Brevard County",
-      "url": "https://www.adzuna.com/land/ad/5757785888?se=gmNjElJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=FFC0770C8083689D4E0B741563EE2E366B964987",
-      "source": "adzuna",
-      "postedAt": "2026-06-09",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d16r1eo6",
@@ -567,51 +345,236 @@
       "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-FL-MELBOURNE-312--795-W-Nasa-Blvd--BLDG-312/Electrical-Engineer-II---01828419-Senior-Electrical-Engineer---Communications--Navigation---Surveillance--ONSITE-_01828427",
       "source": "workday:globalhr",
       "postedAt": null,
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d1un1dnk",
-      "title": "Quantitative Analyst - Sports",
-      "company": "Bet365",
-      "track": "quant",
-      "location": "Denver, Colorado",
-      "url": "https://www.adzuna.com/land/ad/5772254421?se=ckIWCVJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=D3D119F85EAF54C2D883AAB6DBFF4E3F9D7E1812",
+      "id": "d1v1hnb8",
+      "title": "Test Technician II - 2nd Shift",
+      "company": "RTX",
+      "track": "defense",
+      "location": "US-FL-MELBOURNE-308 ~ 1100 W Hibiscus Blvd ~ BLDG 308",
+      "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-FL-MELBOURNE-308--1100-W-Hibiscus-Blvd--BLDG-308/Test-Technician-II---2nd-Shift_01834668",
+      "source": "workday:globalhr",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1ay96zv",
+      "title": "Software Engineer II (ONSITE)",
+      "company": "RTX",
+      "track": "defense",
+      "location": "US-FL-MELBOURNE-313 ~ 1344 S Babcock St ~ BLDG 313",
+      "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-FL-MELBOURNE-313--1344-S-Babcock-St--BLDG-313/Software-Engineer-II_01836401",
+      "source": "workday:globalhr",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d17vrb2m",
+      "title": "Quality Inspector 3 - 2nd Shift (onsite)",
+      "company": "RTX",
+      "track": "defense",
+      "location": "US-FL-MELBOURNE-311 ~ 1100 W Hibiscus Blvd ~ BLDG 311",
+      "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-FL-MELBOURNE-311--1100-W-Hibiscus-Blvd--BLDG-311/Quality-Inspector-3---2nd-Shift--onsite-_01852060",
+      "source": "workday:globalhr",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1z0p2k0",
+      "title": "Electrical Engineer II - Communication, Navigation & Surveillance (ONSITE)",
+      "company": "RTX",
+      "track": "defense",
+      "location": "US-FL-MELBOURNE-312 ~ 795 W Nasa Blvd ~ BLDG 312",
+      "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-FL-MELBOURNE-312--795-W-Nasa-Blvd--BLDG-312/Electrical-Engineer-II---Communication--Navigation---Surveillance--ONSITE-_01851855",
+      "source": "workday:globalhr",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d17kcm1z",
+      "title": "Manufacturing Engineer II - Second Shift (Onsite)",
+      "company": "RTX",
+      "track": "defense",
+      "location": "US-FL-MELBOURNE-308 ~ 1100 W Hibiscus Blvd ~ BLDG 308",
+      "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-FL-MELBOURNE-308--1100-W-Hibiscus-Blvd--BLDG-308/Manufacturing-Engineer-II---Second-Shift_01847970",
+      "source": "workday:globalhr",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "dwgd1a2",
+      "title": "Aerospace Tradesperson",
+      "company": "Boeing",
+      "track": "defense",
+      "location": "AUS - Port Melbourne, Australia",
+      "url": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/AUS---Port-Melbourne-Australia/Aerospace-Tradesperson_JR2026515658-1",
+      "source": "workday:boeing",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d18p226",
+      "title": "Warehouse Material Handlers",
+      "company": "Boeing",
+      "track": "defense",
+      "location": "AUS - Port Melbourne, Australia",
+      "url": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/AUS---Port-Melbourne-Australia/Warehouse-Material-Handlers_JR2026513598-1",
+      "source": "workday:boeing",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "di2eqx0",
+      "title": "Warehouse Coordinator",
+      "company": "Boeing",
+      "track": "defense",
+      "location": "AUS - Port Melbourne, Australia",
+      "url": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/AUS---Port-Melbourne-Australia/Warehouse-Coordinator_JR2026513597-1",
+      "source": "workday:boeing",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "duo74c7",
+      "title": "EHS Specialist",
+      "company": "Boeing",
+      "track": "defense",
+      "location": "AUS - Port Melbourne, Australia",
+      "url": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS/job/AUS---Port-Melbourne-Australia/EHS-Specialist_JR2026515273-1",
+      "source": "workday:boeing",
+      "postedAt": null,
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1v88pfu",
+      "title": "Sr Specialist, Systems Engineer (Space Systems) - MBSE : Sign-on bonus ($20K max)",
+      "company": "L3Harris Technologies",
+      "track": "defense",
+      "location": "West Concord, Middlesex County",
+      "url": "https://www.adzuna.com/land/ad/5772325495?se=CPbTAcVu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=E9A021DC5E76D3D091284CDD078C45194AD32199",
       "source": "adzuna",
       "postedAt": "2026-06-22",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d15jlbkk",
-      "title": "Associate Quantitative Analyst",
-      "company": "Morningstar",
+      "id": "dfobged",
+      "title": "Systems Engineer II - Signal Processing",
+      "company": "Raytheon",
+      "track": "defense",
+      "location": "Ysleta Del Sur Pueblo, El Paso County",
+      "url": "https://www.adzuna.com/land/ad/5773058531?se=RAPrAMVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=F5E5603C3E88CBE4F542CF416416A62994A80E7A",
+      "source": "adzuna",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1sotfjs",
+      "title": "Trainer, Electronic Warfare",
+      "company": "Anduril",
+      "track": "defense",
+      "location": "Costa Mesa, California, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5111336007?gh_jid=5111336007",
+      "source": "greenhouse:andurilindustries",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1ezs3nd",
+      "title": "Technical Operations Engineer, Electronic Warfare",
+      "company": "Anduril",
+      "track": "defense",
+      "location": "Costa Mesa, California, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5005155007?gh_jid=5005155007",
+      "source": "greenhouse:andurilindustries",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "dshca3m",
+      "title": "Systems Engineer, TRS",
+      "company": "Anduril",
+      "track": "defense",
+      "location": "Costa Mesa, California, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5164077007?gh_jid=5164077007",
+      "source": "greenhouse:andurilindustries",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "dahqbef",
+      "title": "Systems Engineer, Surveillance Tower",
+      "company": "Anduril",
+      "track": "defense",
+      "location": "Irvine, California, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5051350007?gh_jid=5051350007",
+      "source": "greenhouse:andurilindustries",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d15tnya3",
+      "title": "Machine Learning Engineer",
+      "company": "IMC Trading",
       "track": "quant",
-      "location": "Chicago, Cook County",
-      "url": "https://www.adzuna.com/details/5771430247?utm_medium=api&utm_source=f83c0ab9",
+      "location": "Chicago, United States; Hong Kong, Hong Kong; Sydney,  Australia",
+      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4570309101",
+      "source": "greenhouse:imc",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "d1u1wdaj",
+      "title": "2026 Raytheon Full Time - Systems Engineer I - Atlanta, GA (Onsite)",
+      "company": "RTX Corporation",
+      "track": "defense",
+      "location": "Atlanta, Fulton County",
+      "url": "https://www.adzuna.com/land/ad/5772186446?se=istdAsVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=A36243BA930B6310C1A05404161531552774B475",
       "source": "adzuna",
       "postedAt": "2026-06-21",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d1am3l0q",
-      "title": "Quant Research",
-      "company": "Kalshi",
-      "track": "quant",
-      "location": "New York City, New York",
-      "url": "https://www.adzuna.com/land/ad/5771472187?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=4B20055AC3A3F795B24ECA84112663227702EF87",
+      "id": "d1tb4vd1",
+      "title": "Signal Processing Engineer, Space with Security Clearance",
+      "company": "Anduril Industries",
+      "track": "defense",
+      "location": "Washington, D.C., US",
+      "url": "https://www.adzuna.com/land/ad/5772039803?se=RAPrAMVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=3CA0210CD80822FA835C5675D7AD8E24B1D13C40",
       "source": "adzuna",
       "postedAt": "2026-06-21",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d2ux7jz",
-      "title": "Quantitative Analyst – Legal & Financial Structures",
-      "company": "Sterlington",
-      "track": "quant",
-      "location": "Philadelphia, Philadelphia County",
-      "url": "https://www.adzuna.com/details/5769135609?utm_medium=api&utm_source=f83c0ab9",
+      "id": "d19cz3ca",
+      "title": "Aircraft Engine Mechanic 3rd Shift",
+      "company": "GE Aerospace",
+      "track": "defense",
+      "location": "Lynn, Essex County",
+      "url": "https://www.adzuna.com/land/ad/5771295076?se=_vh-A8Vu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=E53CE503708A8F8613BF227F47FEB4B1BDB465A5",
       "source": "adzuna",
-      "postedAt": "2026-06-19",
-      "remote": false
+      "postedAt": "2026-06-20",
+      "remote": false,
+      "target": true
     },
     {
       "id": "dukzmpn",
@@ -622,29 +585,8 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4892687101",
       "source": "greenhouse:imc",
       "postedAt": "2026-06-19",
-      "remote": false
-    },
-    {
-      "id": "d10gthjf",
-      "title": "Financial Quantitative Analyst",
-      "company": "Roeslein & Associates, Inc.",
-      "track": "quant",
-      "location": "Sappington, Saint Louis County",
-      "url": "https://www.adzuna.com/details/5767993980?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln2djg",
-      "title": "Quantitative analyst",
-      "company": "Selby Jennings",
-      "track": "quant",
-      "location": "Manhattan, New York City",
-      "url": "https://www.adzuna.com/land/ad/5768198034?se=ckIWCVJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=49DDDB355EEE7478329D8B13ED68B2EC1AE6996C",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1ln103e",
@@ -652,142 +594,11 @@
       "company": "PIMCO",
       "track": "quant",
       "location": "Balboa, Orange County",
-      "url": "https://www.adzuna.com/land/ad/5768196788?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=1347759C8AB3E115B7A61FFEFB7D831FC3350EA3",
+      "url": "https://www.adzuna.com/land/ad/5768196788?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=1347759C8AB3E115B7A61FFEFB7D831FC3350EA3",
       "source": "adzuna",
       "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1p71",
-      "title": "Quant Research Associate",
-      "company": "MFS Investment Management",
-      "track": "quant",
-      "location": "South Boston, Suffolk County",
-      "url": "https://www.adzuna.com/land/ad/5768197441?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=D08C9F98CF47EB754506AFA35F4DEF72E6E44ACC",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1qum",
-      "title": "Quant Researchers & Quant Devs - eFinancialCareers",
-      "company": "eFinancialCareers",
-      "track": "quant",
-      "location": "South Boston, Suffolk County",
-      "url": "https://www.adzuna.com/land/ad/5768197631?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=E197115A48325679D09F70F89404E108F8F41802",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1teb",
-      "title": "Quant Research Analyst",
-      "company": "Anson McCade",
-      "track": "quant",
-      "location": "Bee Cave, Travis County",
-      "url": "https://www.adzuna.com/land/ad/5768197942?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=195470D87C383493111AD86697468FE2B4CA7C62",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1roy",
-      "title": "Quantitative Researcher - Frontier Asset Management (Hong Kong)",
-      "company": "Frontier Asset Management",
-      "track": "quant",
-      "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768197734?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=8C1FFEB541D42EFE755645B562293CF7D3909ECD",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln2g4v",
-      "title": "Machine Learning Quantitative Researcher - eFinancialCareers",
-      "company": "eFinancialCareers",
-      "track": "quant",
-      "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768198361?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=89CB834F2DAE3FD8C33E909ECAE51C7FA2D05366",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln2eek",
-      "title": "Equity Quantitative Researcher - Alt Data",
-      "company": "Selby Jennings",
-      "track": "quant",
-      "location": "Manhattan, New York City",
-      "url": "https://www.adzuna.com/land/ad/5768198142?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=E5BAEC55F96922D456134A763A41959DD7E11454",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1q0d",
-      "title": "Quantitative Researcher - Fundamental Equities - eFinancialCareers",
-      "company": "eFinancialCareers",
-      "track": "quant",
-      "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768197531?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=CC7758DA8ABF105540B82E8886C337A7D21B733C",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1rug",
-      "title": "Quantitative Researcher - Global Futures",
-      "company": "Selby Jennings",
-      "track": "quant",
-      "location": "Manhattan, New York City",
-      "url": "https://www.adzuna.com/land/ad/5768197794?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=687ABB538C7A4948008657E6490D23A718BF13E5",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1lu1",
-      "title": "Quantitative Researcher - Entry Level",
-      "company": "Anson McCade",
-      "track": "quant",
-      "location": "Schiller Park, Cook County",
-      "url": "https://www.adzuna.com/land/ad/5768197041?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=FDADD2437CFF8FFA3D4AB1B9F78574C3068379BF",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1lxp",
-      "title": "Quantitative Researcher - LLMs",
-      "company": "Anson McCade",
-      "track": "quant",
-      "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5768197081?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=2D8D895963098A590231E7EB0B3E41403C13E423",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1ltc",
-      "title": "Quantitative Researcher",
-      "company": "Selby Jennings",
-      "track": "quant",
-      "location": "Fountainebleau, Miami-Dade County",
-      "url": "https://www.adzuna.com/land/ad/5768197039?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=E8024C4DC9EFABBA88058FE9B9146D515A054D9D",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
-    },
-    {
-      "id": "d1ln1lyl",
-      "title": "Quantitative Researcher",
-      "company": "Anson McCade",
-      "track": "quant",
-      "location": "Schiller Park, Cook County",
-      "url": "https://www.adzuna.com/land/ad/5768197090?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=31D3A68EE357F75B846896A543929DA6C11E2372",
-      "source": "adzuna",
-      "postedAt": "2026-06-18",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d10ekdh0",
@@ -798,73 +609,68 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4875922101",
       "source": "greenhouse:imc",
       "postedAt": "2026-06-18",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d11f0czq",
-      "title": "Modeling and Simulation of Inertial Confinement Fusion Physics Postdoc",
-      "company": "Los Alamos National Laboratory",
-      "track": "fusion",
-      "location": "White Rock, Los Alamos County",
-      "url": "https://www.adzuna.com/land/ad/5767313922?se=vlE7EFJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=5DAE33085BAD02E34B59C8391FABA1CD14382090",
+      "id": "dirjgop",
+      "title": "Engineer II Naval Radar & Ocean Systems Integration Onsite",
+      "company": "Raytheon",
+      "track": "defense",
+      "location": "Portsmouth, Portsmouth City",
+      "url": "https://www.adzuna.com/land/ad/5766773977?se=istdAsVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=EB1EBBDEDB573F4C1A3A91D3683EFB4B4EAEC8D8",
       "source": "adzuna",
       "postedAt": "2026-06-17",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d11f2gn7",
-      "title": "Postdoctoral Appointee - Plasma Physics, Onsite",
-      "company": "Sandia National Laboratories",
-      "track": "fusion",
-      "location": "Village of Los Ranchos, Bernalillo County",
-      "url": "https://www.adzuna.com/land/ad/5767316034?se=vlE7EFJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=79D814B09CE47F4E5D257F8AFE7EE84D30015097",
+      "id": "dg1eau9",
+      "title": "Radar Signal Processing Engineers with Security Clearance",
+      "company": "Leidos",
+      "track": "defense",
+      "location": "Madison, Madison County",
+      "url": "https://www.adzuna.com/land/ad/5766303910?se=RAPrAMVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=DB3D077C3D91749B125376BDD3D541B158374B67",
       "source": "adzuna",
       "postedAt": "2026-06-17",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "dwkyxr3",
-      "title": "Quantitative Analyst",
-      "company": "NextEra Energy",
-      "track": "quant",
-      "location": "Juno Beach, Palm Beach County",
-      "url": "https://www.adzuna.com/details/5767391256?utm_medium=api&utm_source=f83c0ab9",
+      "id": "dg1didn",
+      "title": "Radar Signal Processing Engineer with Security Clearance",
+      "company": "Leidos",
+      "track": "defense",
+      "location": "Madison, Madison County",
+      "url": "https://www.adzuna.com/land/ad/5766302858?se=RAPrAMVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=AC7DFB911E4B7E2367955A5F9FC21C3E37963718",
       "source": "adzuna",
       "postedAt": "2026-06-17",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "dcefdo7",
-      "title": "Quant Research Associate",
-      "company": "MFS",
-      "track": "quant",
-      "location": "Boston, Suffolk County",
-      "url": "https://www.adzuna.com/details/5766531181?utm_medium=api&utm_source=f83c0ab9",
+      "id": "diq2xxo",
+      "title": "Radar Signal Processing Engineers",
+      "company": "Leidos",
+      "track": "defense",
+      "location": "Huntsville, Madison County",
+      "url": "https://www.adzuna.com/land/ad/5766751329?se=RAPrAMVu8RGeWZzv8P2X6w&utm_medium=api&utm_source=f83c0ab9&v=6439C3A9B25A5C3465C5C2EB862C1672D7E7500C",
       "source": "adzuna",
       "postedAt": "2026-06-17",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "db4lnj0",
-      "title": "Quant Researcher",
-      "company": "Exante",
-      "track": "quant",
-      "location": "US",
-      "url": "https://www.adzuna.com/details/5766344823?utm_medium=api&utm_source=f83c0ab9",
+      "id": "d1v077ux",
+      "title": "Guidance, Nav & Control Engineer, Sr - Orlando, FL",
+      "company": "Lockheed Martin Corporation",
+      "track": "defense",
+      "location": "Orlando, Orange County",
+      "url": "https://www.adzuna.com/land/ad/5765503485?se=3HDbBcVu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=E2877946103673CAFBAD215C264E72699BDBA72A",
       "source": "adzuna",
-      "postedAt": "2026-06-17",
-      "remote": false
-    },
-    {
-      "id": "d16lmzek",
-      "title": "Quantitative Analyst",
-      "company": "StradIT",
-      "track": "quant",
-      "location": "Jersey City, Hudson County",
-      "url": "https://www.adzuna.com/details/5764807317?utm_medium=api&utm_source=f83c0ab9",
-      "source": "adzuna",
-      "postedAt": "2026-06-15",
-      "remote": false
+      "postedAt": "2026-06-16",
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1vode0i",
@@ -875,29 +681,8 @@
       "url": "https://www.adzuna.com/details/5762304254?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-13",
-      "remote": false
-    },
-    {
-      "id": "d2gntrg",
-      "title": "Fixed Income Quant Researcher",
-      "company": "LSEG",
-      "track": "quant",
-      "location": "Grand Central, Manhattan",
-      "url": "https://www.adzuna.com/land/ad/5762499243?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=F16E03A2A7C5C36CC3265B6396A92572F61C439E",
-      "source": "adzuna",
-      "postedAt": "2026-06-13",
-      "remote": false
-    },
-    {
-      "id": "dxcex1s",
-      "title": "Teaching Track Faculty Position in Neurotechnology (Assistant Professor)",
-      "company": "Carnegie Mellon University",
-      "track": "neuro",
-      "location": "Bloomfield, Allegheny County",
-      "url": "https://www.adzuna.com/land/ad/5760887455?se=Zj05C1Ju8RGWcNW46FpXzA&utm_medium=api&utm_source=f83c0ab9&v=7797A8809009530822BB806B3EF08E3CFA10C2EB",
-      "source": "adzuna",
-      "postedAt": "2026-06-11",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dxvclgo",
@@ -905,32 +690,23 @@
       "company": "Point72",
       "track": "quant",
       "location": "US",
-      "url": "https://www.adzuna.com/land/ad/5760921494?se=5t8DClJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=71A53D108A7A28AE5FFBE229F3185933A16DD909",
+      "url": "https://www.adzuna.com/land/ad/5760921494?se=IM1g_sRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=71A53D108A7A28AE5FFBE229F3185933A16DD909",
       "source": "adzuna",
       "postedAt": "2026-06-11",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "drjuj5l",
-      "title": "Sr Quantitative Analyst",
-      "company": "Exelon",
+      "id": "dhz3229",
+      "title": "Quantitative Researcher | Experienced Hire",
+      "company": "Susquehanna International Group",
       "track": "quant",
-      "location": "Fox Valley Facility, DuPage County",
-      "url": "https://www.adzuna.com/details/5760708714?utm_medium=api&utm_source=f83c0ab9",
+      "location": "Bala Cynwyd, Montgomery County",
+      "url": "https://www.adzuna.com/land/ad/5759894540?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=DF893C297E6CF9BF69F65CA147DEB4ABAC7FC9B5",
       "source": "adzuna",
       "postedAt": "2026-06-11",
-      "remote": false
-    },
-    {
-      "id": "dxccjc6",
-      "title": "Market Making Quantitative Researcher - High Frequency Trading",
-      "company": "Quanta Search",
-      "track": "quant",
-      "location": "Lazy Lake, Broward County",
-      "url": "https://www.adzuna.com/land/ad/5760884151?se=EDI-CFJu8RG6LuDuYV1hAg&utm_medium=api&utm_source=f83c0ab9&v=1C81F2CFCA4B2B264D693453B0E93E1522971780",
-      "source": "adzuna",
-      "postedAt": "2026-06-11",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1nbnwny",
@@ -941,7 +717,8 @@
       "url": "https://www.adzuna.com/details/5758346930?utm_medium=api&utm_source=f83c0ab9",
       "source": "adzuna",
       "postedAt": "2026-06-10",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1wfz89i",
@@ -952,7 +729,8 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4588833101",
       "source": "greenhouse:imc",
       "postedAt": "2026-06-10",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d19meg0g",
@@ -960,32 +738,11 @@
       "company": "IMC",
       "track": "quant",
       "location": "Schiller Park, Cook County",
-      "url": "https://www.adzuna.com/land/ad/5757785830?se=hkXICFJu8RGBzuke5Z8_iw&utm_medium=api&utm_source=f83c0ab9&v=E8ADC168EF3FA405CC4C36387FFF76B7AFB5D472",
+      "url": "https://www.adzuna.com/land/ad/5757785830?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=E8ADC168EF3FA405CC4C36387FFF76B7AFB5D472",
       "source": "adzuna",
       "postedAt": "2026-06-09",
-      "remote": false
-    },
-    {
-      "id": "d15tnya3",
-      "title": "Machine Learning Engineer",
-      "company": "IMC Trading",
-      "track": "quant",
-      "location": "Chicago, United States; Hong Kong, Hong Kong; Sydney,  Australia",
-      "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4570309101",
-      "source": "greenhouse:imc",
-      "postedAt": "2026-06-09",
-      "remote": false
-    },
-    {
-      "id": "dkxjpke",
-      "title": "Member of Technical Staff - Plasma Physics",
-      "company": "Maritime Fusion",
-      "track": "fusion",
-      "location": "Hayes Valley, San Francisco",
-      "url": "https://www.adzuna.com/land/ad/5756239637?se=vlE7EFJu8RGLrccMWCcOdA&utm_medium=api&utm_source=f83c0ab9&v=E6F2805240834AE514E87A834E2487A6DB2BE151",
-      "source": "adzuna",
-      "postedAt": "2026-06-08",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "drshvfe",
@@ -996,7 +753,8 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4885477101",
       "source": "greenhouse:imc",
       "postedAt": "2026-06-08",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "dvklvtf",
@@ -1007,7 +765,8 @@
       "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4685067101",
       "source": "greenhouse:imc",
       "postedAt": "2026-05-31",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1mgnsrb",
@@ -1018,7 +777,8 @@
       "url": "https://www.akunacapital.com/careers/job/7863348/?gh_jid=7863348",
       "source": "greenhouse:akunacapital",
       "postedAt": "2026-05-28",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
       "id": "d1mfbcgt",
@@ -1029,18 +789,356 @@
       "url": "https://www.akunacapital.com/careers/job/7846695/?gh_jid=7846695",
       "source": "greenhouse:akunacapital",
       "postedAt": "2026-05-19",
-      "remote": false
+      "remote": false,
+      "target": true
     },
     {
-      "id": "d1v8fp38",
+      "id": "d1jxn5n9",
       "title": "Quantitative Researcher",
       "company": "Akuna Capital",
       "track": "quant",
-      "location": "Sydney, NSW",
-      "url": "https://www.akunacapital.com/careers/job/1082450/?gh_jid=1082450",
+      "location": "Chicago, IL",
+      "url": "https://www.akunacapital.com/careers/job/7496416/?gh_jid=7496416",
       "source": "greenhouse:akunacapital",
-      "postedAt": "2026-04-21",
-      "remote": false
+      "postedAt": "2026-05-19",
+      "remote": false,
+      "target": true
+    },
+    {
+      "id": "dg7ykkh",
+      "title": "Transactional Quantitative Analyst",
+      "company": "Wilson Sonsini",
+      "track": "quant",
+      "location": "Stanford, Santa Clara County",
+      "url": "https://www.adzuna.com/land/ad/5773102618?se=upnD_cRu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=861709D6233FCE6BC4CE7A54AC57A9753923F8F3",
+      "source": "adzuna",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1un1dnk",
+      "title": "Quantitative Analyst - Sports",
+      "company": "bet365",
+      "track": "quant",
+      "location": "Denver, Colorado",
+      "url": "https://www.adzuna.com/land/ad/5772254421?se=upnD_cRu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=D3D119F85EAF54C2D883AAB6DBFF4E3F9D7E1812",
+      "source": "adzuna",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1x8wico",
+      "title": "Quantitative Researcher - Experienced Hires (USA)",
+      "company": "Trexquant Investment",
+      "track": "quant",
+      "location": "Stamford, Fairfield County",
+      "url": "https://www.adzuna.com/land/ad/5772662525?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=657C70FE62D4723E7D0CD7936E37DCCBA6BA3989",
+      "source": "adzuna",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1xxmuum",
+      "title": "Quantitative Researcher (Full-Time - PhD)",
+      "company": "Radix Trading",
+      "track": "quant",
+      "location": "Chicago, Cook County",
+      "url": "https://www.adzuna.com/land/ad/5772783266?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=D1ECC9FC2E7F4A44B33723F559C67882A434D0B1",
+      "source": "adzuna",
+      "postedAt": "2026-06-22",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d15jlbkk",
+      "title": "Associate Quantitative Analyst",
+      "company": "Morningstar",
+      "track": "quant",
+      "location": "Chicago, Cook County",
+      "url": "https://www.adzuna.com/details/5771430247?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-21",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1am3l0q",
+      "title": "Quant Research",
+      "company": "Kalshi",
+      "track": "quant",
+      "location": "New York City, New York",
+      "url": "https://www.adzuna.com/land/ad/5771472187?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=4B20055AC3A3F795B24ECA84112663227702EF87",
+      "source": "adzuna",
+      "postedAt": "2026-06-21",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d10gthjf",
+      "title": "Financial Quantitative Analyst",
+      "company": "Roeslein & Associates, Inc.",
+      "track": "quant",
+      "location": "Sappington, Saint Louis County",
+      "url": "https://www.adzuna.com/details/5767993980?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln2djg",
+      "title": "Quantitative analyst",
+      "company": "Selby Jennings",
+      "track": "quant",
+      "location": "Manhattan, New York City",
+      "url": "https://www.adzuna.com/land/ad/5768198034?se=upnD_cRu8RGQCdTqtj6PDg&utm_medium=api&utm_source=f83c0ab9&v=49DDDB355EEE7478329D8B13ED68B2EC1AE6996C",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln2eek",
+      "title": "Equity Quantitative Researcher - Alt Data",
+      "company": "Selby Jennings",
+      "track": "quant",
+      "location": "Manhattan, New York City",
+      "url": "https://www.adzuna.com/land/ad/5768198142?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=E5BAEC55F96922D456134A763A41959DD7E11454",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1p71",
+      "title": "Quant Research Associate",
+      "company": "MFS Investment Management",
+      "track": "quant",
+      "location": "South Boston, Suffolk County",
+      "url": "https://www.adzuna.com/land/ad/5768197441?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=D08C9F98CF47EB754506AFA35F4DEF72E6E44ACC",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1qum",
+      "title": "Quant Researchers & Quant Devs - eFinancialCareers",
+      "company": "eFinancialCareers",
+      "track": "quant",
+      "location": "South Boston, Suffolk County",
+      "url": "https://www.adzuna.com/land/ad/5768197631?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=E197115A48325679D09F70F89404E108F8F41802",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1teb",
+      "title": "Quant Research Analyst",
+      "company": "Anson McCade",
+      "track": "quant",
+      "location": "Bee Cave, Travis County",
+      "url": "https://www.adzuna.com/land/ad/5768197942?se=pFGQ_cRu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=195470D87C383493111AD86697468FE2B4CA7C62",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1q0d",
+      "title": "Quantitative Researcher - Fundamental Equities - eFinancialCareers",
+      "company": "eFinancialCareers",
+      "track": "quant",
+      "location": "Grand Central, Manhattan",
+      "url": "https://www.adzuna.com/land/ad/5768197531?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=CC7758DA8ABF105540B82E8886C337A7D21B733C",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1rug",
+      "title": "Quantitative Researcher - Global Futures",
+      "company": "Selby Jennings",
+      "track": "quant",
+      "location": "Manhattan, New York City",
+      "url": "https://www.adzuna.com/land/ad/5768197794?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=687ABB538C7A4948008657E6490D23A718BF13E5",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1lu1",
+      "title": "Quantitative Researcher - Entry Level",
+      "company": "Anson McCade",
+      "track": "quant",
+      "location": "Schiller Park, Cook County",
+      "url": "https://www.adzuna.com/land/ad/5768197041?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=FDADD2437CFF8FFA3D4AB1B9F78574C3068379BF",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1lxp",
+      "title": "Quantitative Researcher - LLMs",
+      "company": "Anson McCade",
+      "track": "quant",
+      "location": "Grand Central, Manhattan",
+      "url": "https://www.adzuna.com/land/ad/5768197081?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=2D8D895963098A590231E7EB0B3E41403C13E423",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1ltc",
+      "title": "Quantitative Researcher",
+      "company": "Selby Jennings",
+      "track": "quant",
+      "location": "Fountainebleau, Miami-Dade County",
+      "url": "https://www.adzuna.com/land/ad/5768197039?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=E8024C4DC9EFABBA88058FE9B9146D515A054D9D",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1ln1lyl",
+      "title": "Quantitative Researcher",
+      "company": "Anson McCade",
+      "track": "quant",
+      "location": "Schiller Park, Cook County",
+      "url": "https://www.adzuna.com/land/ad/5768197090?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=31D3A68EE357F75B846896A543929DA6C11E2372",
+      "source": "adzuna",
+      "postedAt": "2026-06-18",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d11f0czq",
+      "title": "Modeling and Simulation of Inertial Confinement Fusion Physics Postdoc",
+      "company": "Los Alamos National Laboratory",
+      "track": "fusion",
+      "location": "White Rock, Los Alamos County",
+      "url": "https://www.adzuna.com/land/ad/5767313922?se=HIY3BMVu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=5DAE33085BAD02E34B59C8391FABA1CD14382090",
+      "source": "adzuna",
+      "postedAt": "2026-06-17",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d11f2gn7",
+      "title": "Postdoctoral Appointee - Plasma Physics, Onsite",
+      "company": "Sandia National Laboratories",
+      "track": "fusion",
+      "location": "Village of Los Ranchos, Bernalillo County",
+      "url": "https://www.adzuna.com/land/ad/5767316034?se=HIY3BMVu8RGU18viNYDoqg&utm_medium=api&utm_source=f83c0ab9&v=79D814B09CE47F4E5D257F8AFE7EE84D30015097",
+      "source": "adzuna",
+      "postedAt": "2026-06-17",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "dwkyxr3",
+      "title": "Quantitative Analyst",
+      "company": "NextEra Energy",
+      "track": "quant",
+      "location": "Juno Beach, Palm Beach County",
+      "url": "https://www.adzuna.com/details/5767391256?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-17",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "dcefdo7",
+      "title": "Quant Research Associate",
+      "company": "MFS",
+      "track": "quant",
+      "location": "Boston, Suffolk County",
+      "url": "https://www.adzuna.com/details/5766531181?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-17",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "db4lnj0",
+      "title": "Quant Researcher",
+      "company": "Exante",
+      "track": "quant",
+      "location": "US",
+      "url": "https://www.adzuna.com/details/5766344823?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-17",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "dfe2oiu",
+      "title": "Quantitative Researcher - Volatility",
+      "company": "IO Associates",
+      "track": "quant",
+      "location": "Grand Central, Manhattan",
+      "url": "https://www.adzuna.com/land/ad/5766202773?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=019D3C2C279B02C508C84EA2ED6FCDAECDA6713B",
+      "source": "adzuna",
+      "postedAt": "2026-06-16",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d16lmzek",
+      "title": "Quantitative Analyst",
+      "company": "StradIT",
+      "track": "quant",
+      "location": "Jersey City, Hudson County",
+      "url": "https://www.adzuna.com/details/5764807317?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-15",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "drjuj5l",
+      "title": "Sr Quantitative Analyst",
+      "company": "Exelon",
+      "track": "quant",
+      "location": "Fox Valley Facility, DuPage County",
+      "url": "https://www.adzuna.com/details/5760708714?utm_medium=api&utm_source=f83c0ab9",
+      "source": "adzuna",
+      "postedAt": "2026-06-11",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "dhz1kf2",
+      "title": "Quantitative Researcher - Portfolio Optimization",
+      "company": "STEVENS CAPITAL MANAGEMENT LP",
+      "track": "quant",
+      "location": "US",
+      "url": "https://www.adzuna.com/land/ad/5759892798?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=FA18691708CF4520B9857BD7C88AA3FB57FF00AA",
+      "source": "adzuna",
+      "postedAt": "2026-06-11",
+      "remote": false,
+      "target": false
+    },
+    {
+      "id": "d1rnwz2k",
+      "title": "Quantitative Researcher",
+      "company": "Xantium Group - Tudor Investment Corporation",
+      "track": "quant",
+      "location": "Salt Lake City, Salt Lake County",
+      "url": "https://www.adzuna.com/land/ad/5758242477?se=Bt0-_cRu8RGOUJ6zGKp4Eg&utm_medium=api&utm_source=f83c0ab9&v=78BB19E99895607B9845F3F4F698440115B71F4C",
+      "source": "adzuna",
+      "postedAt": "2026-06-10",
+      "remote": false,
+      "target": false
     }
   ]
 }
