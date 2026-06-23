@@ -141,12 +141,49 @@ export function boostLocalListings(listings) {
   return [...listings.filter(isLocalListing), ...listings.filter((l) => !isLocalListing(l))]
 }
 
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+// True when a company name matches one of the curated target names. Short,
+// space-free tokens (acronyms like SIG/DRW/HRT/AQR/IMC) match on word boundaries
+// so "design" never matches "SIG"; longer names use a permissive substring match
+// (so "Citadel Securities" matches "Citadel").
+export function matchesTargetFirm(company, names) {
+  if (!company || !names || names.length === 0) return false
+  const hay = String(company).toLowerCase().trim()
+  return names.some((raw) => {
+    const n = String(raw).toLowerCase().trim()
+    if (!n) return false
+    if (n.length <= 4 && /^[a-z0-9]+$/.test(n)) {
+      return new RegExp(`\\b${escapeRegExp(n)}\\b`).test(hay)
+    }
+    return hay.includes(n)
+  })
+}
+
+// True when a listing's company is one of the user's target firms. Track-scoped
+// (targetFirmsByTrack[l.track]) so quant "BlackRock" and neuro "Blackrock
+// Neurotech" don't collide.
+export function isTargetListing(l, targetFirmsByTrack) {
+  return matchesTargetFirm(l.company, targetFirmsByTrack?.[l.track])
+}
+
+// Float target-firm listings to the top so they survive the per-track cap and
+// surface first in the UI. Runs after boostLocalListings so the final order is
+// target → target&local → local → rest.
+export function boostTargetListings(listings) {
+  return [...listings.filter((l) => l.target), ...listings.filter((l) => !l.target)]
+}
+
 // Full pipeline: dedupe -> keyword filter (local roles may bypass via keepLocal)
-// -> exclude title filter -> sort newest-first -> boost local -> cap per company
-// -> cap per track.
-export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6, excludeTitleKeywords = [], keepLocal = false } = {}) {
+// -> exclude title filter -> tag target firms -> sort newest-first -> boost local
+// -> boost targets -> cap per company -> cap per track. Every output listing
+// carries a `target` boolean.
+export function processListings(listings, keywordsByTrack, { maxPerTrack = 50, maxPerCompany = 6, excludeTitleKeywords = [], keepLocal = false, targetFirms = {} } = {}) {
   const included = filterByKeywords(dedupeListings(listings), keywordsByTrack, { keepLocal })
   const excluded = filterByExcludeKeywords(included, excludeTitleKeywords)
-  const boosted = boostLocalListings(sortByPostedDesc(excluded))
+  const tagged = excluded.map((l) => ({ ...l, target: isTargetListing(l, targetFirms) }))
+  const boosted = boostTargetListings(boostLocalListings(sortByPostedDesc(tagged)))
   return capPerTrack(capPerCompany(boosted, maxPerCompany), maxPerTrack)
 }

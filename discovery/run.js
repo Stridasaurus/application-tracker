@@ -17,6 +17,7 @@ import {
   EXCLUDE_TITLE_KEYWORDS,
   LOCAL_SWEEP,
 } from './sources.js'
+import { TARGET_NAMES_BY_TRACK } from './targets.js'
 import { fetchCompanyBoard, fetchWorkday, fetchPhenom, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
 import { processListings } from './normalize.js'
 
@@ -132,13 +133,15 @@ async function main() {
   }
 
   // Keyword-filter every source (even company boards), then cap per company and
-  // per track so no single employer or track floods the curated inbox.
-  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6, excludeTitleKeywords: EXCLUDE_TITLE_KEYWORDS, keepLocal: true })
+  // per track so no single employer or track floods the curated inbox. Target
+  // firms (targets.js) are tagged + floated to the top of each track.
+  const listings = processListings(all, KEYWORDS_BY_TRACK, { maxPerTrack: 50, maxPerCompany: 6, excludeTitleKeywords: EXCLUDE_TITLE_KEYWORDS, keepLocal: true, targetFirms: TARGET_NAMES_BY_TRACK })
 
   const payload = {
     generatedAt: new Date().toISOString(),
     total: listings.length,
     counts: countByTrack(listings),
+    targetCounts: countTargetsByTrack(listings),
     sources: sourceCounts,
     listings,
   }
@@ -146,11 +149,19 @@ async function main() {
   await mkdir(dirname(OUT), { recursive: true })
   await writeFile(OUT, JSON.stringify(payload, null, 2) + '\n')
   console.log(`\nWrote ${listings.length} listings to ${OUT}`)
+  console.log(`  by track:   ${JSON.stringify(payload.counts)}`)
+  console.log(`  ★ targets:  ${JSON.stringify(payload.targetCounts)}`)
 }
 
 function countByTrack(listings) {
   const c = {}
   for (const l of listings) c[l.track] = (c[l.track] ?? 0) + 1
+  return c
+}
+
+function countTargetsByTrack(listings) {
+  const c = {}
+  for (const l of listings) if (l.target) c[l.track] = (c[l.track] ?? 0) + 1
   return c
 }
 
