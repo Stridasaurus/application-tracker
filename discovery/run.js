@@ -149,6 +149,8 @@ async function main() {
   await mkdir(dirname(OUT), { recursive: true })
   await writeFile(OUT, JSON.stringify(payload, null, 2) + '\n')
   console.log(`\nWrote ${listings.length} listings to ${OUT}`)
+  console.log(`  by track:   ${JSON.stringify(payload.counts)}`)
+  console.log(`  ★ targets:  ${JSON.stringify(payload.targetCounts)}`)
 }
 
 function countByTrack(listings) {
