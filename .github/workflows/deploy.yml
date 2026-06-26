@@ -1,11 +1,11 @@
 name: Deploy to GitHub Pages
 
 # Builds the static app and publishes it to GitHub Pages so it can be viewed
-# on any device (including mobile). Runs on pushes to the active dev branch.
+# on any device (including mobile). Runs on pushes to the default branch.
 on:
   push:
     branches:
-      - claude/adoring-hopper-7emrtm
+      - main
   workflow_dispatch:
 
 permissions:
