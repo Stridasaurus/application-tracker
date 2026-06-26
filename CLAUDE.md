@@ -20,7 +20,7 @@ npm install        # install deps
 npm run dev        # local dev server (Vite)
 npm test           # run all unit tests once (Vitest)
 npm run test:watch # watch mode
-npm run build      # production build to dist/ (set VITE_BASE for Pages base path)
+npm run build      # production build to dist/ (CI sets VITE_BASE=/application-tracker/ for the Pages base path)
 node discovery/run.js   # run the discovery sweep locally (writes public/discovered-jobs.json)
 ```
 
@@ -92,30 +92,49 @@ on click to keep the initial bundle down.
 - `sources.js` — `COMPANY_BOARDS` are **verified-working** ATS slugs only;
   unconfirmed companies sit in `CANDIDATE_BOARDS` (not queried) until a slug is
   confirmed and promoted. `WORKDAY_BOARDS` are verified Workday tenants for the
-  defense/aerospace primes (Northrop/RTX/Boeing). Also holds per-track keyword
-  lists, Adzuna company hints, and `LOCAL_SWEEP` (the Melbourne, FL geo-targeted
-  sweep config). Editing the discovered companies/keywords happens here.
-- `fetchers.js` — Greenhouse / Lever / Ashby + Workday public boards + USAJOBS +
-  Adzuna. Each fetcher returns normalized listings and **never throws** (logs and
-  returns `[]` on error). USAJOBS/Adzuna are skipped unless their API-key env vars
-  are set; Adzuna/USAJOBS take optional geo params (`where`/`distance`,
-  `LocationName`/`Radius`) for the local sweep. Workday uses a POST to the CXS
-  endpoint and needs no key.
+  defense/aerospace primes (Northrop/RTX/Boeing); `PHENOM_BOARDS` is the same
+  idea for Phenom career sites (wired but empty until a tenant is verified). Also
+  holds per-track keyword lists, `DISCOVERY_TRACKS` (the job-board tracks swept —
+  `quant`/`neuro`/`defense`; **Fusion was dropped** and PhD is handled separately),
+  `PHD_KEYWORDS` (relevance filter for the live PhD feed), Adzuna company hints,
+  and `LOCAL_SWEEP` (the Melbourne, FL geo-targeted sweep config). Editing the
+  discovered companies/keywords happens here.
+- `targets.js` — the curated **target-firm list** per track (the user's researched
+  fit list, including a `phd` group of institutions). `matchesTargetFirm` is
+  track-scoped; matched listings get a `target` flag, a ★ badge, and float to the
+  top of the inbox. This is *tagging/boosting*, separate from which sources are
+  actually queried.
+- `phd-programs.js` — the curated **PhD program list** (`PHD_PROGRAMS`) seeded
+  straight into the Discover inbox via `phdProgramListings()` (track `phd`). PhD
+  programs aren't on job boards, so these are seeded, not fetched.
+- `fetchers.js` — Greenhouse / Lever / Ashby + Workday + Phenom public boards +
+  USAJOBS + Adzuna + EURAXESS (a best-effort live PhD/research feed, no key).
+  Each fetcher returns normalized listings and **never throws** (logs and returns
+  `[]` on error). USAJOBS/Adzuna are skipped unless their API-key env vars are
+  set; Adzuna/USAJOBS take optional geo params (`where`/`distance`,
+  `LocationName`/`Radius`) for the local sweep. Workday/Phenom/EURAXESS need no key.
 - `normalize.js` — pure, unit-tested: `makeListing` (stable id from URL),
   dedupe, keyword filter, `capPerCompany`, `capPerTrack`, `isLocalListing` /
-  `boostLocalListings` (Space Coast/Brevard area), and the `processListings`
-  pipeline (dedupe → keyword-filter — local roles bypass via `keepLocal` →
-  exclude-title filter → sort newest-first → boost local → cap per company → cap
-  per track). PhD track is intentionally excluded from discovery.
-- `run.js` — orchestrates the sweep and writes `public/discovered-jobs.json`.
+  `boostLocalListings` (Space Coast/Brevard area), `matchesTargetFirm` /
+  `boostTargetListings`, and the `processListings` pipeline (dedupe →
+  keyword-filter — local roles bypass via `keepLocal`, and the `phd` track has no
+  keyword list so seeded programs always pass → exclude-title filter → tag targets
+  → sort newest-first → boost local → boost targets → cap per company → cap per
+  track).
+- `run.js` — orchestrates the sweep (company boards → Workday → USAJOBS → Adzuna),
+  then seeds the curated PhD programs and layers the live EURAXESS feed on top,
+  and writes `public/discovered-jobs.json`.
 
 ### Deploy & discovery automation (`.github/workflows/`)
-- `deploy.yml` — on push to the dev branch: test → build (with
-  `VITE_BASE=/resume-tracker/`) → deploy to GitHub Pages.
+- `deploy.yml` — on push to `main` (the default branch): test → build (with
+  `VITE_BASE=/application-tracker/`) → deploy to GitHub Pages. Live at
+  https://stridasaurus.github.io/application-tracker/.
 - `discover.yml` — daily cron (and manual): run the sweep, commit the refreshed
-  `discovered-jobs.json`, then rebuild + redeploy. **The default `GITHUB_TOKEN`
-  cannot trigger other workflows**, so discovery deploys within its own job
-  rather than relying on the push from its commit.
+  `discovered-jobs.json`, then rebuild + redeploy. It is **branch-agnostic** —
+  the commit/deploy steps gate on `github.event.repository.default_branch`, so a
+  feature-branch dispatch runs the sweep alone (to verify new sources) and skips
+  the deploy. The protected `github-pages` environment only permits the default
+  branch.
 
 API keys for USAJOBS/Adzuna are repo Actions secrets
 (`USAJOBS_API_KEY`, `USAJOBS_EMAIL`, `ADZUNA_APP_ID`, `ADZUNA_APP_KEY`); without
@@ -129,3 +148,14 @@ them those sources are skipped and only company boards run.
   When changing the stored shape, version it and migrate in `useStore.loadState`.
 - Track behavior is data-driven from `constants.js` — prefer extending those
   tables over hardcoding stage/track logic in components.
+
+## Branch & deploy workflow
+
+- `main` is the trunk and the **deploy branch** — pushing to it builds and
+  publishes to GitHub Pages. Do feature work on a branch off `main`; don't commit
+  to `main` directly. Prefer opening a PR and merging once `npm test` and
+  `npm run build` pass, rather than merging straight in. Delete the feature branch
+  after it merges.
+- Verify before pushing: `npm test` (58+ unit tests) and `npm run build` should
+  both pass. The discovery sweep can be smoke-tested with `node discovery/run.js`
+  (network sources fail soft without keys; the curated PhD seed still populates).
