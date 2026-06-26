@@ -160,6 +160,40 @@ export async function fetchPhenom({ company, track, host, refNum = '', keyword =
   return out
 }
 
+// --- EURAXESS (EU research-jobs portal). Best-effort LIVE feed of newly-opened
+// PhD / early-stage-researcher positions, used for the `phd` track to complement
+// the curated program list (discovery/phd-programs.js). No API key needed.
+//
+// EURAXESS exposes a public search at https://euraxess.ec.europa.eu/jobs/search;
+// the JSON search endpoint returns hits under a few possible keys depending on
+// the deployment, so the mapper reads several fallbacks and tolerates either an
+// array or a wrapped `{ hits | results | data }` shape. Like fetchWorkday/
+// fetchPhenom, the contract is "never throws": on any HTTP/shape error it logs
+// nothing here and lets the caller's safe() wrapper record [] so the run is never
+// broken by a portal change. Filter relevance with PHD_KEYWORDS at the call site.
+export async function fetchEuraxess({ keyword = '', track = 'phd', maxResults = 25 } = {}) {
+  const url =
+    `https://euraxess.ec.europa.eu/api/jobs/search` +
+    `?keywords=${encodeURIComponent(keyword)}` +
+    `&researchField=Neuroscience&positionType=phd&pageSize=${maxResults}`
+  const data = await getJson(url, { Accept: 'application/json' })
+  const rows = Array.isArray(data) ? data : data.hits ?? data.results ?? data.data ?? data.jobs ?? []
+  return rows.map((j) => {
+    const title = j.title ?? j.jobTitle ?? j.name ?? ''
+    const company = j.organisation ?? j.organization ?? j.institution ?? j.company ?? j.hiringInstitution ?? ''
+    const location =
+      j.locationText ?? j.location ?? ([j.city, j.country].filter(Boolean).join(', ') || j.country || '')
+    const link = j.url ?? j.applyUrl ?? j.jobUrl ?? j.link ?? (j.id ? `https://euraxess.ec.europa.eu/jobs/${j.id}` : '')
+    const rawDate = j.publicationDate ?? j.postedDate ?? j.startDate ?? j.created ?? ''
+    let postedAt = null
+    if (rawDate) {
+      const d = new Date(rawDate)
+      if (!isNaN(d.getTime())) postedAt = d.toISOString().slice(0, 10)
+    }
+    return makeListing({ title, company, track, location, url: link, source: 'euraxess', postedAt })
+  })
+}
+
 const ATS = { greenhouse: fetchGreenhouse, lever: fetchLever, ashby: fetchAshby }
 
 export async function fetchCompanyBoard(board) {

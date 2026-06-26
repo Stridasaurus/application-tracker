@@ -10,8 +10,10 @@
 // Susquehanna). Short space-free aliases (SIG, DRW, HRT…) are matched on word
 // boundaries downstream so "design" never matches "SIG".
 //
-// List 3 (PhD programs) is intentionally absent — those aren't on job boards and the
-// discovery sweep skips the phd track.
+// The PhD track (List 3) IS covered now: discovery/phd-programs.js seeds the
+// curated programs and fetchEuraxess surfaces live academic positions, so the
+// `phd` group below ★-tags both the seeded programs and matching live listings
+// by institution name.
 export const TARGET_FIRMS = {
   // List 1 — Quantitative finance
   quant: [
@@ -46,6 +48,12 @@ export const TARGET_FIRMS = {
     { name: 'BlackRock' },
     { name: 'PIMCO' },
     { name: 'Bridgewater' },
+    { name: 'Flow Traders' },
+    { name: 'Maven Securities', aliases: ['Maven'] },
+    { name: 'Wintermute' },
+    { name: 'Man Group', aliases: ['Man AHL'] },
+    { name: 'Winton' },
+    { name: 'Capula', aliases: ['Capula Investment'] },
   ],
   // List 2 — Neurotech / BCI / neural data
   neuro: [
@@ -71,27 +79,86 @@ export const TARGET_FIRMS = {
     { name: 'Emotiv' },
     { name: 'Numenta' },
     { name: 'DeepMind' },
+    { name: 'Cerca Magnetics', aliases: ['Cerca'] },
+    { name: 'CorTec' },
+    { name: 'ABILITY Neurotech', aliases: ['ABILITY'] },
+    { name: 'Wyss Center', aliases: ['Wyss'] },
+    { name: 'ONWARD Medical', aliases: ['ONWARD'] },
+    { name: 'InBrain Neuroelectronics', aliases: ['InBrain'] },
+    { name: 'TU Graz', aliases: ['Graz'] },
   ],
-  // Defense / aerospace primes already curated in the pipeline — flagged so the ★
-  // is consistent across tracks (the user's Melbourne-area focus).
+  // Defense / aerospace — mirrors the researched Defense tab. Beyond the local
+  // primes, this leans into the user's actual edge: research labs (MIT Lincoln,
+  // JHU APL, the national labs) and the space-weather / geomagnetism agencies
+  // (NOAA SWPC, NASA heliophysics, USGS) that are a direct content match to their
+  // magnetometer work. The off-list primes (Leidos, Embraer, GE Aerospace,
+  // General Dynamics, Sierra Nevada, Rockwell Collins) were dropped per the list;
+  // Epirus stays a verified COMPANY_BOARD source but is intentionally not ★-tagged.
   defense: [
+    // Defense electronics — Melbourne / Space Coast primes
     { name: 'L3Harris' },
     { name: 'Northrop Grumman', aliases: ['Northrop'] },
     { name: 'Lockheed Martin', aliases: ['Lockheed'] },
     { name: 'Raytheon' },
     { name: 'RTX' },
-    { name: 'Leidos' },
-    { name: 'Embraer' },
     { name: 'Leonardo DRS' },
     { name: 'Collins Aerospace' },
     { name: 'BAE Systems', aliases: ['BAE'] },
-    { name: 'GE Aerospace' },
     { name: 'Boeing' },
-    { name: 'General Dynamics' },
-    { name: 'Sierra Nevada' },
-    { name: 'Rockwell Collins' },
     { name: 'Anduril' },
-    { name: 'Epirus' },
+    // FFRDC / research labs — research-fit (radar, sensors, applied physics)
+    { name: 'MIT Lincoln Laboratory', aliases: ['Lincoln Laboratory', 'Lincoln Lab'] },
+    { name: 'Johns Hopkins APL', aliases: ['Johns Hopkins Applied Physics', 'JHU APL', 'APL'] },
+    { name: 'Sandia National Laboratories', aliases: ['Sandia'] },
+    { name: 'Los Alamos National Laboratory', aliases: ['Los Alamos', 'LANL'] },
+    { name: 'Lawrence Livermore National Laboratory', aliases: ['Lawrence Livermore', 'LLNL'] },
+    // Geospatial / remote sensing
+    { name: 'Maxar' },
+    // Space weather / heliophysics / geomagnetism — DIRECT content match
+    { name: 'NOAA' },
+    { name: 'NASA' },
+    { name: 'USGS' },
+    // Space & launch (local + prestigious; weaker skills fit per the readme)
+    { name: 'SpaceX' },
+    { name: 'Blue Origin' },
+    { name: 'United Launch Alliance', aliases: ['ULA'] },
+    { name: 'Relativity', aliases: ['Relativity Space'] },
+    { name: 'Terran Orbital' },
+    { name: 'Vaya Space' },
+  ],
+  // List 3 — PhD programs (neuroscience / comp-neuro). Institution names, so both
+  // the seeded programs (discovery/phd-programs.js) and matching live EURAXESS
+  // listings get ★-tagged. Mix of US + European (the user's researched fit list).
+  phd: [
+    { name: 'Caltech' },
+    { name: 'Princeton' },
+    { name: 'UCL', aliases: ['University College London', 'Gatsby'] },
+    { name: 'UC Berkeley', aliases: ['Berkeley', 'Redwood'] },
+    { name: 'Columbia' },
+    { name: 'MIT' },
+    { name: 'Stanford' },
+    { name: 'Harvard' },
+    { name: 'NYU' },
+    { name: 'Carnegie Mellon', aliases: ['CMU', 'CNBC'] },
+    { name: 'UCSD', aliases: ['UC San Diego'] },
+    { name: 'Johns Hopkins' },
+    { name: 'Brown', aliases: ['Carney', 'BrainGate'] },
+    { name: 'University of Washington', aliases: ['UW'] },
+    { name: 'Georgia Tech', aliases: ['Emory'] },
+    { name: 'University of Michigan', aliases: ['Michigan'] },
+    { name: 'University of Pennsylvania', aliases: ['UPenn', 'Penn'] },
+    { name: 'Boston University', aliases: ['BU'] },
+    { name: 'Northwestern' },
+    { name: 'Cold Spring Harbor', aliases: ['CSHL', 'Watson School'] },
+    { name: 'ETH Zurich', aliases: ['ETH', 'INI', 'Neuroinformatics'] },
+    { name: 'EPFL', aliases: ['Neuro-X'] },
+    { name: 'IST Austria', aliases: ['ISTA', 'Institute of Science and Technology Austria'] },
+    { name: 'Max Planck', aliases: ['IMPRS', 'Tübingen'] },
+    { name: 'Champalimaud' },
+    { name: 'SISSA' },
+    { name: 'Donders', aliases: ['Radboud'] },
+    { name: 'Hebrew University', aliases: ['ELSC', 'Safra'] },
+    { name: 'University of Edinburgh', aliases: ['Edinburgh'] },
   ],
 }
 

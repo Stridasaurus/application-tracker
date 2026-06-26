@@ -139,33 +139,48 @@ export const KEYWORDS_BY_TRACK = {
     'fpga',
     'mission systems',
     'payload',
-  ],
-  fusion: [
-    'plasma physics',
-    'plasma confinement',
-    'plasma diagnostics',
-    'plasma heating',
-    'nuclear fusion',
-    'fusion energy',
-    'fusion reactor',
-    'fusion power',
-    'tokamak',
-    'stellarator',
-    'magnetohydrodynamic',
-    'mhd',
-    'inertial confinement',
-    'field-reversed configuration',
-    'z-pinch',
-    'tritium',
-    'superconducting magnet',
-    'cryostat',
-    'divertor',
+    // Space weather / geomagnetism / remote sensing — the user's DIRECT edge
+    // (magnetometer + inverse-beamforming work). Matches NOAA SWPC, NASA
+    // heliophysics, USGS Geomagnetism, and Maxar remote-sensing roles.
+    'magnetometer',
+    'space weather',
+    'heliophysics',
+    'geomagnetic',
+    'geomagnetism',
+    'ionosphere',
+    'remote sensing',
   ],
 }
 
-// Tracks that have meaningful coverage on job boards. PhD programs are not on
-// job boards, so the discovery sweep intentionally skips that track.
-export const DISCOVERY_TRACKS = ['quant', 'neuro', 'defense', 'fusion']
+// Keywords used to keep the LIVE academic PhD feed (fetchEuraxess) relevant to
+// the user's comp-neuro / MEG edge. Deliberately NOT added to KEYWORDS_BY_TRACK:
+// the `phd` track has no entry there, so the curated programs (phd-programs.js)
+// bypass the keyword gate in filterByKeywords and always survive, while the live
+// feed is pre-filtered against this list in run.js before it enters the pool.
+export const PHD_KEYWORDS = [
+  'computational neuroscience',
+  'theoretical neuroscience',
+  'systems neuroscience',
+  'neural',
+  'neuroscience',
+  'brain-computer interface',
+  'brain computer interface',
+  'neural engineering',
+  'neuroimaging',
+  'magnetoencephalography',
+  'meg',
+  'eeg',
+  'electrophysiology',
+  'neuromorphic',
+]
+
+// Tracks swept against job boards/aggregators (keyword + company-hint search).
+// Fusion was dropped: it isn't on the user's researched target list, so sweeping
+// it only added inbox noise. The `fusion` track still exists in the app
+// (src/domain/constants.js) — existing cards are untouched — it's just no longer
+// discovered. The `phd` track is handled separately (curated programs +
+// fetchEuraxess in run.js), not via this list.
+export const DISCOVERY_TRACKS = ['quant', 'neuro', 'defense']
 
 // Location-targeted sweep config. The user's home metro (Melbourne, FL) is a
 // major defense/aerospace hub, but a nationwide keyword search returns only the
@@ -219,10 +234,15 @@ export const ADZUNA_COMPANY_HINTS = {
   quant: ['Citadel', 'Jane Street', 'D.E. Shaw', 'Point72', 'Optiver', 'DRW', 'Two Sigma', 'Hudson River Trading', 'WorldQuant', 'Squarepoint'],
   neuro: ['Neuralink', 'Synchron', 'Paradromics', 'Blackrock Neurotech', 'Precision Neuroscience', 'Science Corp', 'MEGIN', 'Rune Labs', 'Ceribell', 'Motif Neurotech'],
   defense: [
-    'L3Harris', 'Northrop Grumman', 'Lockheed Martin', 'Raytheon', 'Leidos',
+    'L3Harris', 'Northrop Grumman', 'Lockheed Martin', 'Raytheon',
     // Melbourne / Space Coast employers (custom ATSs — reachable via Adzuna):
-    'Embraer', 'Leonardo DRS', 'Collins Aerospace', 'BAE Systems', 'GE Aerospace',
-    'Boeing', 'General Dynamics', 'Sierra Nevada', 'Rockwell Collins',
+    'Leonardo DRS', 'Collins Aerospace', 'BAE Systems', 'Boeing',
+    // Research labs + remote sensing (the user's edge fit):
+    'MIT Lincoln Laboratory', 'Johns Hopkins APL', 'Maxar',
+    // Space & launch (local; weaker skills fit but on the list):
+    'SpaceX', 'Blue Origin',
   ],
-  fusion: ['Commonwealth Fusion', 'Helion', 'TAE Technologies', 'Tokamak Energy', 'Type One Energy'],
+  // Federal agencies (NOAA SWPC / NASA heliophysics / USGS Geomagnetism) are not
+  // on Adzuna — they're covered by the USAJOBS keyword sweep in run.js, which now
+  // includes the space-weather / geomagnetism terms.
 }

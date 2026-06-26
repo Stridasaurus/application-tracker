@@ -16,10 +16,17 @@ import {
   ADZUNA_COMPANY_HINTS,
   EXCLUDE_TITLE_KEYWORDS,
   LOCAL_SWEEP,
+  PHD_KEYWORDS,
 } from './sources.js'
 import { TARGET_NAMES_BY_TRACK } from './targets.js'
-import { fetchCompanyBoard, fetchWorkday, fetchPhenom, fetchUsaJobs, fetchAdzuna } from './fetchers.js'
-import { processListings } from './normalize.js'
+import { phdProgramListings } from './phd-programs.js'
+import { fetchCompanyBoard, fetchWorkday, fetchPhenom, fetchUsaJobs, fetchAdzuna, fetchEuraxess } from './fetchers.js'
+import { processListings, matchesAnyKeyword } from './normalize.js'
+
+// Federal space-weather / geomagnetism terms (NOAA SWPC, NASA heliophysics, USGS
+// Geomagnetism) — the user's direct-edge agencies. National in scope (Boulder /
+// Goddard / Golden), so they ride the keyworded USAJOBS sweep, not the local geo one.
+const FEDERAL_EDGE_KEYWORDS = ['space weather', 'heliophysics', 'geomagnetism', 'magnetometer']
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUT = resolve(__dirname, '../public/discovered-jobs.json')
@@ -79,13 +86,20 @@ async function main() {
 
   if (usajobs.apiKey && usajobs.email) {
     console.log('USAJOBS:')
-    for (const track of ['defense', 'fusion']) {
-      for (const keyword of KEYWORDS_BY_TRACK[track].slice(0, 4)) {
-        const items = await safe(`${track}/"${keyword}"`, () =>
-          fetchUsaJobs({ keyword, track, ...usajobs }),
-        )
-        all.push(...items)
-      }
+    for (const keyword of KEYWORDS_BY_TRACK.defense.slice(0, 4)) {
+      const items = await safe(`defense/"${keyword}"`, () =>
+        fetchUsaJobs({ keyword, track: 'defense', ...usajobs }),
+      )
+      all.push(...items)
+    }
+    // Federal space-weather / geomagnetism roles (NOAA SWPC, NASA heliophysics,
+    // USGS Geomagnetism) — national, the user's direct content match.
+    console.log('USAJOBS (space weather / geomagnetism):')
+    for (const keyword of FEDERAL_EDGE_KEYWORDS) {
+      const items = await safe(`edge/"${keyword}"`, () =>
+        fetchUsaJobs({ keyword, track: 'defense', ...usajobs }),
+      )
+      all.push(...items)
     }
     // Local federal roles (Patrick SFB / Cape Canaveral / Melbourne FL).
     console.log('USAJOBS (local — Melbourne, FL):')
@@ -130,6 +144,25 @@ async function main() {
     }
   } else {
     console.log('Adzuna: skipped (no ADZUNA_APP_ID / ADZUNA_APP_KEY secret)')
+  }
+
+  // PhD track. Programs aren't on job boards, so seed the curated researched list
+  // directly (always present), then layer a best-effort LIVE feed of newly-opened
+  // comp-neuro positions from EURAXESS on top. The live feed is pre-filtered to
+  // PHD_KEYWORDS so it stays relevant; the curated programs are NOT filtered (the
+  // `phd` track has no KEYWORDS_BY_TRACK entry, so they bypass the keyword gate).
+  console.log('PhD (curated programs):')
+  const phdSeed = phdProgramListings()
+  console.log(`  ✓ seeded: ${phdSeed.length}`)
+  sourceCounts['phd-program'] = phdSeed.length
+  all.push(...phdSeed)
+
+  console.log('PhD (EURAXESS — live):')
+  for (const keyword of PHD_KEYWORDS.slice(0, 4)) {
+    const items = await safe(`euraxess/"${keyword}"`, () => fetchEuraxess({ keyword }))
+    const relevant = items.filter((l) => matchesAnyKeyword(`${l.title} ${l.location}`, PHD_KEYWORDS))
+    sourceCounts['euraxess'] = (sourceCounts['euraxess'] ?? 0) + relevant.length
+    all.push(...relevant)
   }
 
   // Keyword-filter every source (even company boards), then cap per company and

@@ -53,7 +53,7 @@ export default function Discover({ data, status, apps, dismissed, onAdd, onDismi
         <div>
           <h2 className="text-lg font-semibold">Discover</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            New listings from the daily sweep across company boards, USAJOBS, and Adzuna.
+            New listings from the daily sweep across company boards, USAJOBS, Adzuna, and PhD programs.
             {generated ? ` Last updated ${generated}.` : ' Waiting for the first scheduled run.'}
           </p>
         </div>
@@ -183,5 +183,9 @@ function sourceLabel(source = '') {
   }
   if (source === 'usajobs') return 'USAJOBS'
   if (source === 'adzuna') return 'Adzuna'
+  if (source === 'phd-program') return 'program'
+  if (source === 'euraxess') return 'EURAXESS'
+  if (source.startsWith('workday:')) return 'company board'
+  if (source.startsWith('phenom:')) return 'company board'
   return source
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest'
-import { fetchWorkday, fetchPhenom } from './fetchers.js'
+import { fetchWorkday, fetchPhenom, fetchEuraxess } from './fetchers.js'
 
 afterEach(() => {
   vi.restoreAllMocks()
@@ -110,5 +110,53 @@ describe('fetchPhenom', () => {
     }))
     const out = await fetchPhenom({ company: 'L3Harris', track: 'defense', host: 'careers.l3harris.com', maxPages: 1 })
     expect(out[0]).toMatchObject({ location: 'Palm Bay, FL', url: 'https://x.co/apply/9' })
+  })
+})
+
+describe('fetchEuraxess', () => {
+  it('normalizes live PhD positions to track "phd" (wrapped {hits} shape)', async () => {
+    global.fetch = vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        hits: [
+          {
+            title: 'PhD in Computational Neuroscience',
+            organisation: 'Donders Institute',
+            city: 'Nijmegen',
+            country: 'Netherlands',
+            url: 'https://euraxess.ec.europa.eu/jobs/123',
+            publicationDate: '2026-06-20',
+          },
+        ],
+      }),
+    }))
+
+    const out = await fetchEuraxess({ keyword: 'computational neuroscience' })
+    expect(out).toHaveLength(1)
+    expect(out[0]).toMatchObject({
+      title: 'PhD in Computational Neuroscience',
+      company: 'Donders Institute',
+      track: 'phd',
+      location: 'Nijmegen, Netherlands',
+      url: 'https://euraxess.ec.europa.eu/jobs/123',
+      source: 'euraxess',
+      postedAt: '2026-06-20',
+    })
+  })
+
+  it('tolerates a bare array and missing fields', async () => {
+    global.fetch = vi.fn(async () => ({
+      ok: true,
+      json: async () => [{ jobTitle: 'Doctoral Researcher (MEG)', institution: 'ETH Zurich', id: '99' }],
+    }))
+    const out = await fetchEuraxess({ keyword: 'meg' })
+    expect(out[0]).toMatchObject({
+      title: 'Doctoral Researcher (MEG)',
+      company: 'ETH Zurich',
+      track: 'phd',
+      url: 'https://euraxess.ec.europa.eu/jobs/99',
+      source: 'euraxess',
+      postedAt: null,
+    })
   })
 })
