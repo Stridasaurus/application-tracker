@@ -62,6 +62,9 @@ export default function App() {
       track: listing.track,
       status: 'Saved',
       url: listing.url,
+      // Carry a deadline when the source provides one (e.g. a PhD program's
+      // application deadline) — deadlines are a first-class concern in this app.
+      ...(listing.deadline ? { deadline: listing.deadline } : {}),
       notes: `Discovered via ${listing.source}${listing.location ? ` · ${listing.location}` : ''}`,
     })
     store.actions.dismissListing(listing.id)
